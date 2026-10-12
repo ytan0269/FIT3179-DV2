@@ -38,7 +38,7 @@
   "data": [
     {
       "name": "raw",
-      "url": "../datasets/monthly_observations_by_state_animal_group.csv",
+      "url": "datasets/monthly_observations_by_state_animal_group.csv",
       "format": { "type": "csv" },
       "transform": [
         { "type": "formula", "as": "month", "expr": "toNumber(datum.month)" },

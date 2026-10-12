@@ -108,7 +108,7 @@
     },
     {
       "name": "rawBinned",
-      "url": "../datasets/binned_wildlife_data.csv",
+      "url": "datasets/binned_wildlife_data.csv",
       "format": { "type": "csv" },
       "transform": [
         { "type": "formula", "as": "lon_bin",      "expr": "toNumber(datum.lon_bin)" },

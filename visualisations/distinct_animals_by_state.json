@@ -61,7 +61,7 @@
           "lookup": "properties.STATE_NAME",
           "from": {
             "data": {
-              "url": "../datasets/distinct_animals_by_state.csv",
+              "url": "datasets/distinct_animals_by_state.csv",
               "format": { "type": "csv" }
             },
             "key": "state",

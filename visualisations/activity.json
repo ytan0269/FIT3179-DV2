@@ -15,7 +15,7 @@
   },
 
   "data": {
-    "url": "../datasets/activity.csv",
+    "url": "datasets/activity.csv",
     "format": {
       "type": "csv"
     }

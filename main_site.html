@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Australian Wildlife Spotting</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vega@6.2.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@6.4.3"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@7.1.0"></script>
+</head>
+
+
+<body>
+    <div class="main_container">
+        <h1>Australian Wildlife Spotting</h1>
+
+        
+        <div class="standard_card">
+            <div class="inner_card">
+                <div class="paragraph_container">
+                    <p>
+                        Here in Australia, there are a range of wildlife related activities Australian can participate in, 
+                        one of which is wildlife spotting. Australia is home to a diverse set of wildlife, ranging from icon mammals 
+                        to rare amphibians. The opportunity to explore and spot these animals are dependent on the location, time of 
+                        day and year, and the animal’s overall rarity.
+                    </p> 
+                    <p>
+                        Whether it be observing kangaroos at dawn, listening for nocturnal calls in the rainforest, or scanning coastal waters 
+                        for migrating whales, wildlife spotting invites all Australians no matter their age to engage deeply with the environment 
+                        and appreciate the remarkable biodiversity that defines the continent.
+                    </p>
+                    <p>
+                        Image taken from
+                        <a href="https://www.letsgocaravanandcamping.com.au/news/spring-wildlife-spotting-where-to-see-australias-baby-animals-this-school-holidays/">
+                            Let's Go Caravan & Camping
+                        </a>
+                    </p>
+                </div>
+                
+                <div class="image_card">
+                    <img src="tasmania.png">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="standard_card">
+            <h2>Types of Wildlife Activites Australians Participate in</h2>
+
+            <div class="inner_card">
+                <p>Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder</p> 
+                
+                <div class="inner_inner_card">
+                    <!-- <h3>Type of Wildlife Activities Australians Participate in per State</h3> -->
+                    <div id="activity_vis"></div>
+                    <script>
+                        const vis_path = "visualisations/activity.json"
+                        vegaEmbed("#activity_vis", vis_path, {"actions":false})
+                    </script>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="standard_card">
+            <h2>Australian's Reasons for Participating in Wildlife Activities</h2>
+
+                <p>Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder</p> 
+                
+                <div class="inner_inner_card_2">
+                    <!-- <h3>Type of Wildlife Activities Australians Participate in per State</h3> -->
+                    <div id="activity_reason_vis"></div>
+                    <script>
+                         const vis2_path = "visualisations/activity_reason.json"
+                        vegaEmbed("#activity_reason_vis", vis2_path, {"actions":false})
+                    </script>
+                </div>
+        </div>
+    
+        
+        <div class="standard_card">
+            <h2>Which State has the Greatest Animal Diversity</h2>
+
+            <div class="inner_card">
+                <p>Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder</p> 
+                
+                <div class="inner_inner_card">
+                    <!-- <h3>Type of Wildlife Activities Australians Participate in per State</h3> -->
+                    <div id="distinct_animals_by_state_vis"></div>
+                    <script>
+                        const vis3_path = "visualisations/distinct_animals_by_state.json"
+                        vegaEmbed("#distinct_animals_by_state_vis", vis3_path, {"actions":false})
+                    </script>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="standard_card">
+            <h2>Common Animal Groups Spotted</h2>
+
+            <div class="inner_card">
+                <p>Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder</p> 
+                
+                <div class="inner_inner_card">
+                    <!-- <h3>Type of Wildlife Activities Australians Participate in per State</h3> -->
+                    <div id="observations_by_animal_group_vis"></div>
+                    <script>
+                        const vis_path9 = "visualisations/observations_by_animal_group.json"
+                        vegaEmbed("#observations_by_animal_group_vis", vis_path9, {"actions":false})
+                    </script>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="standard_card">
+            <h2>Most Common Species and Animal</h2>
+
+                <p>Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder</p> 
+                
+                <div class="inner_inner_card_2">
+                    <!-- <h3>Type of Wildlife Activities Australians Participate in per State</h3> -->
+                    <div id="top_10_species_by_animal_group_vis"></div>
+                    <script>
+                        const vis_path8 = "visualisations/top_10_species_by_animal_group.json"
+                        vegaEmbed("#top_10_species_by_animal_group_vis", vis_path8, {"actions":false})
+                    </script>
+                </div>
+        </div>
+
+        
+        <div class="standard_card">
+            <h2>Which Areas has the Most Recorded Wildlife Observations</h2>
+
+                <p>Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder</p> 
+                
+                <div class="inner_inner_card_2">
+                    <!-- <h3>Type of Wildlife Activities Australians Participate in per State</h3> -->
+                    <div id="binned_wildlife_data_vis"></div>
+                    <script>
+                        const vis5_path = "visualisations/binned_wildlife_data.json"
+                        vegaEmbed("#binned_wildlife_data_vis", vis5_path, {"actions":false})
+                    </script>
+                </div>
+        </div>
+
+
+        <div class="standard_card">
+            <h2>Which Month is best to Observe Each Animal Group</h2>
+
+                <p>Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder</p> 
+                
+                <div class="inner_inner_card_2">
+                    <!-- <h3>Type of Wildlife Activities Australians Participate in per State</h3> -->
+                    <div id="monthly_observations_by_state_animal_group_vis"></div>
+                    <script>
+                        const vis4_path = "visualisations/monthly_observations_by_state_animal_group.json"
+                        vegaEmbed("#monthly_observations_by_state_animal_group_vis", vis4_path, {"actions":false})
+                    </script>
+                </div>
+        </div>
+
+
+        <div class="standard_card">
+            <h2>What's the best time to Spot Wildlife</h2>
+
+                <p>Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder</p> 
+                
+                <div class="inner_inner_card_2">
+                    <!-- <h3>Type of Wildlife Activities Australians Participate in per State</h3> -->
+                    <div id="wildlife_time_observations_vis"></div>
+                    <script>
+                        const vis_path6 = "visualisations/wildlife_time_observations.json"
+                        vegaEmbed("#wildlife_time_observations_vis", vis_path6, {"actions":false})
+                    </script>
+                </div>
+        </div>
+
+
+        <div class="standard_card">
+            <h2>Number of Endangered Species in Each State</h2>
+
+                <p>Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder</p> 
+                
+                <div class="inner_inner_card_2">
+                    <!-- <h3>Type of Wildlife Activities Australians Participate in per State</h3> -->
+                    <div id="wildlife_endangered_2025_vis"></div>
+                    <script>
+                        const vis_path10 = "visualisations/wildlife_endangered_2025.json"
+                        vegaEmbed("#wildlife_endangered_2025_vis", vis_path10, {"actions":false})
+                    </script>
+                </div>
+        </div>
+
+
+        <div class="standard_card">
+            <h2>Changes in the Number of Endangered Animals</h2>
+
+            <div class="inner_card">
+                <p>Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder</p> 
+                
+                <div class="inner_inner_card">
+                    <!-- <h3>Type of Wildlife Activities Australians Participate in per State</h3> -->
+                    <div id="combined_species_checklist_2023_2025_vis"></div>
+                    <script>
+                        const vis_path7 = "visualisations/combined_species_checklist_2023_2025.json"
+                        vegaEmbed("#combined_species_checklist_2023_2025_vis", vis_path7, {"actions":false})
+                    </script>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="standard_card">
+            <h2>What Australian's are Doing to Give Back to the Environment</h2>
+
+            <div class="inner_card">
+                <p>Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder</p> 
+                
+                <div class="inner_inner_card">
+                    <!-- <h3>Type of Wildlife Activities Australians Participate in per State</h3> -->
+                    <div id="ways_to_give_back_vis"></div>
+                    <script>
+                        const vis_path11 = "visualisations/ways_to_give_back.json"
+                        vegaEmbed("#ways_to_give_back_vis", vis_path11, {"actions":false})
+                    </script>
+                </div>
+            </div>
+        </div>
+
+
+    
+    </div>
+</body>
+</html>

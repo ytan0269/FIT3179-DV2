@@ -1,0 +1,196 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v6.json",
+  "width": 1050,
+  "height": 400,
+  "padding": {"top": 20, "left": 10, "right": 10, "bottom": 20},
+  "autosize": "pad",
+
+  "title": {
+    "text": "Top 5 Species Observed in Each Animal Group",
+    "subtitle": "Box size shows the number of observations",
+    "anchor": "middle",
+    "frame": "group",
+    "fontSize": 18,
+    "subtitleFontSize": 13,
+    "subtitleColor": "#555",
+    "offset": 25,
+    "subtitlePadding": 6
+  },
+
+  "data": [
+    {
+      "name": "raw",
+      "url": "datasets/top_5_species_by_animal_group.csv",
+      "format": {"type": "csv"},
+      "transform": [
+        {"type": "formula", "as": "observations", "expr": "toNumber(datum.observations)"}
+      ]
+    },
+    {
+      "name": "total",
+      "source": "raw",
+      "transform": [
+        {"type": "aggregate", "fields": ["observations"], "ops": ["sum"], "as": ["obs"]},
+        {"type": "formula", "as": "id", "expr": "'All animals'"},
+        {"type": "formula", "as": "parent", "expr": "null"},
+        {"type": "formula", "as": "label", "expr": "'All animals'"},
+        {"type": "formula", "as": "grp", "expr": "'All animals'"},
+        {"type": "formula", "as": "size", "expr": "0"}
+      ]
+    },
+    {
+      "name": "groups",
+      "source": "raw",
+      "transform": [
+        {
+          "type": "aggregate",
+          "groupby": ["animal_group"],
+          "fields": ["observations"],
+          "ops": ["sum"],
+          "as": ["obs"]
+        },
+        {"type": "formula", "as": "id", "expr": "datum.animal_group"},
+        {"type": "formula", "as": "parent", "expr": "'All animals'"},
+        {"type": "formula", "as": "label", "expr": "datum.animal_group"},
+        {"type": "formula", "as": "grp", "expr": "datum.animal_group"},
+        {"type": "formula", "as": "size", "expr": "0"}
+      ]
+    },
+    {
+      "name": "leaves",
+      "source": "raw",
+      "transform": [
+        {"type": "formula", "as": "id", "expr": "datum.animal_group + '/' + datum.common_name"},
+        {"type": "formula", "as": "parent", "expr": "datum.animal_group"},
+        {"type": "formula", "as": "label", "expr": "datum.common_name"},
+        {"type": "formula", "as": "grp", "expr": "datum.animal_group"},
+        {"type": "formula", "as": "obs", "expr": "datum.observations"},
+        {"type": "formula", "as": "size", "expr": "datum.observations"}
+      ]
+    },
+    {
+      "name": "tree",
+      "source": ["total", "groups", "leaves"],
+      "transform": [
+        {"type": "stratify", "key": "id", "parentKey": "parent"},
+        {
+          "type": "treemap",
+          "field": "size",
+          "sort": {"field": "value", "order": "descending"},
+          "round": true,
+          "method": "squarify",
+          "ratio": 1.4,
+          "paddingInner": 2,
+          "paddingOuter": 3,
+          "paddingTop": 3,
+          "size": [{"signal": "width"}, {"signal": "height"}]
+        }
+      ]
+    },
+    {
+      "name": "groupNodes",
+      "source": "tree",
+      "transform": [{"type": "filter", "expr": "datum.depth === 1"}]
+    },
+    {
+      "name": "leafNodes",
+      "source": "tree",
+      "transform": [{"type": "filter", "expr": "datum.depth === 2"}]
+    },
+    {
+      "name": "leafLabels",
+      "source": "leafNodes",
+      "transform": [
+        {"type": "filter", "expr": "(datum.x1 - datum.x0) > 58 && (datum.y1 - datum.y0) > 22"}
+      ]
+    }
+  ],
+
+  "scales": [
+    {
+      "name": "color",
+      "type": "ordinal",
+      "domain": ["Amphibians", "Birds", "Fish", "Invertebrates", "Mammals", "Reptiles"],
+      "range": {"scheme": "set2"}
+    }
+  ],
+
+  "legends": [
+    {
+      "fill": "color",
+      "title": "Animal group",
+      "orient": "top",
+      "direction": "horizontal",
+      "columns": 6,
+      "titleOrient": "left",
+      "titleAnchor": "middle",
+      "titlePadding": 12,
+      "columnPadding": 18,
+      "offset": 10,
+      "symbolType": "square",
+      "symbolSize": 120,
+      "labelFontSize": 12,
+      "titleFontSize": 12
+    }
+  ],
+
+  "marks": [
+    {
+      "type": "rect",
+      "from": {"data": "groupNodes"},
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": {"field": "x0"},
+          "y": {"field": "y0"},
+          "x2": {"field": "x1"},
+          "y2": {"field": "y1"},
+          "fill": {"scale": "color", "field": "grp"},
+          "stroke": {"value": "white"},
+          "strokeWidth": {"value": 1}
+        }
+      }
+    },
+    {
+      "type": "rect",
+      "from": {"data": "leafNodes"},
+      "encode": {
+        "update": {
+          "x": {"field": "x0"},
+          "y": {"field": "y0"},
+          "x2": {"field": "x1"},
+          "y2": {"field": "y1"},
+          "fill": {"scale": "color", "field": "grp"},
+          "fillOpacity": {"value": 0.75},
+          "stroke": {"value": "white"},
+          "strokeWidth": {"value": 1},
+          "tooltip": {
+            "signal": "{'Species': datum.label, 'Animal group': datum.grp, 'Observations': format(datum.obs, ',')}"
+          }
+        },
+        "hover": {
+          "fillOpacity": {"value": 1},
+          "stroke": {"value": "#333"},
+          "strokeWidth": {"value": 2}
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {"data": "leafLabels"},
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": {"signal": "0.5 * (datum.x0 + datum.x1)"},
+          "y": {"signal": "0.5 * (datum.y0 + datum.y1)"},
+          "text": {"field": "label"},
+          "align": {"value": "center"},
+          "baseline": {"value": "middle"},
+          "fontSize": {"value": 11},
+          "fill": {"value": "#111"},
+          "limit": {"signal": "datum.x1 - datum.x0 - 8"}
+        }
+      }
+    }
+  ]
+}

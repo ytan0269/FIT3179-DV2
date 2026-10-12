@@ -1,0 +1,332 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v6.json",
+  "width": 860,
+  "height": { "signal": "titleSpace + rows * (panelH + gapY) - gapY + 40" },
+  "padding": {"left": 5, "right": 5, "top": 20, "bottom": 20},
+  "autosize": "pad",
+
+  "config": {
+    "text": { "font": "Arial, Helvetica, sans-serif" },
+    "axis": {
+      "labelFont": "Arial, Helvetica, sans-serif",
+      "labelFontSize": 11,
+      "titleFont": "Arial, Helvetica, sans-serif",
+      "titleFontSize": 13
+    },
+    "title": {
+      "font": "Arial, Helvetica, sans-serif",
+      "subtitleFont": "Arial, Helvetica, sans-serif",
+      "fontSize": 18
+    }
+  },
+
+  "title": {
+    "text": "Daily Observation Count for Each Animal Group",
+    "subtitle": "Across all states, the time at which the number of observations are made",
+    "anchor": "middle",
+    "frame": "group",
+    "offset": 34,
+    "subtitleFontSize": 13,
+    "subtitlePadding": 6,
+    "subtitleColor": "#555"
+  },
+
+  "signals": [
+    { "name": "cols", "value": 2 },
+    { "name": "gapX", "value": 70 },
+    { "name": "gapY", "value": 74 },
+    { "name": "titleSpace", "value": 24 },
+    { "name": "panelH", "value": 110 },
+    {
+      "name": "groupOrder",
+      "value": ["Mammals", "Amphibians", "Birds", "Fish", "Invertebrates", "Reptiles"]
+    },
+    { "name": "panelW", "update": "(width - (cols - 1) * gapX) / cols" },
+    { "name": "rows", "update": "ceil(length(groupOrder) / cols)" }
+  ],
+
+  "data": [
+    {
+      "name": "source",
+      "url": "datasets/wildlife_time_observations.csv",
+      "format": { "type": "csv" },
+      "transform": [
+        { "type": "formula", "as": "hour", "expr": "toNumber(split(datum.time, ':')[0])" },
+        { "type": "formula", "as": "minute", "expr": "toNumber(split(datum.time, ':')[1])" },
+        { "type": "formula", "as": "timeDecimal", "expr": "datum.hour + datum.minute / 60" },
+        { "type": "formula", "as": "observationsNum", "expr": "toNumber(datum.observations)" },
+        {
+          "type": "formula",
+          "as": "timeLabel",
+          "expr": "(datum.hour % 12 === 0 ? 12 : datum.hour % 12) + (datum.minute > 0 ? ':' + (datum.minute < 10 ? '0' : '') + datum.minute : '') + (datum.hour < 12 ? ' am' : ' pm')"
+        },
+        {
+          "type": "filter",
+          "expr": "isValid(datum.timeDecimal) && isValid(datum.observationsNum)"
+        }
+      ]
+    },
+
+    {
+      "name": "profile",
+      "source": "source",
+      "transform": [
+        {
+          "type": "aggregate",
+          "groupby": ["animal_group", "timeDecimal", "timeLabel"],
+          "fields": ["observationsNum"],
+          "ops": ["sum"],
+          "as": ["observationsNum"]
+        },
+        {
+          "type": "joinaggregate",
+          "groupby": ["animal_group"],
+          "fields": ["observationsNum"],
+          "ops": ["sum"],
+          "as": ["totalObs"]
+        },
+        { "type": "formula", "as": "share", "expr": "datum.observationsNum / datum.totalObs * 100" },
+        {
+          "type": "window",
+          "groupby": ["animal_group"],
+          "sort": { "field": "timeDecimal", "order": "ascending" },
+          "ops": ["row_number"],
+          "fields": [null],
+          "as": ["idx"]
+        }
+      ]
+    },
+
+    {
+      "name": "bands",
+      "values": [
+        { "a": 0, "b": 5, "tint": "#c9d1ea" },
+        { "a": 5, "b": 8, "tint": "#ffe3c4" },
+        { "a": 8, "b": 17, "tint": "#fff3b8" },
+        { "a": 17, "b": 20, "tint": "#e6d3f2" },
+        { "a": 20, "b": 24, "tint": "#c9d1ea" }
+      ]
+    },
+
+    {
+      "name": "periods",
+      "values": [
+        { "i": 0, "name": "Night (8pm–5am)", "tint": "#c9d1ea" },
+        { "i": 1, "name": "Dawn (5–8am)", "tint": "#ffe3c4" },
+        { "i": 2, "name": "Day (8am–5pm)", "tint": "#fff3b8" },
+        { "i": 3, "name": "Dusk (5–8pm)", "tint": "#e6d3f2" }
+      ]
+    }
+  ],
+
+  "scales": [
+    {
+      "name": "x",
+      "type": "linear",
+      "domain": [0, 24],
+      "range": [0, { "signal": "panelW" }],
+      "zero": false
+    },
+    {
+      "name": "yp",
+      "type": "linear",
+      "domain": { "data": "profile", "field": "share" },
+      "domainMin": 0,
+      "nice": true,
+      "range": [{ "signal": "panelH" }, 0]
+    },
+    {
+      "name": "color",
+      "type": "ordinal",
+      "domain": ["Amphibians", "Birds", "Fish", "Invertebrates", "Mammals", "Reptiles"],
+      "range": ["#66c2a5", "#3288bd", "#5e4fa2", "#e6ab02", "#e78ac3", "#fc8d62"]
+    }
+  ],
+
+  "marks": [
+    {
+      "type": "text",
+      "name": "legendTitle",
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": { "value": 0 },
+          "y": { "value": -20 },
+          "text": { "value": "Time of day:" },
+          "baseline": { "value": "middle" },
+          "fontSize": { "value": 11 },
+          "fontWeight": { "value": "bold" },
+          "fill": { "value": "#222222" }
+        }
+      }
+    },
+    {
+      "type": "rect",
+      "name": "legendSwatch",
+      "from": { "data": "periods" },
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": { "signal": "82 + datum.i * 130" },
+          "y": { "value": -26 },
+          "width": { "value": 14 },
+          "height": { "value": 12 },
+          "fill": { "field": "tint" },
+          "stroke": { "value": "#999999" },
+          "strokeWidth": { "value": 0.7 }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "name": "legendLabel",
+      "from": { "data": "periods" },
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": { "signal": "82 + datum.i * 130 + 20" },
+          "y": { "value": -20 },
+          "text": { "field": "name" },
+          "baseline": { "value": "middle" },
+          "fontSize": { "value": 11 },
+          "fill": { "value": "#444444" }
+        }
+      }
+    },
+
+    {
+      "type": "group",
+      "name": "panel",
+      "from": {
+        "facet": { "name": "series", "data": "profile", "groupby": "animal_group" }
+      },
+
+      "data": [
+        {
+          "name": "head",
+          "source": "series",
+          "transform": [{ "type": "filter", "expr": "datum.idx === 1" }]
+        }
+      ],
+
+      "encode": {
+        "update": {
+          "x": { "signal": "(indexof(groupOrder, datum.animal_group) % cols) * (panelW + gapX)" },
+          "y": {
+            "signal": "titleSpace + floor(indexof(groupOrder, datum.animal_group) / cols) * (panelH + gapY)"
+          },
+          "width": { "signal": "panelW" },
+          "height": { "signal": "panelH" },
+          "stroke": { "value": "#d0d0d0" },
+          "strokeWidth": { "value": 1 }
+        }
+      },
+
+      "axes": [
+        {
+          "scale": "x",
+          "orient": "bottom",
+          "domain": false,
+          "tickSize": 4,
+          "values": [0, 6, 12, 18, 24],
+          "labelExpr": "datum.value % 12 === 0 ? (datum.value === 12 ? '12 pm' : '12 am') : datum.value < 12 ? datum.value + ' am' : (datum.value - 12) + ' pm'",
+          "title": "Time of day",
+          "titleFontSize": 10.5,
+          "titleFontWeight": "normal",
+          "titleColor": "#555555",
+          "titlePadding": 5
+        },
+        {
+          "scale": "yp",
+          "orient": "left",
+          "gridScale": "x",
+          "domain": false,
+          "ticks": false,
+          "grid": true,
+          "gridColor": "#999999",
+          "gridOpacity": 0.3,
+          "tickCount": 3,
+          "labelFontSize": 10,
+          "labelExpr": "datum.value + '%'",
+          "title": "% of observations",
+          "titleFontSize": 10.5,
+          "titleFontWeight": "normal",
+          "titleColor": "#555555",
+          "titlePadding": 6
+        }
+      ],
+
+      "marks": [
+        {
+          "type": "rect",
+          "from": { "data": "bands" },
+          "interactive": false,
+          "encode": {
+            "update": {
+              "x": { "signal": "scale('x', datum.a)" },
+              "x2": { "signal": "scale('x', datum.b)" },
+              "y": { "value": 0 },
+              "y2": { "signal": "panelH" },
+              "fill": { "field": "tint" },
+              "fillOpacity": { "value": 0.55 }
+            }
+          }
+        },
+
+        {
+          "type": "area",
+          "from": { "data": "series" },
+          "sort": { "field": "datum.timeDecimal" },
+          "interactive": false,
+          "encode": {
+            "update": {
+              "x": { "signal": "scale('x', datum.timeDecimal)" },
+              "y": { "signal": "scale('yp', datum.share)" },
+              "y2": { "signal": "panelH" },
+              "interpolate": { "value": "monotone" },
+              "fill": { "scale": "color", "field": "animal_group" },
+              "fillOpacity": { "value": 0.65 },
+              "stroke": { "scale": "color", "field": "animal_group" },
+              "strokeWidth": { "value": 2 }
+            }
+          }
+        },
+
+        {
+          "type": "symbol",
+          "from": { "data": "series" },
+          "encode": {
+            "update": {
+              "x": { "signal": "scale('x', datum.timeDecimal)" },
+              "y": { "signal": "scale('yp', datum.share)" },
+              "size": { "value": 16 },
+              "fill": { "scale": "color", "field": "animal_group" },
+              "stroke": { "value": "#ffffff" },
+              "strokeWidth": { "value": 0.5 },
+              "tooltip": {
+                "signal": "{'Animal group': datum.animal_group, 'Time': datum.timeLabel, 'Observations': format(datum.observationsNum, ','), 'Share of group': format(datum.share, '.2f') + '%'}"
+              }
+            },
+            "hover": { "size": { "value": 110 } }
+          }
+        },
+
+        {
+          "type": "text",
+          "from": { "data": "head" },
+          "interactive": false,
+          "encode": {
+            "update": {
+              "x": { "value": 0 },
+              "y": { "value": -10 },
+              "text": { "field": "animal_group" },
+              "fontSize": { "value": 13 },
+              "fontWeight": { "value": "bold" },
+              "fill": { "scale": "color", "field": "animal_group" }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

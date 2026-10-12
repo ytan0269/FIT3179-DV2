@@ -1,0 +1,441 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v6.json",
+  "width": 920,
+  "height": 460,
+  "padding": 20,
+  "autosize": "pad",
+
+  "title": {
+    "text": "Monthly Observation of Each Animal Groups",
+    "subtitle": "Each chart shows how a group's yearly observations are spread across the months",
+    "anchor": "middle",
+    "frame": "group",
+    "fontSize": 18,
+    "subtitleFontSize": 13,
+    "subtitleColor": "#555",
+    "offset": 16
+    },
+
+  "signals": [
+    { "name": "cellW", "value": 230 },
+    { "name": "cellH", "value": 234 },
+    { "name": "panelW", "value": 220 },
+    { "name": "panelH", "value": 224 },
+    { "name": "cx", "value": 110 },
+    { "name": "cy", "value": 120 },
+    { "name": "R", "value": 76 },
+    { "name": "ringStep", "update": "domain('r')[1] > 30 ? 10 : 5" },
+    {
+      "name": "groupOrder",
+      "value": ["All", "Amphibians", "Birds", "Fish", "Invertebrates", "Mammals", "Reptiles"]
+    },
+    {
+      "name": "monthNames",
+      "value": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+    }
+  ],
+
+  "data": [
+    {
+      "name": "raw",
+      "url": "../datasets/monthly_observations_by_state_animal_group.csv",
+      "format": { "type": "csv" },
+      "transform": [
+        { "type": "formula", "as": "month", "expr": "toNumber(datum.month)" },
+        { "type": "formula", "as": "observations", "expr": "toNumber(datum.observations)" },
+        { "type": "formula", "as": "percentage_observation", "expr": "toNumber(datum.percentage_observation)" }
+      ]
+    },
+
+    {
+      "name": "heat",
+      "source": "raw",
+      "transform": [
+        { "type": "filter", "expr": "datum.state === 'All States'" }
+      ]
+    },
+
+    {
+      "name": "polar",
+      "source": "heat",
+      "transform": [
+        {
+          "type": "joinaggregate",
+          "groupby": ["animal_group"],
+          "fields": ["observations"],
+          "ops": ["sum"],
+          "as": ["total_obs"]
+        },
+        {
+          "type": "window",
+          "groupby": ["animal_group"],
+          "sort": { "field": "percentage_observation", "order": "descending" },
+          "ops": ["row_number"],
+          "fields": [null],
+          "as": ["rnk"]
+        },
+        { "type": "formula", "as": "theta", "expr": "(datum.month - 1) / 12 * 2 * PI" },
+        { "type": "formula", "as": "rad", "expr": "scale('r', datum.percentage_observation)" },
+        { "type": "formula", "as": "px", "expr": "datum.rad * sin(datum.theta)" },
+        { "type": "formula", "as": "py", "expr": "-datum.rad * cos(datum.theta)" }
+      ]
+    },
+
+    {
+      "name": "rings",
+      "values": [
+        { "v": 5 }, { "v": 10 }, { "v": 15 }, { "v": 20 }, { "v": 25 },
+        { "v": 30 }, { "v": 35 }, { "v": 40 }, { "v": 45 }, { "v": 50 },
+        { "v": 60 }, { "v": 70 }, { "v": 80 }, { "v": 90 }, { "v": 100 }
+      ],
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "datum.v <= domain('r')[1] && datum.v % ringStep === 0"
+        }
+      ]
+    },
+
+    {
+      "name": "monthAxis",
+      "values": [
+        { "m": 1 }, { "m": 2 }, { "m": 3 }, { "m": 4 }, { "m": 5 }, { "m": 6 },
+        { "m": 7 }, { "m": 8 }, { "m": 9 }, { "m": 10 }, { "m": 11 }, { "m": 12 }
+      ],
+      "transform": [
+        { "type": "formula", "as": "theta", "expr": "(datum.m - 1) / 12 * 2 * PI" },
+        { "type": "formula", "as": "sx", "expr": "sin(datum.theta)" },
+        { "type": "formula", "as": "sy", "expr": "-cos(datum.theta)" }
+      ]
+    },
+
+    {
+      "name": "seasons",
+      "values": [
+        { "i": 0, "name": "Summer", "a0": -45, "a1": 45, "fill": "#FFD0A6" },
+        { "i": 1, "name": "Autumn", "a0": 45, "a1": 135, "fill": "#F7E08F" },
+        { "i": 2, "name": "Winter", "a0": 135, "a1": 225, "fill": "#B8D8F8" },
+        { "i": 3, "name": "Spring", "a0": 225, "a1": 315, "fill": "#BDE8A5" }
+      ]
+    }
+  ],
+
+  "scales": [
+    {
+      "name": "r",
+      "type": "linear",
+      "domain": { "data": "heat", "field": "percentage_observation" },
+      "domainMin": 0,
+      "nice": true,
+      "range": [0, { "signal": "R" }]
+    }
+  ],
+
+  "marks": [
+    {
+      "type": "group",
+      "from": {
+        "facet": {
+          "name": "series",
+          "data": "polar",
+          "groupby": "animal_group"
+        }
+      },
+
+      "encode": {
+        "update": {
+          "x": { "signal": "(indexof(groupOrder, datum.animal_group) % 4) * cellW" },
+          "y": { "signal": "floor(indexof(groupOrder, datum.animal_group) / 4) * cellH" },
+          "width": { "signal": "panelW" },
+          "height": { "signal": "panelH" },
+          "fill": { "value": "#ffffff" },
+          "stroke": { "value": "#e0e0e0" },
+          "cornerRadius": { "value": 6 }
+        }
+      },
+
+      "marks": [
+        {
+          "type": "arc",
+          "from": { "data": "seasons" },
+          "interactive": false,
+          "encode": {
+            "update": {
+              "x": { "signal": "cx" },
+              "y": { "signal": "cy" },
+              "innerRadius": { "value": 0 },
+              "outerRadius": { "signal": "R" },
+              "startAngle": { "signal": "datum.a0 * PI / 180" },
+              "endAngle": { "signal": "datum.a1 * PI / 180" },
+              "fill": { "field": "fill" },
+              "fillOpacity": { "value": 1 }
+            }
+          }
+        },
+
+        {
+          "type": "arc",
+          "from": { "data": "rings" },
+          "interactive": false,
+          "encode": {
+            "update": {
+              "x": { "signal": "cx" },
+              "y": { "signal": "cy" },
+              "innerRadius": { "value": 0 },
+              "outerRadius": { "signal": "scale('r', datum.v)" },
+              "startAngle": { "value": 0 },
+              "endAngle": { "signal": "2 * PI" },
+              "fill": { "value": null },
+              "stroke": { "value": "#8a8a8a" },
+              "strokeWidth": { "value": 0.9 }
+            }
+          }
+        },
+
+        {
+          "type": "rule",
+          "from": { "data": "monthAxis" },
+          "interactive": false,
+          "encode": {
+            "update": {
+              "x": { "signal": "cx" },
+              "y": { "signal": "cy" },
+              "x2": { "signal": "cx + R * datum.sx" },
+              "y2": { "signal": "cy + R * datum.sy" },
+              "stroke": { "value": "#b0b0b0" },
+              "strokeWidth": { "value": 0.6 }
+            }
+          }
+        },
+
+        {
+          "type": "line",
+          "from": { "data": "series" },
+          "sort": { "field": "datum.month" },
+          "interactive": false,
+          "encode": {
+            "update": {
+              "x": { "signal": "cx + datum.px" },
+              "y": { "signal": "cy + datum.py" },
+              "interpolate": { "value": "cardinal-closed" },
+              "tension": { "value": 0.6 },
+              "fill": { "value": "#8B5A2B" },
+              "fillOpacity": { "value": 0.2 },
+              "stroke": { "value": "#8B5A2B" },
+              "strokeWidth": { "value": 1.5 }
+            }
+          }
+        },
+
+        {
+          "type": "symbol",
+          "from": { "data": "series" },
+          "encode": {
+            "update": {
+              "x": { "signal": "cx + datum.px" },
+              "y": { "signal": "cy + datum.py" },
+              "size": { "signal": "datum.rnk === 1 ? 75 : 28" },
+              "fill": { "value": "#8B5A2B" },
+              "stroke": { "signal": "datum.rnk === 1 ? '#4A2E14' : '#8B5A2B'" },
+              "strokeWidth": { "signal": "datum.rnk === 1 ? 2 : 1" },
+              "tooltip": {
+                "signal": "{'Animal group': datum.animal_group, 'Month': monthNames[datum.month - 1], 'Observations': format(datum.observations, ','), 'Share of yearly total': format(datum.percentage_observation, '.2f') + '%'}"
+              }
+            },
+            "hover": {
+              "size": { "value": 140 }
+            }
+          }
+        },
+
+        {
+          "type": "text",
+          "from": { "data": "monthAxis" },
+          "interactive": false,
+          "encode": {
+            "update": {
+              "x": { "signal": "cx + (R + 14) * datum.sx" },
+              "y": { "signal": "cy + (R + 14) * datum.sy" },
+              "text": { "signal": "monthNames[datum.m - 1]" },
+              "align": { "value": "center" },
+              "baseline": { "value": "middle" },
+              "fontSize": { "value": 9 },
+              "fill": { "value": "#555555" }
+            }
+          }
+        },
+
+        {
+          "type": "text",
+          "from": { "data": "rings" },
+          "interactive": false,
+          "encode": {
+            "update": {
+              "x": { "signal": "cx + 3" },
+              "y": { "signal": "cy - scale('r', datum.v) + 2" },
+              "text": { "signal": "datum.v + '%'" },
+              "align": { "value": "left" },
+              "baseline": { "value": "top" },
+              "fontSize": { "value": 9 },
+              "fontWeight": { "value": "normal" },
+              "fill": { "value": "#555555" }
+            }
+          }
+        },
+
+        {
+          "type": "text",
+          "from": { "data": "series" },
+          "interactive": false,
+          "encode": {
+            "update": {
+              "x": { "value": 12 },
+              "y": { "value": 18 },
+              "text": {
+                "signal": "datum.rnk === 1 ? (datum.animal_group === 'All' ? 'All groups' : datum.animal_group) : ''"
+              },
+              "fontSize": { "value": 13 },
+              "fontWeight": { "value": "bold" },
+              "fill": { "value": "#222222" }
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "type": "group",
+      "name": "legend",
+      "encode": {
+        "update": {
+          "x": { "signal": "3 * cellW" },
+          "y": { "signal": "cellH" },
+          "width": { "signal": "panelW" },
+          "height": { "value": 188 },
+          "fill": { "value": "#fafafa" },
+          "stroke": { "value": "#e0e0e0" },
+          "cornerRadius": { "value": 6 }
+        }
+      },
+
+      "marks": [
+        {
+          "type": "text",
+          "encode": {
+            "enter": {
+              "x": { "value": 14 },
+              "y": { "value": 24 },
+              "text": { "value": "Seasons" },
+              "fontSize": { "value": 14 },
+              "fontWeight": { "value": "bold" }
+            }
+          }
+        },
+
+        {
+          "type": "rect",
+          "from": { "data": "seasons" },
+          "encode": {
+            "enter": {
+              "width": { "value": 12 },
+              "height": { "value": 12 },
+              "fill": { "field": "fill" },
+              "stroke": { "value": "#bbbbbb" },
+              "strokeWidth": { "value": 0.5 }
+            },
+            "update": {
+              "x": { "signal": "14 + (datum.i % 2) * 104" },
+              "y": { "signal": "48 + floor(datum.i / 2) * 22" }
+            }
+          }
+        },
+
+        {
+          "type": "text",
+          "from": { "data": "seasons" },
+          "encode": {
+            "enter": {
+              "text": { "field": "name" },
+              "baseline": { "value": "middle" },
+              "fontSize": { "value": 10.5 },
+              "fill": { "value": "#333333" }
+            },
+            "update": {
+              "x": { "signal": "32 + (datum.i % 2) * 104" },
+              "y": { "signal": "54 + floor(datum.i / 2) * 22" }
+            }
+          }
+        },
+
+        {
+          "type": "text",
+          "encode": {
+            "enter": {
+              "x": { "value": 14 },
+              "y": { "value": 124 },
+              "text": { "value": "Point markers" },
+              "fontSize": { "value": 14 },
+              "fontWeight": { "value": "bold" }
+            }
+          }
+        },
+
+        {
+          "type": "symbol",
+          "encode": {
+            "enter": {
+              "x": { "value": 20 },
+              "y": { "value": 148 },
+              "size": { "value": 75 },
+              "fill": { "value": "#8B5A2B" },
+              "stroke": { "value": "#4A2E14" },
+              "strokeWidth": { "value": 2 }
+            }
+          }
+        },
+
+        {
+          "type": "text",
+          "encode": {
+            "enter": {
+              "x": { "value": 32 },
+              "y": { "value": 148 },
+              "text": { "value": "Peak month (highest share)" },
+              "baseline": { "value": "middle" },
+              "fontSize": { "value": 10.5 },
+              "fill": { "value": "#333333" }
+            }
+          }
+        },
+
+        {
+          "type": "symbol",
+          "encode": {
+            "enter": {
+              "x": { "value": 20 },
+              "y": { "value": 170 },
+              "size": { "value": 28 },
+              "fill": { "value": "#8B5A2B" },
+              "stroke": { "value": "#8B5A2B" },
+              "strokeWidth": { "value": 1 }
+            }
+          }
+        },
+
+        {
+          "type": "text",
+          "encode": {
+            "enter": {
+              "x": { "value": 32 },
+              "y": { "value": 170 },
+              "text": { "value": "Other months" },
+              "baseline": { "value": "middle" },
+              "fontSize": { "value": 10.5 },
+              "fill": { "value": "#333333" }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

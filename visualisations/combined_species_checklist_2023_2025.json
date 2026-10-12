@@ -1,0 +1,341 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v6.json",
+  "width": 520,
+  "height": 320,
+  "padding": { "top": 15, "left": 10, "right": 10, "bottom": 15 },
+  "autosize": "pad",
+  "title": {
+    "text": "Changes in Australia's Endangered Species: 2020 to 2025",
+    "subtitle": "The number of critically endangered, endangered and vulnerable across all animal groups",
+    "anchor": "middle",
+    "fontSize": 18,
+    "offset": 16,
+    "frame": "bounds",
+    "subtitleFontSize": 13,
+    "subtitlePadding": 6,
+    "subtitleColor": "#555"
+  },
+  "signals": [
+    { "name": "statusList", "value": ["Critically Endangered", "Endangered", "Vulnerable"] },
+    { "name": "n2020", "update": "length(data('rows2020'))" },
+    { "name": "n2025", "update": "length(data('rows2025'))" },
+    { "name": "annW", "value": 250 },
+    { "name": "annX", "update": "width / 3 + (2 * width / 3 - annW) / 2" }
+  ],
+  "data": [
+    {
+      "name": "raw",
+      "url": "datasets/combined_species_checklist_2023_2025.csv",
+      "format": { "type": "csv" }
+    },
+    {
+      "name": "rows2020",
+      "source": "raw",
+      "transform": [{ "type": "filter", "expr": "datum.year === '2020'" }]
+    },
+    {
+      "name": "rows2025",
+      "source": "raw",
+      "transform": [{ "type": "filter", "expr": "datum.year === '2025'" }]
+    },
+    {
+      "name": "dumbbell",
+      "source": "raw",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "(datum.year === '2020' || datum.year === '2025') && indexof(statusList, datum.endangered_status) >= 0"
+        },
+        {
+          "type": "aggregate",
+          "groupby": ["endangered_status", "year"],
+          "ops": ["count"],
+          "fields": [null],
+          "as": ["n"]
+        },
+        {
+          "type": "pivot",
+          "groupby": ["endangered_status"],
+          "field": "year",
+          "value": "n"
+        },
+        { "type": "formula", "as": "v2020", "expr": "datum['2020'] || 0" },
+        { "type": "formula", "as": "v2025", "expr": "datum['2025'] || 0" },
+        { "type": "formula", "as": "change", "expr": "datum.v2025 - datum.v2020" },
+        { "type": "formula", "as": "bottom", "expr": "min(datum.v2020, datum.v2025)" },
+        {
+          "type": "formula",
+          "as": "changeLabel",
+          "expr": "(datum.change > 0 ? '+' : datum.change < 0 ? '\u2212' : '') + abs(datum.change) + (datum.v2020 > 0 ? ' (' + format(abs(datum.change) / datum.v2020, '.0%') + ')' : '')"
+        },
+        { "type": "formula", "as": "absChange", "expr": "abs(datum.change)" },
+        {
+          "type": "formula",
+          "as": "pctChange",
+          "expr": "datum.v2020 > 0 ? format(abs(datum.change) / datum.v2020, '.0%') : 'n/a'"
+        }
+      ]
+    },
+    {
+      "name": "totals",
+      "source": "dumbbell",
+      "transform": [
+        {
+          "type": "aggregate",
+          "fields": ["v2020", "v2025", "change"],
+          "ops": ["sum", "sum", "min"],
+          "as": ["t2020", "t2025", "minChange"]
+        },
+        { "type": "formula", "as": "tChange", "expr": "datum.t2025 - datum.t2020" },
+        {
+          "type": "formula",
+          "as": "tLabel",
+          "expr": "(datum.tChange > 0 ? '+' : datum.tChange < 0 ? '\u2212' : '') + abs(datum.tChange) + (datum.t2020 > 0 ? ' (' + format(abs(datum.tChange) / datum.t2020, '.0%') + ')' : '')"
+        },
+        { "type": "formula", "as": "tAbs", "expr": "abs(datum.tChange)" },
+        {
+          "type": "formula",
+          "as": "tPct",
+          "expr": "datum.t2020 > 0 ? format(abs(datum.tChange) / datum.t2020, '.0%') : 'n/a'"
+        }
+      ]
+    }
+  ],
+  "scales": [
+    {
+      "name": "x",
+      "type": "band",
+      "domain": { "signal": "statusList" },
+      "range": "width",
+      "paddingInner": 0.3,
+      "paddingOuter": 0.15
+    },
+    {
+      "name": "xBg",
+      "type": "band",
+      "domain": { "signal": "statusList" },
+      "range": "width",
+      "padding": 0
+    },
+    {
+      "name": "y",
+      "type": "linear",
+      "domain": { "data": "dumbbell", "fields": ["v2020", "v2025"] },
+      "domainMin": 0,
+      "range": "height",
+      "nice": true,
+      "zero": true
+    },
+    {
+      "name": "color",
+      "type": "ordinal",
+      "domain": ["2020", "2025"],
+      "range": ["#8a9aa8", "#d6336c"]
+    }
+  ],
+  "axes": [
+    {
+      "orient": "bottom",
+      "scale": "x",
+      "title": "Endangered status",
+      "labelPadding": 6,
+      "domain": false,
+      "ticks": false
+    },
+    {
+      "orient": "left",
+      "scale": "y",
+      "title": "Total species count",
+      "grid": true,
+      "gridOpacity": 0.15,
+      "domain": false,
+      "tickCount": 6
+    }
+  ],
+  "legends": [
+    {
+      "fill": "color",
+      "title": "Year",
+      "orient": "top",
+      "direction": "horizontal",
+      "titleOrient": "left",
+      "titlePadding": 8,
+      "labelOffset": 4,
+      "symbolType": "circle",
+      "symbolSize": 150,
+      "offset": 6
+    }
+  ],
+  "marks": [
+    {
+      "type": "rect",
+      "from": { "data": "dumbbell" },
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": { "scale": "xBg", "field": "endangered_status" },
+          "width": { "scale": "xBg", "band": 1 },
+          "y": { "value": 0 },
+          "y2": { "signal": "height" },
+          "fill": { "value": "#f4f6f8" },
+          "stroke": { "value": "white" },
+          "strokeWidth": { "value": 2 }
+        }
+      }
+    },
+    {
+      "type": "rule",
+      "from": { "data": "dumbbell" },
+      "encode": {
+        "update": {
+          "x": { "scale": "x", "field": "endangered_status", "band": 0.5 },
+          "y": { "scale": "y", "field": "v2020" },
+          "y2": { "scale": "y", "field": "v2025" },
+          "stroke": { "value": "#b8b8b8" },
+          "strokeWidth": { "value": 5 },
+          "strokeCap": { "value": "round" }
+        }
+      }
+    },
+    {
+      "type": "symbol",
+      "from": { "data": "dumbbell" },
+      "encode": {
+        "update": {
+          "x": { "scale": "x", "field": "endangered_status", "band": 0.5 },
+          "y": { "scale": "y", "field": "v2020" },
+          "size": { "value": 260 },
+          "fill": { "scale": "color", "value": "2020" },
+          "stroke": { "value": "white" },
+          "strokeWidth": { "value": 1.5 },
+          "tooltip": {
+            "signal": "{'Status': datum.endangered_status, '2020': datum.v2020, '2025': datum.v2025, 'Change': datum.changeLabel}"
+          }
+        },
+        "hover": { "strokeWidth": { "value": 3 } }
+      }
+    },
+    {
+      "type": "symbol",
+      "from": { "data": "dumbbell" },
+      "encode": {
+        "update": {
+          "x": { "scale": "x", "field": "endangered_status", "band": 0.5 },
+          "y": { "scale": "y", "field": "v2025" },
+          "size": { "value": 260 },
+          "fill": { "scale": "color", "value": "2025" },
+          "stroke": { "value": "white" },
+          "strokeWidth": { "value": 1.5 },
+          "tooltip": {
+            "signal": "{'Status': datum.endangered_status, '2020': datum.v2020, '2025': datum.v2025, 'Change': datum.changeLabel}"
+          }
+        },
+        "hover": { "strokeWidth": { "value": 3 } }
+      }
+    },
+    {
+      "type": "text",
+      "from": { "data": "dumbbell" },
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": { "scale": "x", "field": "endangered_status", "band": 0.5, "offset": -16 },
+          "y": { "scale": "y", "field": "v2020" },
+          "text": { "signal": "datum.v2020" },
+          "align": { "value": "right" },
+          "baseline": { "value": "middle" },
+          "fontSize": { "value": 11 },
+          "fill": { "value": "#5f6b76" }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": { "data": "dumbbell" },
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": { "scale": "x", "field": "endangered_status", "band": 0.5, "offset": 16 },
+          "y": { "scale": "y", "field": "v2025" },
+          "text": { "signal": "datum.v2025" },
+          "align": { "value": "left" },
+          "baseline": { "value": "middle" },
+          "fontSize": { "value": 11 },
+          "fontWeight": { "value": "bold" },
+          "fill": { "value": "#d6336c" }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": { "data": "dumbbell" },
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": { "scale": "x", "field": "endangered_status", "band": 0.5 },
+          "y": {
+            "signal": "min(scale('y', datum.bottom) + 20, height - 16)"
+          },
+          "text": { "signal": "datum.changeLabel" },
+          "align": { "value": "center" },
+          "baseline": { "value": "top" },
+          "fontSize": { "value": 12 },
+          "fontWeight": { "value": "bold" },
+          "fill": { "value": "#333" }
+        }
+      }
+    },
+    {
+      "type": "rect",
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": { "signal": "annX" },
+          "width": { "signal": "annW" },
+          "y": { "signal": "scale('y', 190)" },
+          "height": { "value": 108 },
+          "cornerRadius": { "value": 6 },
+          "fill": { "value": "#ffffff" },
+          "stroke": { "value": "#e3e6ea" }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": { "signal": "annX + 14" },
+          "y": { "signal": "scale('y', 190) + 14" },
+          "text": { "value": "What is driving this?" },
+          "baseline": { "value": "top" },
+          "fontSize": { "value": 13 },
+          "fontWeight": { "value": "bold" },
+          "fill": { "value": "#222" }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": { "signal": "annX + 14" },
+          "y": { "signal": "scale('y', 190) + 34" },
+          "text": {
+            "value": [
+              "Human activity is accelerating extinction",
+              "rates. Drivers such as habitat loss,",
+              "climate change and pollution are pushing",
+              "more animals towards endangerment."
+            ]
+          },
+          "baseline": { "value": "top" },
+          "lineHeight": { "value": 15 },
+          "fontSize": { "value": 12 },
+          "fill": { "value": "#555" }
+        }
+      }
+    }
+  ]
+}

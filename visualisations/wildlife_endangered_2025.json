@@ -1,0 +1,620 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v6.json",
+
+  "width": 880,
+  "height": 660,
+  "padding": {"left": 20, "right": 20, "top": 20, "bottom": 30},
+  "autosize": "pad",
+
+  "title": {
+    "text": "Endangered Species Observed Across Australia",
+    "subtitle": "Slices show conservation status; pie size shows how many distinct endangered species were observed in the state",
+    "anchor": "middle",
+    "fontSize": 18,
+    "subtitleFontSize": 13,
+    "offset": 16,
+    "subtitlePadding": 6,
+    "subtitleColor": "#555"
+  },
+
+  "signals": [
+    {
+      "name": "animalGroup",
+      "value": "All",
+      "on": [{ "events": "@groupBtn:click", "update": "datum.name" }]
+    },
+    {
+      "name": "maxTotal",
+      "update": "data('globalTotalStats')[0] ? data('globalTotalStats')[0].maxT : 1"
+    },
+    { "name": "legendX", "update": "width + 30" }
+  ],
+
+  "projections": [
+    {
+      "name": "projection",
+      "type": "mercator",
+      "center": [134, -27],
+      "scale": 860,
+      "translate": [{ "signal": "width / 2" }, { "signal": "height / 2 - 10" }]
+    }
+  ],
+
+  "scales": [
+    {
+      "name": "pieSize",
+      "type": "linear",
+      "domain": [0, { "signal": "maxTotal" }],
+      "zero": true,
+      "nice": false,
+      "range": [6, 32]
+    },
+    {
+      "name": "statusColor",
+      "type": "ordinal",
+      "domain": ["Critically Endangered", "Endangered", "Vulnerable"],
+      "range": ["#b2182b", "#ef8a62", "#fddbc7"]
+    },
+    {
+      "name": "btnX",
+      "type": "band",
+      "domain": { "data": "groupList", "field": "name" },
+      "range": "width",
+      "paddingInner": 0.08,
+      "paddingOuter": 0
+    }
+  ],
+
+  "data": [
+    {
+      "name": "groupList",
+      "values": [
+        { "name": "All" },
+        { "name": "Amphibians" },
+        { "name": "Birds" },
+        { "name": "Fish" },
+        { "name": "Invertebrates" },
+        { "name": "Mammals" },
+        { "name": "Reptiles" }
+      ]
+    },
+    {
+      "name": "statusLegend",
+      "values": [
+        { "name": "Critically Endangered", "i": 0 },
+        { "name": "Endangered", "i": 1 },
+        { "name": "Vulnerable", "i": 2 }
+      ]
+    },
+    {
+      "name": "sizeLegend",
+      "values": [
+        { "i": 1, "value": 30 },
+        { "i": 2, "value": 60 },
+        { "i": 3, "value": 90 },
+        { "i": 4, "value": 120 },
+        { "i": 5, "value": 150 }
+      ],
+      "transform": [
+        { "type": "formula", "as": "r", "expr": "scale('pieSize', datum.value)" },
+        { "type": "formula", "as": "d", "expr": "2 * datum.r + 14" },
+        {
+          "type": "window",
+          "ops": ["sum"],
+          "fields": ["d"],
+          "as": ["cum"],
+          "frame": [null, 0]
+        },
+        { "type": "formula", "as": "cy", "expr": "176 + datum.cum - datum.d + datum.r" }
+      ]
+    },
+    {
+      "name": "oceanLabels",
+      "values": [
+        { "name": "Indian\nOcean", "lon": 110, "lat": -27 },
+        { "name": "Southern Ocean", "lon": 128, "lat": -41.5 },
+        { "name": "Pacific\nOcean", "lon": 156, "lat": -27 },
+        { "name": "Tasman\nSea", "lon": 156.5, "lat": -40.5 },
+        { "name": "Coral Sea", "lon": 152.5, "lat": -15.5 },
+        { "name": "Timor Sea", "lon": 126, "lat": -11.5 },
+        { "name": "Arafura Sea", "lon": 136.5, "lat": -10.5 }
+      ],
+      "transform": [
+        {
+          "type": "geopoint",
+          "projection": "projection",
+          "fields": ["lon", "lat"],
+          "as": ["x", "y"]
+        }
+      ]
+    },
+    {
+      "name": "states",
+      "url": "https://raw.githubusercontent.com/rowanhogan/australian-states/master/states.geojson",
+      "format": { "type": "json", "property": "features" }
+    },
+    {
+      "name": "raw",
+      "url": "datasets/endangered_wildlife_2025.csv",
+      "format": { "type": "csv" }
+    },
+
+    {
+      "name": "allSpecies",
+      "source": "raw",
+      "transform": [
+        {
+          "type": "aggregate",
+          "groupby": ["state", "common_name", "animal_group", "endangered_status"],
+          "ops": ["count"],
+          "as": ["records"]
+        }
+      ]
+    },
+    {
+      "name": "allStatusCounts",
+      "source": "allSpecies",
+      "transform": [
+        {
+          "type": "aggregate",
+          "groupby": ["state", "endangered_status"],
+          "ops": ["count"],
+          "as": ["species_count"]
+        }
+      ]
+    },
+    {
+      "name": "globalStateTotals",
+      "source": "allStatusCounts",
+      "transform": [
+        {
+          "type": "aggregate",
+          "groupby": ["state"],
+          "fields": ["species_count"],
+          "ops": ["sum"],
+          "as": ["total_species"]
+        }
+      ]
+    },
+    {
+      "name": "globalTotalStats",
+      "source": "globalStateTotals",
+      "transform": [
+        {
+          "type": "aggregate",
+          "fields": ["total_species"],
+          "ops": ["max"],
+          "as": ["maxT"]
+        }
+      ]
+    },
+
+    {
+      "name": "species",
+      "source": "raw",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "animalGroup === 'All' || datum.animal_group === animalGroup"
+        },
+        {
+          "type": "aggregate",
+          "groupby": ["state", "common_name", "animal_group", "endangered_status"],
+          "ops": ["count"],
+          "as": ["records"]
+        }
+      ]
+    },
+    {
+      "name": "statusCounts",
+      "source": "species",
+      "transform": [
+        {
+          "type": "aggregate",
+          "groupby": ["state", "endangered_status"],
+          "ops": ["count"],
+          "as": ["species_count"]
+        }
+      ]
+    },
+
+    {
+      "name": "centroids",
+      "values": [
+        { "state": "Western Australia", "abbr": "WA", "longitude": 121.0, "latitude": -25.0 },
+        { "state": "Northern Territory", "abbr": "NT", "longitude": 133.0, "latitude": -19.5 },
+        { "state": "South Australia", "abbr": "SA", "longitude": 136.0, "latitude": -30.5 },
+        { "state": "Queensland", "abbr": "QLD", "longitude": 145.0, "latitude": -22.0 },
+        { "state": "New South Wales", "abbr": "NSW", "longitude": 147.0, "latitude": -32.0 },
+        { "state": "Victoria", "abbr": "VIC", "longitude": 144.0, "latitude": -36.5 },
+        { "state": "Tasmania", "abbr": "TAS", "longitude": 146.5, "latitude": -42.0 },
+        {
+          "state": "Australian Capital Territory",
+          "abbr": "ACT",
+          "longitude": 152.8,
+          "latitude": -37.0,
+          "tlon": 149.1,
+          "tlat": -35.5,
+          "hasLeader": true
+        }
+      ],
+      "transform": [
+        {
+          "type": "formula",
+          "as": "tlon",
+          "expr": "isValid(datum.tlon) ? datum.tlon : datum.longitude"
+        },
+        {
+          "type": "formula",
+          "as": "tlat",
+          "expr": "isValid(datum.tlat) ? datum.tlat : datum.latitude"
+        },
+        {
+          "type": "geopoint",
+          "projection": "projection",
+          "fields": ["longitude", "latitude"],
+          "as": ["x", "y"]
+        },
+        {
+          "type": "geopoint",
+          "projection": "projection",
+          "fields": ["tlon", "tlat"],
+          "as": ["tx", "ty"]
+        }
+      ]
+    },
+    {
+      "name": "stateTotals",
+      "source": "statusCounts",
+      "transform": [
+        {
+          "type": "aggregate",
+          "groupby": ["state"],
+          "fields": ["species_count"],
+          "ops": ["sum"],
+          "as": ["total_species"]
+        }
+      ]
+    },
+    {
+      "name": "labelData",
+      "source": "centroids",
+      "transform": [
+        {
+          "type": "lookup",
+          "from": "stateTotals",
+          "key": "state",
+          "fields": ["state"],
+          "values": ["total_species"],
+          "as": ["total_species"],
+          "default": 0
+        }
+      ]
+    },
+    {
+      "name": "leaders",
+      "source": "centroids",
+      "transform": [{ "type": "filter", "expr": "datum.hasLeader" }]
+    },
+    {
+      "name": "pieData",
+      "source": "statusCounts",
+      "transform": [
+        {
+          "type": "joinaggregate",
+          "groupby": ["state"],
+          "fields": ["species_count"],
+          "ops": ["sum"],
+          "as": ["total_species"]
+        },
+        {
+          "type": "stack",
+          "groupby": ["state"],
+          "field": "species_count",
+          "sort": { "field": "endangered_status" },
+          "offset": "normalize",
+          "as": ["frac0", "frac1"]
+        },
+        { "type": "formula", "as": "startAngle", "expr": "datum.frac0 * 2 * PI" },
+        { "type": "formula", "as": "endAngle", "expr": "datum.frac1 * 2 * PI" },
+        {
+          "type": "lookup",
+          "from": "centroids",
+          "key": "state",
+          "fields": ["state"],
+          "values": ["x", "y"],
+          "as": ["x", "y"]
+        }
+      ]
+    }
+  ],
+
+  "marks": [
+    {
+      "name": "ocean",
+      "type": "rect",
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": { "value": 0 },
+          "x2": { "signal": "width" },
+          "y": { "value": 0 },
+          "y2": { "signal": "height" },
+          "fill": { "value": "#d6eaf8" }
+        }
+      }
+    },
+    {
+      "name": "map",
+      "type": "shape",
+      "from": { "data": "states" },
+      "transform": [{ "type": "geoshape", "projection": "projection" }],
+      "encode": {
+        "enter": {
+          "fill": { "value": "#f3f3f3" },
+          "stroke": { "value": "#aaa" },
+          "strokeWidth": { "value": 0.8 }
+        }
+      }
+    },
+    {
+      "name": "oceanNames",
+      "type": "text",
+      "from": { "data": "oceanLabels" },
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": { "field": "x" },
+          "y": { "field": "y" },
+          "text": { "field": "name" },
+          "lineBreak": { "value": "\n" },
+          "lineHeight": { "value": 14 },
+          "align": { "value": "center" },
+          "baseline": { "value": "middle" },
+          "fontStyle": { "value": "italic" },
+          "fontSize": { "value": 12 },
+          "fill": { "value": "#2c5d8a" }
+        }
+      }
+    },
+    {
+      "type": "rule",
+      "from": { "data": "leaders" },
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": { "field": "tx" },
+          "y": { "field": "ty" },
+          "x2": { "field": "x" },
+          "y2": { "field": "y" },
+          "stroke": { "value": "#666" },
+          "strokeWidth": { "value": 1 }
+        }
+      }
+    },
+    {
+      "type": "symbol",
+      "from": { "data": "leaders" },
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": { "field": "tx" },
+          "y": { "field": "ty" },
+          "size": { "value": 25 },
+          "fill": { "value": "#666" }
+        }
+      }
+    },
+    {
+      "name": "pies",
+      "type": "arc",
+      "from": { "data": "pieData" },
+      "encode": {
+        "update": {
+          "x": { "field": "x" },
+          "y": { "field": "y" },
+          "startAngle": { "field": "startAngle" },
+          "endAngle": { "field": "endAngle" },
+          "innerRadius": { "value": 0 },
+          "outerRadius": { "scale": "pieSize", "field": "total_species" },
+          "fill": { "scale": "statusColor", "field": "endangered_status" },
+          "stroke": { "value": "white" },
+          "strokeWidth": { "value": 1 },
+          "tooltip": {
+            "signal": "{'State': datum.state, 'Animal group': animalGroup, 'Status': datum.endangered_status, 'Distinct species': datum.species_count, 'Total endangered species': datum.total_species}"
+          }
+        },
+        "hover": {
+          "stroke": { "value": "#333" },
+          "strokeWidth": { "value": 2 }
+        }
+      }
+    },
+    {
+      "name": "stateLabels",
+      "type": "text",
+      "from": { "data": "labelData" },
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": { "field": "x" },
+          "y": { "field": "y" },
+          "dy": {
+            "signal": "datum.total_species > 0 ? scale('pieSize', datum.total_species) + 7 : -6"
+          },
+          "align": { "value": "center" },
+          "baseline": { "value": "top" },
+          "fontSize": { "value": 11 },
+          "fontWeight": { "value": "bold" },
+          "fill": { "value": "#333" },
+          "text": {
+            "signal": "datum.abbr === 'ACT' ? 'Australian Capital\\nTerritory' : datum.state"
+          },
+          "lineBreak": { "value": "\n" },
+          "lineHeight": { "value": 12 }
+        }
+      }
+    },
+
+    {
+      "type": "text",
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": { "signal": "legendX" },
+          "y": { "value": 10 },
+          "text": { "value": "Conservation status" },
+          "baseline": { "value": "middle" },
+          "fontSize": { "value": 12 },
+          "fontWeight": { "value": "bold" },
+          "fill": { "value": "#222" }
+        }
+      }
+    },
+    {
+      "type": "symbol",
+      "from": { "data": "statusLegend" },
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": { "signal": "legendX + 7" },
+          "y": { "signal": "36 + datum.i * 24" },
+          "size": { "value": 130 },
+          "fill": { "scale": "statusColor", "field": "name" },
+          "stroke": { "value": "#bbb" },
+          "strokeWidth": { "value": 0.8 }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": { "data": "statusLegend" },
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": { "signal": "legendX + 22" },
+          "y": { "signal": "36 + datum.i * 24" },
+          "text": { "field": "name" },
+          "baseline": { "value": "middle" },
+          "fontSize": { "value": 12 },
+          "fill": { "value": "#333" }
+        }
+      }
+    },
+
+    {
+      "type": "text",
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": { "signal": "legendX" },
+          "y": { "value": 120 },
+          "text": { "value": ["Number of", "endangered species"] },
+          "lineHeight": { "value": 15 },
+          "baseline": { "value": "top" },
+          "fontSize": { "value": 12 },
+          "fontWeight": { "value": "bold" },
+          "fill": { "value": "#222" }
+        }
+      }
+    },
+    {
+      "type": "rule",
+      "from": { "data": "sizeLegend" },
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": { "signal": "legendX + 40 + datum.r + 4" },
+          "x2": { "signal": "legendX + 96" },
+          "y": { "field": "cy" },
+          "stroke": { "value": "#ccc" },
+          "strokeWidth": { "value": 1 },
+          "strokeDash": { "value": [2, 2] }
+        }
+      }
+    },
+    {
+      "type": "symbol",
+      "from": { "data": "sizeLegend" },
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": { "signal": "legendX + 40" },
+          "y": { "field": "cy" },
+          "size": { "signal": "PI * pow(datum.r, 2)" },
+          "fill": { "value": "#fafafa" },
+          "stroke": { "value": "#666" },
+          "strokeWidth": { "value": 1.5 }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": { "data": "sizeLegend" },
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": { "signal": "legendX + 102" },
+          "y": { "field": "cy" },
+          "text": { "signal": "datum.value" },
+          "align": { "value": "left" },
+          "baseline": { "value": "middle" },
+          "fontSize": { "value": 12 },
+          "fill": { "value": "#333" }
+        }
+      }
+    },
+
+    {
+      "type": "text",
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": { "value": 0 },
+          "y": { "value": -56 },
+          "text": { "value": "Filter by animal group:" },
+          "baseline": { "value": "middle" },
+          "fontSize": { "value": 11 },
+          "fill": { "value": "#666" }
+        }
+      }
+    },
+    {
+      "type": "rect",
+      "name": "groupBtn",
+      "from": { "data": "groupList" },
+      "encode": {
+        "update": {
+          "x": { "scale": "btnX", "field": "name" },
+          "width": { "scale": "btnX", "band": 1 },
+          "y": { "value": -46 },
+          "height": { "value": 26 },
+          "cornerRadius": { "value": 5 },
+          "fill": { "signal": "datum.name === animalGroup ? '#333' : '#eef0f3'" },
+          "stroke": { "signal": "datum.name === animalGroup ? '#333' : '#d5d9de'" },
+          "cursor": { "value": "pointer" }
+        },
+        "hover": {
+          "fill": { "signal": "datum.name === animalGroup ? '#333' : '#dde1e6'" }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": { "data": "groupList" },
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": { "scale": "btnX", "field": "name", "band": 0.5 },
+          "y": { "value": -33 },
+          "text": { "field": "name" },
+          "align": { "value": "center" },
+          "baseline": { "value": "middle" },
+          "fontSize": { "value": 10 },
+          "limit": { "signal": "bandwidth('btnX') - 6" },
+          "fill": { "signal": "datum.name === animalGroup ? '#fff' : '#333'" }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,370 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v6.json",
+  "description": "Binned map of animal observations across Australia.",
+
+  "width": 820,
+  "height": 700,
+  "padding": {"left": 20, "right": 20, "top": 20, "bottom": 30},
+  "autosize": "pad",
+  "background": "#ffffff",
+
+  "title": {
+    "text": "Where Animals Are Observed Across Australia",
+    "subtitle": {
+      "signal": "'Number of observations in each map grid square. Showing: ' + (animalGroup === 'All' ? 'all animal groups' : animalGroup)"
+    },
+    "anchor": "middle",
+    "fontSize": 18,
+    "subtitleFontSize": 13,
+    "offset": 16,
+    "subtitlePadding": 6,
+    "subtitleColor": "#555"
+  },
+
+  "signals": [
+    {
+      "name": "animalGroup",
+      "value": "All",
+      "on": [{ "events": "@groupBtn:click", "update": "datum.name" }]
+    },
+    { "name": "legendX", "update": "width + 30" }
+  ],
+
+  "projections": [
+    {
+      "name": "projection",
+      "type": "mercator",
+      "center": [133.5, -28],
+      "scale": 850,
+      "translate": [{ "signal": "width / 2" }, { "signal": "height / 2" }]
+    }
+  ],
+
+  "scales": [
+    {
+      "name": "color",
+      "type": "threshold",
+      "domain": [11, 101, 1001, 10001, 100001],
+      "range": ["#fee5d9", "#fcbba1", "#fc9272", "#fb6a4a", "#de2d26", "#a50f15"]
+    },
+    {
+      "name": "btnX",
+      "type": "band",
+      "domain": { "data": "groupList", "field": "name" },
+      "range": "width",
+      "paddingInner": 0.08,
+      "paddingOuter": 0
+    }
+  ],
+
+  "data": [
+    {
+      "name": "groupList",
+      "values": [
+        { "name": "All" },
+        { "name": "Amphibians" },
+        { "name": "Birds" },
+        { "name": "Fish" },
+        { "name": "Invertebrates" },
+        { "name": "Mammals" },
+        { "name": "Reptiles" }
+      ]
+    },
+    {
+      "name": "legendSteps",
+      "values": [
+        { "i": 0, "v": 1,      "label": "0" },
+        { "i": 1, "v": 11,     "label": "10" },
+        { "i": 2, "v": 101,    "label": "100" },
+        { "i": 3, "v": 1001,   "label": "1,000" },
+        { "i": 4, "v": 10001,  "label": "10,000" },
+        { "i": 5, "v": 100001, "label": "100,000" }
+      ]
+    },
+    {
+      "name": "states",
+      "url": "https://raw.githubusercontent.com/rowanhogan/australian-states/master/states.geojson",
+      "format": { "type": "json", "property": "features" }
+    },
+    {
+      "name": "oceanLabels",
+      "values": [
+        { "name": "Indian Ocean",   "lon": 109.5, "lat": -28 },
+        { "name": "Southern Ocean", "lon": 128,   "lat": -41.5 },
+        { "name": "Pacific Ocean",  "lon": 157,   "lat": -27 },
+        { "name": "Tasman Sea",     "lon": 157,   "lat": -38 },
+        { "name": "Coral Sea",      "lon": 153.5, "lat": -17 },
+        { "name": "Timor Sea",      "lon": 126,   "lat": -12 },
+        { "name": "Arafura Sea",    "lon": 135,   "lat": -9.5 }
+      ],
+      "transform": [
+        {
+          "type": "geopoint",
+          "projection": "projection",
+          "fields": ["lon", "lat"],
+          "as": ["x", "y"]
+        }
+      ]
+    },
+    {
+      "name": "rawBinned",
+      "url": "../datasets/binned_wildlife_data.csv",
+      "format": { "type": "csv" },
+      "transform": [
+        { "type": "formula", "as": "lon_bin",      "expr": "toNumber(datum.lon_bin)" },
+        { "type": "formula", "as": "lat_bin",      "expr": "toNumber(datum.lat_bin)" },
+        { "type": "formula", "as": "lon_bin_end",  "expr": "toNumber(datum.lon_bin_end)" },
+        { "type": "formula", "as": "lat_bin_end",  "expr": "toNumber(datum.lat_bin_end)" },
+        { "type": "formula", "as": "observations", "expr": "toNumber(datum.observations)" },
+        {
+          "type": "filter",
+          "expr": "isValid(datum.lon_bin) && isValid(datum.lat_bin) && isValid(datum.observations)"
+        }
+      ]
+    },
+    {
+      "name": "binned",
+      "source": "rawBinned",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "datum.animal_group === animalGroup"
+        },
+        {
+          "type": "aggregate",
+          "groupby": ["lon_bin", "lat_bin", "lon_bin_end", "lat_bin_end"],
+          "fields": ["observations"],
+          "ops": ["sum"],
+          "as": ["observations"]
+        },
+        { "type": "formula", "as": "animal_group", "expr": "animalGroup" }
+      ]
+    },
+    {
+      "name": "bins",
+      "source": "binned",
+      "transform": [
+        {
+          "type": "geopoint",
+          "projection": "projection",
+          "fields": ["lon_bin", "lat_bin"],
+          "as": ["x0", "y0"]
+        },
+        {
+          "type": "geopoint",
+          "projection": "projection",
+          "fields": ["lon_bin_end", "lat_bin_end"],
+          "as": ["x1", "y1"]
+        },
+        { "type": "formula", "as": "x",      "expr": "min(datum.x0, datum.x1)" },
+        { "type": "formula", "as": "y",      "expr": "min(datum.y0, datum.y1)" },
+        { "type": "formula", "as": "width",  "expr": "abs(datum.x1 - datum.x0)" },
+        { "type": "formula", "as": "height", "expr": "abs(datum.y1 - datum.y0)" }
+      ]
+    }
+  ],
+
+  "marks": [
+    {
+      "name": "ocean",
+      "type": "rect",
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": { "value": 0 },
+          "x2": { "signal": "width" },
+          "y": { "value": 0 },
+          "y2": { "signal": "height" },
+          "fill": { "value": "#e3eef7" },
+          "stroke": { "value": "#b7c9d8" },
+          "strokeWidth": { "value": 1 }
+        }
+      }
+    },
+    {
+      "name": "land",
+      "type": "shape",
+      "from": { "data": "states" },
+      "interactive": false,
+      "transform": [{ "type": "geoshape", "projection": "projection" }],
+      "encode": {
+        "enter": {
+          "fill": { "value": "#f3f0e8" },
+          "stroke": { "value": null }
+        }
+      }
+    },
+    {
+      "name": "binRects",
+      "type": "rect",
+      "from": { "data": "bins" },
+      "encode": {
+        "update": {
+          "x": { "field": "x" },
+          "y": { "field": "y" },
+          "width": { "field": "width" },
+          "height": { "field": "height" },
+          "fill": { "scale": "color", "field": "observations" },
+          "fillOpacity": { "value": 0.8 },
+          "stroke": { "value": null },
+          "strokeWidth": { "value": 0 },
+          "tooltip": {
+            "signal": "{'Animal group': datum.animal_group, 'Longitude': format(datum.lon_bin, '.2f') + '° to ' + format(datum.lon_bin_end, '.2f') + '°', 'Latitude': format(datum.lat_bin, '.2f') + '° to ' + format(datum.lat_bin_end, '.2f') + '°', 'Observations': format(datum.observations, ',')}"
+          }
+        },
+        "hover": {
+          "fillOpacity": { "value": 1 },
+          "stroke": { "value": "black" },
+          "strokeWidth": { "value": 1 }
+        }
+      }
+    },
+    {
+      "name": "stateBorders",
+      "type": "shape",
+      "from": { "data": "states" },
+      "interactive": false,
+      "transform": [{ "type": "geoshape", "projection": "projection" }],
+      "encode": {
+        "enter": {
+          "fill": { "value": null },
+          "stroke": { "value": "black" },
+          "strokeWidth": { "value": 0.75 },
+          "strokeJoin": { "value": "round" }
+        }
+      }
+    },
+    {
+      "name": "oceanNames",
+      "type": "text",
+      "from": { "data": "oceanLabels" },
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": { "field": "x" },
+          "y": { "field": "y" },
+          "text": { "field": "name" },
+          "align": { "value": "center" },
+          "baseline": { "value": "middle" },
+          "fontStyle": { "value": "italic" },
+          "fontSize": { "value": 13 },
+          "fill": { "value": "#4f7ca3" }
+        }
+      }
+    },
+
+    {
+      "type": "text",
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": { "signal": "legendX" },
+          "y": { "value": 10 },
+          "text": { "value": "Observations" },
+          "baseline": { "value": "middle" },
+          "fontSize": { "value": 13 },
+          "fontWeight": { "value": "bold" },
+          "fill": { "value": "#222222" }
+        }
+      }
+    },
+    {
+      "type": "rect",
+      "from": { "data": "legendSteps" },
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": { "signal": "legendX" },
+          "width": { "value": 18 },
+          "y": { "signal": "28 + datum.i * 30" },
+          "height": { "value": 30 },
+          "fill": { "scale": "color", "field": "v" },
+          "fillOpacity": { "value": 0.8 },
+          "stroke": { "value": "#999999" },
+          "strokeWidth": { "value": 0.5 }
+        }
+      }
+    },
+    {
+      "type": "rule",
+      "from": { "data": "legendSteps" },
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": { "signal": "legendX" },
+          "x2": { "signal": "legendX + 24" },
+          "y": { "signal": "28 + datum.i * 30" },
+          "stroke": { "value": "#333333" },
+          "strokeWidth": { "value": 1 }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": { "data": "legendSteps" },
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": { "signal": "legendX + 30" },
+          "y": { "signal": "28 + datum.i * 30" },
+          "text": { "field": "label" },
+          "baseline": { "value": "middle" },
+          "fontSize": { "value": 12 },
+          "fill": { "value": "#333333" }
+        }
+      }
+    },
+
+    {
+      "type": "text",
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": { "value": 0 },
+          "y": { "value": -56 },
+          "text": { "value": "Filter by animal group:" },
+          "baseline": { "value": "middle" },
+          "fontSize": { "value": 11 },
+          "fill": { "value": "#666666" }
+        }
+      }
+    },
+    {
+      "name": "groupBtn",
+      "type": "rect",
+      "from": { "data": "groupList" },
+      "encode": {
+        "update": {
+          "x": { "scale": "btnX", "field": "name" },
+          "width": { "scale": "btnX", "band": 1 },
+          "y": { "value": -46 },
+          "height": { "value": 26 },
+          "cornerRadius": { "value": 5 },
+          "fill": { "signal": "datum.name === animalGroup ? '#333333' : '#eef0f3'" },
+          "stroke": { "signal": "datum.name === animalGroup ? '#333333' : '#d5d9de'" },
+          "cursor": { "value": "pointer" }
+        },
+        "hover": {
+          "fill": { "signal": "datum.name === animalGroup ? '#333333' : '#dde1e6'" }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": { "data": "groupList" },
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": { "scale": "btnX", "field": "name", "band": 0.5 },
+          "y": { "value": -33 },
+          "text": { "field": "name" },
+          "align": { "value": "center" },
+          "baseline": { "value": "middle" },
+          "fontSize": { "value": 11 },
+          "limit": { "signal": "bandwidth('btnX') - 6" },
+          "fill": { "signal": "datum.name === animalGroup ? '#ffffff' : '#333333'" }
+        }
+      }
+    }
+  ]
+}

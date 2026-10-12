@@ -1,0 +1,120 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "description": "Choropleth map of Australia showing the number of distinct animal species recorded in each state and territory.",
+  "width": 600,
+  "height": 450,
+  "padding": {"left": 15, "right": 15, "top": 0, "bottom": 0},
+  "autosize": { "type": "pad", "contains": "padding" },
+  "title": {
+    "text": "Unique Animal Species Recorded by State",
+    "subtitle": "Darker green indicates more unique species recorded in that state or territory",
+    "anchor": "middle",
+    "frame": "group",
+    "fontSize": 18,
+    "subtitleFontSize": 13,
+    "offset": 10,
+    "subtitlePadding": 6,
+    "subtitleColor": "#555"
+  },
+  "background": "white",
+  "config": {
+    "view": {
+      "stroke": null,
+      "fill": "#d6eaf8"
+    }
+  },
+  "datasets": {
+    "oceanLabels": [
+      { "name": "Indian\nOcean", "lon": 108, "lat": -27 },
+      { "name": "Southern Ocean", "lon": 128, "lat": -40.5 },
+      { "name": "Pacific Ocean", "lon": 158, "lat": -27 },
+      { "name": "Tasman Sea", "lon": 158, "lat": -38 },
+      { "name": "Timor Sea", "lon": 126, "lat": -11.5 },
+      { "name": "Arafura Sea", "lon": 136, "lat": -9.5 }
+    ]
+  },
+  "projection": {
+    "type": "mercator",
+    "center": [134, -28.3],
+    "scale": 600
+  },
+  "layer": [
+    {
+      "description": "Ocean layer",
+      "data": { "values": [{}] },
+      "mark": { "type": "rect", "color": "#d6eaf8" },
+      "encoding": {
+        "x": { "value": 0 },
+        "x2": { "value": 600 },
+        "y": { "value": 0 },
+        "y2": { "value": 450 }
+      }
+    },
+    {
+      "description": "States heat map",
+      "data": {
+        "url": "https://raw.githubusercontent.com/rowanhogan/australian-states/master/states.geojson",
+        "format": { "type": "json", "property": "features" }
+      },
+      "transform": [
+        {
+          "lookup": "properties.STATE_NAME",
+          "from": {
+            "data": {
+              "url": "../datasets/distinct_animals_by_state.csv",
+              "format": { "type": "csv" }
+            },
+            "key": "state",
+            "fields": ["distinct_animals"]
+          }
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "stroke": "black",
+        "strokeWidth": 0.5
+      },
+      "encoding": {
+        "color": {
+          "field": "distinct_animals",
+          "type": "quantitative",
+          "title": "Unique Animals",
+          "scale": { "scheme": "greens" },
+          "legend": {
+            "orient": "bottom",
+            "direction": "horizontal",
+            "offset": 8,
+            "titleOrient": "left",
+            "titleAnchor": "middle",
+            "titleFontSize": 13,
+            "labelFontSize": 12,
+            "gradientLength": 250,
+            "gradientThickness": 12
+          }
+        },
+        "tooltip": [
+          { "field": "properties.STATE_NAME", "type": "nominal", "title": "State" },
+          { "field": "distinct_animals", "type": "quantitative", "title": "Unique Animals", "format": "," }
+        ]
+      }
+    },
+    {
+      "description": "Ocean names",
+      "data": { "name": "oceanLabels" },
+      "mark": {
+        "type": "text",
+        "fontStyle": "italic",
+        "fontSize": 11,
+        "color": "#2c5d8a",
+        "lineBreak": "\n",
+        "lineHeight": 13,
+        "align": "center"
+      },
+      "encoding": {
+        "longitude": { "field": "lon", "type": "quantitative" },
+        "latitude": { "field": "lat", "type": "quantitative" },
+        "text": { "field": "name", "type": "nominal" }
+      }
+    }
+  ]
+}

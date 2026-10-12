@@ -1,0 +1,2596 @@
+state,animal_group,time,observations,percentage_observations
+All,Amphibians,00:00,158,0.4941
+All,Amphibians,00:30,253,0.7912
+All,Amphibians,01:00,338,1.057
+All,Amphibians,01:30,232,0.7255
+All,Amphibians,02:00,274,0.8568
+All,Amphibians,02:30,312,0.9757
+All,Amphibians,03:00,328,1.0257
+All,Amphibians,03:30,334,1.0445
+All,Amphibians,04:00,378,1.1821
+All,Amphibians,04:30,550,1.7199
+All,Amphibians,05:00,849,2.655
+All,Amphibians,05:30,1088,3.4023
+All,Amphibians,06:00,1156,3.615
+All,Amphibians,06:30,1088,3.4023
+All,Amphibians,07:00,1046,3.271
+All,Amphibians,07:30,1027,3.2116
+All,Amphibians,08:00,5282,16.5176
+All,Amphibians,08:30,779,2.436
+All,Amphibians,09:00,580,1.8137
+All,Amphibians,09:30,1866,5.8353
+All,Amphibians,10:00,3464,10.8324
+All,Amphibians,10:30,1183,3.6994
+All,Amphibians,11:00,4881,15.2636
+All,Amphibians,11:30,78,0.2439
+All,Amphibians,12:00,57,0.1782
+All,Amphibians,12:30,57,0.1782
+All,Amphibians,13:00,57,0.1782
+All,Amphibians,13:30,57,0.1782
+All,Amphibians,14:00,45,0.1407
+All,Amphibians,14:30,55,0.172
+All,Amphibians,15:00,42,0.1313
+All,Amphibians,15:30,55,0.172
+All,Amphibians,16:00,61,0.1908
+All,Amphibians,16:30,86,0.2689
+All,Amphibians,17:00,103,0.3221
+All,Amphibians,17:30,183,0.5723
+All,Amphibians,18:00,159,0.4972
+All,Amphibians,18:30,199,0.6223
+All,Amphibians,19:00,253,0.7912
+All,Amphibians,19:30,243,0.7599
+All,Amphibians,20:00,324,1.0132
+All,Amphibians,20:30,329,1.0288
+All,Amphibians,21:00,330,1.032
+All,Amphibians,21:30,330,1.032
+All,Amphibians,22:00,362,1.132
+All,Amphibians,22:30,344,1.0757
+All,Amphibians,23:00,298,0.9319
+All,Amphibians,23:30,286,0.8944
+All,Amphibians,24:00,139,0.4347
+All,Birds,00:00,112589,1.6337
+All,Birds,00:30,175320,2.5439
+All,Birds,01:00,202096,2.9325
+All,Birds,01:30,181563,2.6345
+All,Birds,02:00,203394,2.9513
+All,Birds,02:30,165976,2.4083
+All,Birds,03:00,144186,2.0922
+All,Birds,03:30,88514,1.2844
+All,Birds,04:00,66404,0.9635
+All,Birds,04:30,51151,0.7422
+All,Birds,05:00,48261,0.7003
+All,Birds,05:30,39732,0.5765
+All,Birds,06:00,37395,0.5426
+All,Birds,06:30,23713,0.3441
+All,Birds,07:00,16979,0.2464
+All,Birds,07:30,7564,0.1098
+All,Birds,08:00,128045,1.858
+All,Birds,08:30,2327,0.0338
+All,Birds,09:00,2332,0.0338
+All,Birds,09:30,90549,1.3139
+All,Birds,10:00,465763,6.7583
+All,Birds,10:30,70387,1.0213
+All,Birds,11:00,382260,5.5467
+All,Birds,11:30,1870,0.0271
+All,Birds,12:00,1775,0.0258
+All,Birds,12:30,1678,0.0243
+All,Birds,13:00,2442,0.0354
+All,Birds,13:30,5626,0.0816
+All,Birds,14:00,12688,0.1841
+All,Birds,14:30,18154,0.2634
+All,Birds,15:00,33531,0.4865
+All,Birds,15:30,43220,0.6271
+All,Birds,16:00,102853,1.4924
+All,Birds,16:30,176561,2.5619
+All,Birds,17:00,287094,4.1658
+All,Birds,17:30,290221,4.2112
+All,Birds,18:00,358584,5.2031
+All,Birds,18:30,315625,4.5798
+All,Birds,19:00,354678,5.1465
+All,Birds,19:30,297662,4.3191
+All,Birds,20:00,310926,4.5116
+All,Birds,20:30,262204,3.8046
+All,Birds,21:00,264428,3.8369
+All,Birds,21:30,210855,3.0596
+All,Birds,22:00,213390,3.0963
+All,Birds,22:30,176543,2.5617
+All,Birds,23:00,186495,2.7061
+All,Birds,23:30,169631,2.4614
+All,Birds,24:00,86463,1.2546
+All,Fish,00:00,1893,1.8469
+All,Fish,00:30,3084,3.0089
+All,Fish,01:00,2957,2.885
+All,Fish,01:30,2642,2.5777
+All,Fish,02:00,2462,2.402
+All,Fish,02:30,2351,2.2937
+All,Fish,03:00,2238,2.1835
+All,Fish,03:30,1383,1.3493
+All,Fish,04:00,1163,1.1347
+All,Fish,04:30,1374,1.3405
+All,Fish,05:00,1179,1.1503
+All,Fish,05:30,1097,1.0703
+All,Fish,06:00,1070,1.0439
+All,Fish,06:30,554,0.5405
+All,Fish,07:00,538,0.5249
+All,Fish,07:30,510,0.4976
+All,Fish,08:00,523,0.5103
+All,Fish,08:30,337,0.3288
+All,Fish,09:00,317,0.3093
+All,Fish,09:30,1146,1.1181
+All,Fish,10:00,5059,4.9358
+All,Fish,10:30,406,0.3961
+All,Fish,11:00,7531,7.3476
+All,Fish,11:30,72,0.0702
+All,Fish,12:00,89,0.0868
+All,Fish,12:30,110,0.1073
+All,Fish,13:00,84,0.082
+All,Fish,13:30,73,0.0712
+All,Fish,14:00,101,0.0985
+All,Fish,14:30,159,0.1551
+All,Fish,15:00,131,0.1278
+All,Fish,15:30,168,0.1639
+All,Fish,16:00,314,0.3064
+All,Fish,16:30,744,0.7259
+All,Fish,17:00,1441,1.4059
+All,Fish,17:30,1974,1.9259
+All,Fish,18:00,2643,2.5786
+All,Fish,18:30,4466,4.3572
+All,Fish,19:00,5264,5.1358
+All,Fish,19:30,4585,4.4733
+All,Fish,20:00,5133,5.008
+All,Fish,20:30,5418,5.2861
+All,Fish,21:00,5176,5.05
+All,Fish,21:30,4588,4.4763
+All,Fish,22:00,4573,4.4616
+All,Fish,22:30,3644,3.5553
+All,Fish,23:00,4112,4.0119
+All,Fish,23:30,3665,3.5757
+All,Fish,24:00,1955,1.9074
+All,Invertebrates,00:00,6738,1.9546
+All,Invertebrates,00:30,11663,3.3832
+All,Invertebrates,01:00,11419,3.3124
+All,Invertebrates,01:30,10783,3.1279
+All,Invertebrates,02:00,10394,3.0151
+All,Invertebrates,02:30,8951,2.5965
+All,Invertebrates,03:00,8511,2.4689
+All,Invertebrates,03:30,6549,1.8997
+All,Invertebrates,04:00,6127,1.7773
+All,Invertebrates,04:30,5876,1.7045
+All,Invertebrates,05:00,5618,1.6297
+All,Invertebrates,05:30,5652,1.6395
+All,Invertebrates,06:00,6101,1.7698
+All,Invertebrates,06:30,5192,1.5061
+All,Invertebrates,07:00,5269,1.5284
+All,Invertebrates,07:30,5049,1.4646
+All,Invertebrates,08:00,5650,1.6389
+All,Invertebrates,08:30,5123,1.4861
+All,Invertebrates,09:00,4816,1.397
+All,Invertebrates,09:30,4772,1.3843
+All,Invertebrates,10:00,6209,1.8011
+All,Invertebrates,10:30,2566,0.7443
+All,Invertebrates,11:00,22970,6.6631
+All,Invertebrates,11:30,1542,0.4473
+All,Invertebrates,12:00,1662,0.4821
+All,Invertebrates,12:30,1316,0.3817
+All,Invertebrates,13:00,1386,0.4021
+All,Invertebrates,13:30,1187,0.3443
+All,Invertebrates,14:00,1369,0.3971
+All,Invertebrates,14:30,1376,0.3991
+All,Invertebrates,15:00,1371,0.3977
+All,Invertebrates,15:30,1314,0.3812
+All,Invertebrates,16:00,1631,0.4731
+All,Invertebrates,16:30,2178,0.6318
+All,Invertebrates,17:00,3262,0.9462
+All,Invertebrates,17:30,4305,1.2488
+All,Invertebrates,18:00,5835,1.6926
+All,Invertebrates,18:30,7356,2.1338
+All,Invertebrates,19:00,9353,2.7131
+All,Invertebrates,19:30,10724,3.1108
+All,Invertebrates,20:00,12549,3.6402
+All,Invertebrates,20:30,12843,3.7255
+All,Invertebrates,21:00,14937,4.3329
+All,Invertebrates,21:30,14629,4.2436
+All,Invertebrates,22:00,15036,4.3616
+All,Invertebrates,22:30,13715,3.9784
+All,Invertebrates,23:00,13461,3.9048
+All,Invertebrates,23:30,12304,3.5691
+All,Invertebrates,24:00,6094,1.7677
+All,Mammals,00:00,1644,0.9108
+All,Mammals,00:30,1293,0.7163
+All,Mammals,01:00,1490,0.8254
+All,Mammals,01:30,1543,0.8548
+All,Mammals,02:00,1695,0.939
+All,Mammals,02:30,1734,0.9606
+All,Mammals,03:00,1711,0.9479
+All,Mammals,03:30,1356,0.7512
+All,Mammals,04:00,1223,0.6775
+All,Mammals,04:30,1193,0.6609
+All,Mammals,05:00,1183,0.6554
+All,Mammals,05:30,1238,0.6858
+All,Mammals,06:00,1189,0.6587
+All,Mammals,06:30,1116,0.6183
+All,Mammals,07:00,1016,0.5629
+All,Mammals,07:30,932,0.5163
+All,Mammals,08:00,23986,13.2881
+All,Mammals,08:30,799,0.4426
+All,Mammals,09:00,683,0.3784
+All,Mammals,09:30,9817,5.4385
+All,Mammals,10:00,49917,27.6536
+All,Mammals,10:30,3232,1.7905
+All,Mammals,11:00,48718,26.9894
+All,Mammals,11:30,266,0.1474
+All,Mammals,12:00,309,0.1712
+All,Mammals,12:30,237,0.1313
+All,Mammals,13:00,254,0.1407
+All,Mammals,13:30,230,0.1274
+All,Mammals,14:00,225,0.1246
+All,Mammals,14:30,228,0.1263
+All,Mammals,15:00,298,0.1651
+All,Mammals,15:30,339,0.1878
+All,Mammals,16:00,461,0.2554
+All,Mammals,16:30,665,0.3684
+All,Mammals,17:00,929,0.5147
+All,Mammals,17:30,1056,0.585
+All,Mammals,18:00,1207,0.6687
+All,Mammals,18:30,1296,0.718
+All,Mammals,19:00,1418,0.7856
+All,Mammals,19:30,1440,0.7977
+All,Mammals,20:00,1472,0.8155
+All,Mammals,20:30,1319,0.7307
+All,Mammals,21:00,1386,0.7678
+All,Mammals,21:30,1377,0.7628
+All,Mammals,22:00,1325,0.734
+All,Mammals,22:30,1211,0.6709
+All,Mammals,23:00,1176,0.6515
+All,Mammals,23:30,1078,0.5972
+All,Mammals,24:00,598,0.3313
+All,Reptiles,00:00,1404,1.9466
+All,Reptiles,00:30,2355,3.2652
+All,Reptiles,01:00,2284,3.1667
+All,Reptiles,01:30,2029,2.8132
+All,Reptiles,02:00,1843,2.5553
+All,Reptiles,02:30,1667,2.3113
+All,Reptiles,03:00,1474,2.0437
+All,Reptiles,03:30,1248,1.7303
+All,Reptiles,04:00,1088,1.5085
+All,Reptiles,04:30,1070,1.4835
+All,Reptiles,05:00,988,1.3698
+All,Reptiles,05:30,1025,1.4211
+All,Reptiles,06:00,949,1.3158
+All,Reptiles,06:30,871,1.2076
+All,Reptiles,07:00,797,1.105
+All,Reptiles,07:30,721,0.9997
+All,Reptiles,08:00,1877,2.6024
+All,Reptiles,08:30,507,0.7029
+All,Reptiles,09:00,404,0.5601
+All,Reptiles,09:30,2246,3.114
+All,Reptiles,10:00,4645,6.4402
+All,Reptiles,10:30,3364,4.6641
+All,Reptiles,11:00,8688,12.0458
+All,Reptiles,11:30,153,0.2121
+All,Reptiles,12:00,143,0.1983
+All,Reptiles,12:30,121,0.1678
+All,Reptiles,13:00,115,0.1594
+All,Reptiles,13:30,121,0.1678
+All,Reptiles,14:00,129,0.1789
+All,Reptiles,14:30,128,0.1775
+All,Reptiles,15:00,156,0.2163
+All,Reptiles,15:30,194,0.269
+All,Reptiles,16:00,272,0.3771
+All,Reptiles,16:30,337,0.4672
+All,Reptiles,17:00,471,0.653
+All,Reptiles,17:30,595,0.825
+All,Reptiles,18:00,817,1.1328
+All,Reptiles,18:30,1043,1.4461
+All,Reptiles,19:00,1381,1.9147
+All,Reptiles,19:30,1497,2.0756
+All,Reptiles,20:00,1850,2.565
+All,Reptiles,20:30,2150,2.9809
+All,Reptiles,21:00,2506,3.4745
+All,Reptiles,21:30,2556,3.5438
+All,Reptiles,22:00,2792,3.8711
+All,Reptiles,22:30,2637,3.6562
+All,Reptiles,23:00,2659,3.6867
+All,Reptiles,23:30,2550,3.5355
+All,Reptiles,24:00,1208,1.6749
+Australian Capital Territory,Amphibians,00:00,2,1.1976
+Australian Capital Territory,Amphibians,00:30,2,1.1976
+Australian Capital Territory,Amphibians,01:00,2,1.1976
+Australian Capital Territory,Amphibians,01:30,3,1.7964
+Australian Capital Territory,Amphibians,02:00,1,0.5988
+Australian Capital Territory,Amphibians,02:30,2,1.1976
+Australian Capital Territory,Amphibians,03:00,3,1.7964
+Australian Capital Territory,Amphibians,03:30,1,0.5988
+Australian Capital Territory,Amphibians,04:00,2,1.1976
+Australian Capital Territory,Amphibians,05:00,2,1.1976
+Australian Capital Territory,Amphibians,05:30,1,0.5988
+Australian Capital Territory,Amphibians,06:00,3,1.7964
+Australian Capital Territory,Amphibians,06:30,3,1.7964
+Australian Capital Territory,Amphibians,07:00,2,1.1976
+Australian Capital Territory,Amphibians,07:30,5,2.994
+Australian Capital Territory,Amphibians,08:00,7,4.1916
+Australian Capital Territory,Amphibians,08:30,12,7.1856
+Australian Capital Territory,Amphibians,09:00,5,2.994
+Australian Capital Territory,Amphibians,09:30,3,1.7964
+Australian Capital Territory,Amphibians,10:00,7,4.1916
+Australian Capital Territory,Amphibians,10:30,2,1.1976
+Australian Capital Territory,Amphibians,11:00,9,5.3892
+Australian Capital Territory,Amphibians,11:30,6,3.5928
+Australian Capital Territory,Amphibians,12:30,2,1.1976
+Australian Capital Territory,Amphibians,13:00,5,2.994
+Australian Capital Territory,Amphibians,13:30,2,1.1976
+Australian Capital Territory,Amphibians,14:00,4,2.3952
+Australian Capital Territory,Amphibians,14:30,3,1.7964
+Australian Capital Territory,Amphibians,15:00,1,0.5988
+Australian Capital Territory,Amphibians,15:30,6,3.5928
+Australian Capital Territory,Amphibians,16:00,2,1.1976
+Australian Capital Territory,Amphibians,16:30,1,0.5988
+Australian Capital Territory,Amphibians,17:00,1,0.5988
+Australian Capital Territory,Amphibians,18:00,1,0.5988
+Australian Capital Territory,Amphibians,18:30,2,1.1976
+Australian Capital Territory,Amphibians,19:00,3,1.7964
+Australian Capital Territory,Amphibians,19:30,4,2.3952
+Australian Capital Territory,Amphibians,20:00,7,4.1916
+Australian Capital Territory,Amphibians,20:30,10,5.988
+Australian Capital Territory,Amphibians,21:00,7,4.1916
+Australian Capital Territory,Amphibians,21:30,3,1.7964
+Australian Capital Territory,Amphibians,22:00,6,3.5928
+Australian Capital Territory,Amphibians,22:30,3,1.7964
+Australian Capital Territory,Amphibians,23:00,6,3.5928
+Australian Capital Territory,Amphibians,23:30,2,1.1976
+Australian Capital Territory,Amphibians,24:00,1,0.5988
+Australian Capital Territory,Birds,00:00,4877,2.1205
+Australian Capital Territory,Birds,00:30,6509,2.8301
+Australian Capital Territory,Birds,01:00,6541,2.8441
+Australian Capital Territory,Birds,01:30,5592,2.4314
+Australian Capital Territory,Birds,02:00,6332,2.7532
+Australian Capital Territory,Birds,02:30,4972,2.1619
+Australian Capital Territory,Birds,03:00,3398,1.4775
+Australian Capital Territory,Birds,03:30,2404,1.0453
+Australian Capital Territory,Birds,04:00,2076,0.9027
+Australian Capital Territory,Birds,04:30,1903,0.8274
+Australian Capital Territory,Birds,05:00,2165,0.9414
+Australian Capital Territory,Birds,05:30,1629,0.7083
+Australian Capital Territory,Birds,06:00,1831,0.7961
+Australian Capital Territory,Birds,06:30,612,0.2661
+Australian Capital Territory,Birds,07:00,372,0.1617
+Australian Capital Territory,Birds,07:30,103,0.0448
+Australian Capital Territory,Birds,08:00,109,0.0474
+Australian Capital Territory,Birds,08:30,104,0.0452
+Australian Capital Territory,Birds,09:00,132,0.0574
+Australian Capital Territory,Birds,09:30,158,0.0687
+Australian Capital Territory,Birds,10:00,2849,1.2388
+Australian Capital Territory,Birds,10:30,239,0.1039
+Australian Capital Territory,Birds,11:00,3304,1.4366
+Australian Capital Territory,Birds,11:30,279,0.1213
+Australian Capital Territory,Birds,12:00,302,0.1313
+Australian Capital Territory,Birds,12:30,276,0.12
+Australian Capital Territory,Birds,13:00,288,0.1252
+Australian Capital Territory,Birds,13:30,242,0.1052
+Australian Capital Territory,Birds,14:00,234,0.1017
+Australian Capital Territory,Birds,14:30,189,0.0822
+Australian Capital Territory,Birds,15:00,175,0.0761
+Australian Capital Territory,Birds,15:30,186,0.0809
+Australian Capital Territory,Birds,16:00,347,0.1509
+Australian Capital Territory,Birds,16:30,1794,0.78
+Australian Capital Territory,Birds,17:00,5723,2.4884
+Australian Capital Territory,Birds,17:30,9428,4.0993
+Australian Capital Territory,Birds,18:00,16786,7.2986
+Australian Capital Territory,Birds,18:30,17009,7.3956
+Australian Capital Territory,Birds,19:00,18306,7.9595
+Australian Capital Territory,Birds,19:30,15940,6.9308
+Australian Capital Territory,Birds,20:00,14476,6.2942
+Australian Capital Territory,Birds,20:30,12894,5.6064
+Australian Capital Territory,Birds,21:00,11974,5.2064
+Australian Capital Territory,Birds,21:30,9264,4.028
+Australian Capital Territory,Birds,22:00,9990,4.3437
+Australian Capital Territory,Birds,22:30,7794,3.3889
+Australian Capital Territory,Birds,23:00,7679,3.3389
+Australian Capital Territory,Birds,23:30,6663,2.8971
+Australian Capital Territory,Birds,24:00,3539,1.5388
+Australian Capital Territory,Fish,00:00,3,1.5873
+Australian Capital Territory,Fish,00:30,6,3.1746
+Australian Capital Territory,Fish,01:00,3,1.5873
+Australian Capital Territory,Fish,01:30,9,4.7619
+Australian Capital Territory,Fish,02:00,5,2.6455
+Australian Capital Territory,Fish,02:30,5,2.6455
+Australian Capital Territory,Fish,03:00,1,0.5291
+Australian Capital Territory,Fish,03:30,4,2.1164
+Australian Capital Territory,Fish,04:00,5,2.6455
+Australian Capital Territory,Fish,04:30,1,0.5291
+Australian Capital Territory,Fish,05:30,1,0.5291
+Australian Capital Territory,Fish,06:00,1,0.5291
+Australian Capital Territory,Fish,07:00,1,0.5291
+Australian Capital Territory,Fish,07:30,2,1.0582
+Australian Capital Territory,Fish,08:00,2,1.0582
+Australian Capital Territory,Fish,08:30,4,2.1164
+Australian Capital Territory,Fish,09:00,1,0.5291
+Australian Capital Territory,Fish,09:30,1,0.5291
+Australian Capital Territory,Fish,10:00,2,1.0582
+Australian Capital Territory,Fish,10:30,2,1.0582
+Australian Capital Territory,Fish,11:00,7,3.7037
+Australian Capital Territory,Fish,11:30,2,1.0582
+Australian Capital Territory,Fish,12:00,4,2.1164
+Australian Capital Territory,Fish,12:30,4,2.1164
+Australian Capital Territory,Fish,13:00,1,0.5291
+Australian Capital Territory,Fish,13:30,2,1.0582
+Australian Capital Territory,Fish,14:00,2,1.0582
+Australian Capital Territory,Fish,14:30,1,0.5291
+Australian Capital Territory,Fish,15:00,1,0.5291
+Australian Capital Territory,Fish,16:30,2,1.0582
+Australian Capital Territory,Fish,17:00,3,1.5873
+Australian Capital Territory,Fish,17:30,1,0.5291
+Australian Capital Territory,Fish,18:30,1,0.5291
+Australian Capital Territory,Fish,19:00,4,2.1164
+Australian Capital Territory,Fish,19:30,2,1.0582
+Australian Capital Territory,Fish,20:00,19,10.0529
+Australian Capital Territory,Fish,20:30,16,8.4656
+Australian Capital Territory,Fish,21:00,15,7.9365
+Australian Capital Territory,Fish,21:30,13,6.8783
+Australian Capital Territory,Fish,22:00,6,3.1746
+Australian Capital Territory,Fish,22:30,2,1.0582
+Australian Capital Territory,Fish,23:00,9,4.7619
+Australian Capital Territory,Fish,23:30,11,5.8201
+Australian Capital Territory,Fish,24:00,2,1.0582
+Australian Capital Territory,Invertebrates,00:00,133,1.0093
+Australian Capital Territory,Invertebrates,00:30,182,1.3811
+Australian Capital Territory,Invertebrates,01:00,239,1.8136
+Australian Capital Territory,Invertebrates,01:30,233,1.7681
+Australian Capital Territory,Invertebrates,02:00,227,1.7226
+Australian Capital Territory,Invertebrates,02:30,191,1.4494
+Australian Capital Territory,Invertebrates,03:00,202,1.5329
+Australian Capital Territory,Invertebrates,03:30,192,1.457
+Australian Capital Territory,Invertebrates,04:00,169,1.2824
+Australian Capital Territory,Invertebrates,04:30,147,1.1155
+Australian Capital Territory,Invertebrates,05:00,144,1.0927
+Australian Capital Territory,Invertebrates,05:30,139,1.0548
+Australian Capital Territory,Invertebrates,06:00,143,1.0851
+Australian Capital Territory,Invertebrates,06:30,89,0.6754
+Australian Capital Territory,Invertebrates,07:00,88,0.6678
+Australian Capital Territory,Invertebrates,07:30,148,1.1231
+Australian Capital Territory,Invertebrates,08:00,205,1.5556
+Australian Capital Territory,Invertebrates,08:30,206,1.5632
+Australian Capital Territory,Invertebrates,09:00,263,1.9958
+Australian Capital Territory,Invertebrates,09:30,277,2.102
+Australian Capital Territory,Invertebrates,10:00,422,3.2023
+Australian Capital Territory,Invertebrates,10:30,437,3.3161
+Australian Capital Territory,Invertebrates,11:00,546,4.1433
+Australian Capital Territory,Invertebrates,11:30,461,3.4983
+Australian Capital Territory,Invertebrates,12:00,474,3.5969
+Australian Capital Territory,Invertebrates,12:30,419,3.1795
+Australian Capital Territory,Invertebrates,13:00,375,2.8457
+Australian Capital Territory,Invertebrates,13:30,330,2.5042
+Australian Capital Territory,Invertebrates,14:00,319,2.4207
+Australian Capital Territory,Invertebrates,14:30,267,2.0261
+Australian Capital Territory,Invertebrates,15:00,279,2.1172
+Australian Capital Territory,Invertebrates,15:30,252,1.9123
+Australian Capital Territory,Invertebrates,16:00,243,1.844
+Australian Capital Territory,Invertebrates,16:30,287,2.1779
+Australian Capital Territory,Invertebrates,17:00,248,1.8819
+Australian Capital Territory,Invertebrates,17:30,171,1.2976
+Australian Capital Territory,Invertebrates,18:00,176,1.3356
+Australian Capital Territory,Invertebrates,18:30,125,0.9486
+Australian Capital Territory,Invertebrates,19:00,165,1.2521
+Australian Capital Territory,Invertebrates,19:30,192,1.457
+Australian Capital Territory,Invertebrates,20:00,258,1.9578
+Australian Capital Territory,Invertebrates,20:30,305,2.3145
+Australian Capital Territory,Invertebrates,21:00,454,3.4451
+Australian Capital Territory,Invertebrates,21:30,440,3.3389
+Australian Capital Territory,Invertebrates,22:00,472,3.5817
+Australian Capital Territory,Invertebrates,22:30,462,3.5058
+Australian Capital Territory,Invertebrates,23:00,438,3.3237
+Australian Capital Territory,Invertebrates,23:30,390,2.9595
+Australian Capital Territory,Invertebrates,24:00,154,1.1686
+Australian Capital Territory,Mammals,00:00,19,0.9606
+Australian Capital Territory,Mammals,00:30,38,1.9211
+Australian Capital Territory,Mammals,01:00,46,2.3256
+Australian Capital Territory,Mammals,01:30,46,2.3256
+Australian Capital Territory,Mammals,02:00,61,3.0839
+Australian Capital Territory,Mammals,02:30,52,2.6289
+Australian Capital Territory,Mammals,03:00,51,2.5784
+Australian Capital Territory,Mammals,03:30,53,2.6795
+Australian Capital Territory,Mammals,04:00,50,2.5278
+Australian Capital Territory,Mammals,04:30,35,1.7695
+Australian Capital Territory,Mammals,05:00,35,1.7695
+Australian Capital Territory,Mammals,05:30,31,1.5672
+Australian Capital Territory,Mammals,06:00,41,2.0728
+Australian Capital Territory,Mammals,06:30,33,1.6684
+Australian Capital Territory,Mammals,07:00,43,2.1739
+Australian Capital Territory,Mammals,07:30,24,1.2133
+Australian Capital Territory,Mammals,08:00,34,1.7189
+Australian Capital Territory,Mammals,08:30,41,2.0728
+Australian Capital Territory,Mammals,09:00,30,1.5167
+Australian Capital Territory,Mammals,09:30,27,1.365
+Australian Capital Territory,Mammals,10:00,90,4.5501
+Australian Capital Territory,Mammals,10:30,36,1.82
+Australian Capital Territory,Mammals,11:00,100,5.0556
+Australian Capital Territory,Mammals,11:30,35,1.7695
+Australian Capital Territory,Mammals,12:00,41,2.0728
+Australian Capital Territory,Mammals,12:30,32,1.6178
+Australian Capital Territory,Mammals,13:00,33,1.6684
+Australian Capital Territory,Mammals,13:30,27,1.365
+Australian Capital Territory,Mammals,14:00,32,1.6178
+Australian Capital Territory,Mammals,14:30,30,1.5167
+Australian Capital Territory,Mammals,15:00,22,1.1122
+Australian Capital Territory,Mammals,15:30,33,1.6684
+Australian Capital Territory,Mammals,16:00,34,1.7189
+Australian Capital Territory,Mammals,16:30,38,1.9211
+Australian Capital Territory,Mammals,17:00,42,2.1234
+Australian Capital Territory,Mammals,17:30,39,1.9717
+Australian Capital Territory,Mammals,18:00,29,1.4661
+Australian Capital Territory,Mammals,18:30,39,1.9717
+Australian Capital Territory,Mammals,19:00,35,1.7695
+Australian Capital Territory,Mammals,19:30,38,1.9211
+Australian Capital Territory,Mammals,20:00,49,2.4772
+Australian Capital Territory,Mammals,20:30,37,1.8706
+Australian Capital Territory,Mammals,21:00,60,3.0334
+Australian Capital Territory,Mammals,21:30,60,3.0334
+Australian Capital Territory,Mammals,22:00,51,2.5784
+Australian Capital Territory,Mammals,22:30,30,1.5167
+Australian Capital Territory,Mammals,23:00,38,1.9211
+Australian Capital Territory,Mammals,23:30,45,2.275
+Australian Capital Territory,Mammals,24:00,13,0.6572
+Australian Capital Territory,Reptiles,00:00,25,1.7895
+Australian Capital Territory,Reptiles,00:30,37,2.6485
+Australian Capital Territory,Reptiles,01:00,45,3.2212
+Australian Capital Territory,Reptiles,01:30,39,2.7917
+Australian Capital Territory,Reptiles,02:00,39,2.7917
+Australian Capital Territory,Reptiles,02:30,21,1.5032
+Australian Capital Territory,Reptiles,03:00,38,2.7201
+Australian Capital Territory,Reptiles,03:30,20,1.4316
+Australian Capital Territory,Reptiles,04:00,12,0.859
+Australian Capital Territory,Reptiles,04:30,18,1.2885
+Australian Capital Territory,Reptiles,05:00,12,0.859
+Australian Capital Territory,Reptiles,05:30,8,0.5727
+Australian Capital Territory,Reptiles,06:00,11,0.7874
+Australian Capital Territory,Reptiles,06:30,6,0.4295
+Australian Capital Territory,Reptiles,07:00,4,0.2863
+Australian Capital Territory,Reptiles,07:30,3,0.2147
+Australian Capital Territory,Reptiles,08:00,5,0.3579
+Australian Capital Territory,Reptiles,08:30,16,1.1453
+Australian Capital Territory,Reptiles,09:00,12,0.859
+Australian Capital Territory,Reptiles,09:30,18,1.2885
+Australian Capital Territory,Reptiles,10:00,35,2.5054
+Australian Capital Territory,Reptiles,10:30,43,3.078
+Australian Capital Territory,Reptiles,11:00,61,4.3665
+Australian Capital Territory,Reptiles,11:30,38,2.7201
+Australian Capital Territory,Reptiles,12:00,42,3.0064
+Australian Capital Territory,Reptiles,12:30,29,2.0759
+Australian Capital Territory,Reptiles,13:00,37,2.6485
+Australian Capital Territory,Reptiles,13:30,28,2.0043
+Australian Capital Territory,Reptiles,14:00,28,2.0043
+Australian Capital Territory,Reptiles,14:30,20,1.4316
+Australian Capital Territory,Reptiles,15:00,23,1.6464
+Australian Capital Territory,Reptiles,15:30,13,0.9306
+Australian Capital Territory,Reptiles,16:00,13,0.9306
+Australian Capital Territory,Reptiles,16:30,12,0.859
+Australian Capital Territory,Reptiles,17:00,13,0.9306
+Australian Capital Territory,Reptiles,17:30,7,0.5011
+Australian Capital Territory,Reptiles,18:00,6,0.4295
+Australian Capital Territory,Reptiles,18:30,9,0.6442
+Australian Capital Territory,Reptiles,19:00,21,1.5032
+Australian Capital Territory,Reptiles,19:30,22,1.5748
+Australian Capital Territory,Reptiles,20:00,34,2.4338
+Australian Capital Territory,Reptiles,20:30,55,3.937
+Australian Capital Territory,Reptiles,21:00,65,4.6528
+Australian Capital Territory,Reptiles,21:30,63,4.5097
+Australian Capital Territory,Reptiles,22:00,72,5.1539
+Australian Capital Territory,Reptiles,22:30,72,5.1539
+Australian Capital Territory,Reptiles,23:00,72,5.1539
+Australian Capital Territory,Reptiles,23:30,54,3.8654
+Australian Capital Territory,Reptiles,24:00,21,1.5032
+New South Wales,Amphibians,00:00,61,0.6355
+New South Wales,Amphibians,00:30,73,0.7605
+New South Wales,Amphibians,01:00,90,0.9376
+New South Wales,Amphibians,01:30,51,0.5313
+New South Wales,Amphibians,02:00,72,0.7501
+New South Wales,Amphibians,02:30,73,0.7605
+New South Wales,Amphibians,03:00,59,0.6146
+New South Wales,Amphibians,03:30,64,0.6667
+New South Wales,Amphibians,04:00,87,0.9063
+New South Wales,Amphibians,04:30,97,1.0105
+New South Wales,Amphibians,05:00,91,0.948
+New South Wales,Amphibians,05:30,104,1.0834
+New South Wales,Amphibians,06:00,100,1.0418
+New South Wales,Amphibians,06:30,150,1.5627
+New South Wales,Amphibians,07:00,239,2.4898
+New South Wales,Amphibians,07:30,353,3.6775
+New South Wales,Amphibians,08:00,419,4.365
+New South Wales,Amphibians,08:30,327,3.4066
+New South Wales,Amphibians,09:00,247,2.5732
+New South Wales,Amphibians,09:30,184,1.9169
+New South Wales,Amphibians,10:00,1808,18.8353
+New South Wales,Amphibians,10:30,68,0.7084
+New South Wales,Amphibians,11:00,3620,37.7123
+New South Wales,Amphibians,11:30,35,0.3646
+New South Wales,Amphibians,12:00,22,0.2292
+New South Wales,Amphibians,12:30,26,0.2709
+New South Wales,Amphibians,13:00,15,0.1563
+New South Wales,Amphibians,13:30,19,0.1979
+New South Wales,Amphibians,14:00,20,0.2084
+New South Wales,Amphibians,14:30,12,0.125
+New South Wales,Amphibians,15:00,8,0.0833
+New South Wales,Amphibians,15:30,3,0.0313
+New South Wales,Amphibians,16:00,9,0.0938
+New South Wales,Amphibians,16:30,4,0.0417
+New South Wales,Amphibians,17:00,30,0.3125
+New South Wales,Amphibians,17:30,26,0.2709
+New South Wales,Amphibians,18:00,27,0.2813
+New South Wales,Amphibians,18:30,37,0.3855
+New South Wales,Amphibians,19:00,41,0.4271
+New South Wales,Amphibians,19:30,57,0.5938
+New South Wales,Amphibians,20:00,77,0.8022
+New South Wales,Amphibians,20:30,103,1.073
+New South Wales,Amphibians,21:00,75,0.7813
+New South Wales,Amphibians,21:30,111,1.1564
+New South Wales,Amphibians,22:00,104,1.0834
+New South Wales,Amphibians,22:30,98,1.0209
+New South Wales,Amphibians,23:00,90,0.9376
+New South Wales,Amphibians,23:30,85,0.8855
+New South Wales,Amphibians,24:00,28,0.2917
+New South Wales,Birds,00:00,28545,1.553
+New South Wales,Birds,00:30,45337,2.4665
+New South Wales,Birds,01:00,52483,2.8553
+New South Wales,Birds,01:30,47954,2.6089
+New South Wales,Birds,02:00,52175,2.8385
+New South Wales,Birds,02:30,43119,2.3459
+New South Wales,Birds,03:00,36667,1.9948
+New South Wales,Birds,03:30,24008,1.3061
+New South Wales,Birds,04:00,20970,1.1409
+New South Wales,Birds,04:30,19806,1.0775
+New South Wales,Birds,05:00,19472,1.0594
+New South Wales,Birds,05:30,16191,0.8809
+New South Wales,Birds,06:00,12518,0.681
+New South Wales,Birds,06:30,7061,0.3841
+New South Wales,Birds,07:00,3281,0.1785
+New South Wales,Birds,07:30,1049,0.0571
+New South Wales,Birds,08:00,826,0.0449
+New South Wales,Birds,08:30,659,0.0359
+New South Wales,Birds,09:00,604,0.0329
+New South Wales,Birds,09:30,444,0.0242
+New South Wales,Birds,10:00,165932,9.0274
+New South Wales,Birds,10:30,479,0.0261
+New South Wales,Birds,11:00,209709,11.4091
+New South Wales,Birds,11:30,390,0.0212
+New South Wales,Birds,12:00,408,0.0222
+New South Wales,Birds,12:30,475,0.0258
+New South Wales,Birds,13:00,447,0.0243
+New South Wales,Birds,13:30,315,0.0171
+New South Wales,Birds,14:00,409,0.0223
+New South Wales,Birds,14:30,377,0.0205
+New South Wales,Birds,15:00,969,0.0527
+New South Wales,Birds,15:30,1589,0.0864
+New South Wales,Birds,16:00,8237,0.4481
+New South Wales,Birds,16:30,22768,1.2387
+New South Wales,Birds,17:00,47550,2.5869
+New South Wales,Birds,17:30,63804,3.4712
+New South Wales,Birds,18:00,95503,5.1958
+New South Wales,Birds,18:30,87335,4.7514
+New South Wales,Birds,19:00,104533,5.6871
+New South Wales,Birds,19:30,80969,4.4051
+New South Wales,Birds,20:00,85920,4.6744
+New South Wales,Birds,20:30,68897,3.7483
+New South Wales,Birds,21:00,72823,3.9619
+New South Wales,Birds,21:30,57427,3.1243
+New South Wales,Birds,22:00,59994,3.2639
+New South Wales,Birds,22:30,49617,2.6994
+New South Wales,Birds,23:00,50379,2.7408
+New South Wales,Birds,23:30,45297,2.4644
+New South Wales,Birds,24:00,22367,1.2169
+New South Wales,Fish,00:00,435,2.3742
+New South Wales,Fish,00:30,745,4.0661
+New South Wales,Fish,01:00,667,3.6404
+New South Wales,Fish,01:30,508,2.7726
+New South Wales,Fish,02:00,456,2.4888
+New South Wales,Fish,02:30,382,2.0849
+New South Wales,Fish,03:00,337,1.8393
+New South Wales,Fish,03:30,297,1.621
+New South Wales,Fish,04:00,326,1.7793
+New South Wales,Fish,04:30,212,1.1571
+New South Wales,Fish,05:00,202,1.1025
+New South Wales,Fish,05:30,156,0.8514
+New South Wales,Fish,06:00,156,0.8514
+New South Wales,Fish,06:30,118,0.644
+New South Wales,Fish,07:00,139,0.7587
+New South Wales,Fish,07:30,145,0.7914
+New South Wales,Fish,08:00,120,0.655
+New South Wales,Fish,08:30,55,0.3002
+New South Wales,Fish,09:00,50,0.2729
+New South Wales,Fish,09:30,55,0.3002
+New South Wales,Fish,10:00,188,1.0261
+New South Wales,Fish,10:30,4,0.0218
+New South Wales,Fish,11:00,556,3.0346
+New South Wales,Fish,11:30,9,0.0491
+New South Wales,Fish,12:00,17,0.0928
+New South Wales,Fish,12:30,19,0.1037
+New South Wales,Fish,13:00,25,0.1364
+New South Wales,Fish,13:30,17,0.0928
+New South Wales,Fish,14:00,12,0.0655
+New South Wales,Fish,14:30,7,0.0382
+New South Wales,Fish,15:00,8,0.0437
+New South Wales,Fish,15:30,14,0.0764
+New South Wales,Fish,16:00,29,0.1583
+New South Wales,Fish,16:30,43,0.2347
+New South Wales,Fish,17:00,63,0.3438
+New South Wales,Fish,17:30,128,0.6986
+New South Wales,Fish,18:00,237,1.2935
+New South Wales,Fish,18:30,349,1.9048
+New South Wales,Fish,19:00,575,3.1383
+New South Wales,Fish,19:30,706,3.8533
+New South Wales,Fish,20:00,1043,5.6926
+New South Wales,Fish,20:30,1149,6.2711
+New South Wales,Fish,21:00,1255,6.8497
+New South Wales,Fish,21:30,1398,7.6302
+New South Wales,Fish,22:00,1348,7.3573
+New South Wales,Fish,22:30,967,5.2778
+New South Wales,Fish,23:00,1171,6.3912
+New South Wales,Fish,23:30,965,5.2669
+New South Wales,Fish,24:00,459,2.5052
+New South Wales,Invertebrates,00:00,2137,2.4422
+New South Wales,Invertebrates,00:30,3442,3.9336
+New South Wales,Invertebrates,01:00,3201,3.6582
+New South Wales,Invertebrates,01:30,3099,3.5416
+New South Wales,Invertebrates,02:00,3399,3.8845
+New South Wales,Invertebrates,02:30,2936,3.3554
+New South Wales,Invertebrates,03:00,2973,3.3976
+New South Wales,Invertebrates,03:30,2281,2.6068
+New South Wales,Invertebrates,04:00,2168,2.4777
+New South Wales,Invertebrates,04:30,2028,2.3177
+New South Wales,Invertebrates,05:00,1844,2.1074
+New South Wales,Invertebrates,05:30,1428,1.632
+New South Wales,Invertebrates,06:00,1273,1.4548
+New South Wales,Invertebrates,06:30,1022,1.168
+New South Wales,Invertebrates,07:00,1152,1.3165
+New South Wales,Invertebrates,07:30,1283,1.4663
+New South Wales,Invertebrates,08:00,1528,1.7462
+New South Wales,Invertebrates,08:30,1290,1.4743
+New South Wales,Invertebrates,09:00,1009,1.1531
+New South Wales,Invertebrates,09:30,895,1.0228
+New South Wales,Invertebrates,10:00,1599,1.8274
+New South Wales,Invertebrates,10:30,588,0.672
+New South Wales,Invertebrates,11:00,1626,1.8582
+New South Wales,Invertebrates,11:30,466,0.5326
+New South Wales,Invertebrates,12:00,457,0.5223
+New South Wales,Invertebrates,12:30,358,0.4091
+New South Wales,Invertebrates,13:00,406,0.464
+New South Wales,Invertebrates,13:30,319,0.3646
+New South Wales,Invertebrates,14:00,296,0.3383
+New South Wales,Invertebrates,14:30,295,0.3371
+New South Wales,Invertebrates,15:00,331,0.3783
+New South Wales,Invertebrates,15:30,229,0.2617
+New South Wales,Invertebrates,16:00,319,0.3646
+New South Wales,Invertebrates,16:30,441,0.504
+New South Wales,Invertebrates,17:00,612,0.6994
+New South Wales,Invertebrates,17:30,950,1.0857
+New South Wales,Invertebrates,18:00,1250,1.4285
+New South Wales,Invertebrates,18:30,1487,1.6994
+New South Wales,Invertebrates,19:00,2004,2.2902
+New South Wales,Invertebrates,19:30,2330,2.6628
+New South Wales,Invertebrates,20:00,2744,3.1359
+New South Wales,Invertebrates,20:30,2953,3.3748
+New South Wales,Invertebrates,21:00,3733,4.2662
+New South Wales,Invertebrates,21:30,3943,4.5062
+New South Wales,Invertebrates,22:00,4040,4.617
+New South Wales,Invertebrates,22:30,3993,4.5633
+New South Wales,Invertebrates,23:00,3853,4.4033
+New South Wales,Invertebrates,23:30,3618,4.1348
+New South Wales,Invertebrates,24:00,1874,2.1417
+New South Wales,Mammals,00:00,420,0.4594
+New South Wales,Mammals,00:30,266,0.2909
+New South Wales,Mammals,01:00,312,0.3413
+New South Wales,Mammals,01:30,294,0.3216
+New South Wales,Mammals,02:00,340,0.3719
+New South Wales,Mammals,02:30,328,0.3588
+New South Wales,Mammals,03:00,314,0.3435
+New South Wales,Mammals,03:30,248,0.2713
+New South Wales,Mammals,04:00,225,0.2461
+New South Wales,Mammals,04:30,270,0.2953
+New South Wales,Mammals,05:00,242,0.2647
+New South Wales,Mammals,05:30,267,0.292
+New South Wales,Mammals,06:00,258,0.2822
+New South Wales,Mammals,06:30,245,0.268
+New South Wales,Mammals,07:00,219,0.2395
+New South Wales,Mammals,07:30,250,0.2734
+New South Wales,Mammals,08:00,273,0.2986
+New South Wales,Mammals,08:30,261,0.2855
+New South Wales,Mammals,09:00,222,0.2428
+New South Wales,Mammals,09:30,151,0.1652
+New South Wales,Mammals,10:00,40962,44.8039
+New South Wales,Mammals,10:30,100,0.1094
+New South Wales,Mammals,11:00,40597,44.4047
+New South Wales,Mammals,11:30,71,0.0777
+New South Wales,Mammals,12:00,78,0.0853
+New South Wales,Mammals,12:30,56,0.0613
+New South Wales,Mammals,13:00,56,0.0613
+New South Wales,Mammals,13:30,46,0.0503
+New South Wales,Mammals,14:00,38,0.0416
+New South Wales,Mammals,14:30,45,0.0492
+New South Wales,Mammals,15:00,54,0.0591
+New South Wales,Mammals,15:30,57,0.0623
+New South Wales,Mammals,16:00,89,0.0973
+New South Wales,Mammals,16:30,115,0.1258
+New South Wales,Mammals,17:00,138,0.1509
+New South Wales,Mammals,17:30,170,0.1859
+New South Wales,Mammals,18:00,227,0.2483
+New South Wales,Mammals,18:30,260,0.2844
+New South Wales,Mammals,19:00,284,0.3106
+New South Wales,Mammals,19:30,289,0.3161
+New South Wales,Mammals,20:00,269,0.2942
+New South Wales,Mammals,20:30,249,0.2724
+New South Wales,Mammals,21:00,323,0.3533
+New South Wales,Mammals,21:30,315,0.3445
+New South Wales,Mammals,22:00,254,0.2778
+New South Wales,Mammals,22:30,272,0.2975
+New South Wales,Mammals,23:00,256,0.28
+New South Wales,Mammals,23:30,235,0.257
+New South Wales,Mammals,24:00,115,0.1258
+New South Wales,Reptiles,00:00,413,1.645
+New South Wales,Reptiles,00:30,734,2.9236
+New South Wales,Reptiles,01:00,692,2.7563
+New South Wales,Reptiles,01:30,629,2.5054
+New South Wales,Reptiles,02:00,546,2.1748
+New South Wales,Reptiles,02:30,496,1.9756
+New South Wales,Reptiles,03:00,468,1.8641
+New South Wales,Reptiles,03:30,347,1.3821
+New South Wales,Reptiles,04:00,325,1.2945
+New South Wales,Reptiles,04:30,318,1.2666
+New South Wales,Reptiles,05:00,221,0.8803
+New South Wales,Reptiles,05:30,172,0.6851
+New South Wales,Reptiles,06:00,130,0.5178
+New South Wales,Reptiles,06:30,115,0.4581
+New South Wales,Reptiles,07:00,126,0.5019
+New South Wales,Reptiles,07:30,155,0.6174
+New South Wales,Reptiles,08:00,163,0.6492
+New South Wales,Reptiles,08:30,152,0.6054
+New South Wales,Reptiles,09:00,135,0.5377
+New South Wales,Reptiles,09:30,106,0.4222
+New South Wales,Reptiles,10:00,3701,14.7415
+New South Wales,Reptiles,10:30,60,0.239
+New South Wales,Reptiles,11:00,7760,30.9089
+New South Wales,Reptiles,11:30,49,0.1952
+New South Wales,Reptiles,12:00,35,0.1394
+New South Wales,Reptiles,12:30,32,0.1275
+New South Wales,Reptiles,13:00,27,0.1075
+New South Wales,Reptiles,13:30,41,0.1633
+New South Wales,Reptiles,14:00,38,0.1514
+New South Wales,Reptiles,14:30,29,0.1155
+New South Wales,Reptiles,15:00,31,0.1235
+New South Wales,Reptiles,15:30,31,0.1235
+New South Wales,Reptiles,16:00,25,0.0996
+New South Wales,Reptiles,16:30,27,0.1075
+New South Wales,Reptiles,17:00,38,0.1514
+New South Wales,Reptiles,17:30,52,0.2071
+New South Wales,Reptiles,18:00,90,0.3585
+New South Wales,Reptiles,18:30,138,0.5497
+New South Wales,Reptiles,19:00,211,0.8404
+New South Wales,Reptiles,19:30,303,1.2069
+New South Wales,Reptiles,20:00,411,1.6371
+New South Wales,Reptiles,20:30,543,2.1628
+New South Wales,Reptiles,21:00,682,2.7165
+New South Wales,Reptiles,21:30,782,3.1148
+New South Wales,Reptiles,22:00,818,3.2582
+New South Wales,Reptiles,22:30,763,3.0391
+New South Wales,Reptiles,23:00,790,3.1467
+New South Wales,Reptiles,23:30,805,3.2064
+New South Wales,Reptiles,24:00,351,1.3981
+Northern Territory,Amphibians,00:00,2,0.321
+Northern Territory,Amphibians,00:30,11,1.7657
+Northern Territory,Amphibians,01:00,9,1.4446
+Northern Territory,Amphibians,01:30,2,0.321
+Northern Territory,Amphibians,02:00,4,0.6421
+Northern Territory,Amphibians,02:30,5,0.8026
+Northern Territory,Amphibians,03:00,3,0.4815
+Northern Territory,Amphibians,03:30,4,0.6421
+Northern Territory,Amphibians,04:00,6,0.9631
+Northern Territory,Amphibians,04:30,8,1.2841
+Northern Territory,Amphibians,05:00,38,6.0995
+Northern Territory,Amphibians,05:30,41,6.5811
+Northern Territory,Amphibians,06:00,49,7.8652
+Northern Territory,Amphibians,06:30,65,10.4334
+Northern Territory,Amphibians,07:00,43,6.9021
+Northern Territory,Amphibians,07:30,28,4.4944
+Northern Territory,Amphibians,08:00,18,2.8892
+Northern Territory,Amphibians,08:30,11,1.7657
+Northern Territory,Amphibians,09:00,6,0.9631
+Northern Territory,Amphibians,09:30,129,20.7063
+Northern Territory,Amphibians,10:00,4,0.6421
+Northern Territory,Amphibians,10:30,2,0.321
+Northern Territory,Amphibians,11:00,5,0.8026
+Northern Territory,Amphibians,11:30,1,0.1605
+Northern Territory,Amphibians,12:00,1,0.1605
+Northern Territory,Amphibians,12:30,2,0.321
+Northern Territory,Amphibians,13:00,1,0.1605
+Northern Territory,Amphibians,14:00,1,0.1605
+Northern Territory,Amphibians,14:30,1,0.1605
+Northern Territory,Amphibians,15:00,1,0.1605
+Northern Territory,Amphibians,15:30,6,0.9631
+Northern Territory,Amphibians,16:00,4,0.6421
+Northern Territory,Amphibians,16:30,8,1.2841
+Northern Territory,Amphibians,17:00,7,1.1236
+Northern Territory,Amphibians,17:30,4,0.6421
+Northern Territory,Amphibians,18:00,7,1.1236
+Northern Territory,Amphibians,18:30,8,1.2841
+Northern Territory,Amphibians,19:00,6,0.9631
+Northern Territory,Amphibians,19:30,5,0.8026
+Northern Territory,Amphibians,20:00,13,2.0867
+Northern Territory,Amphibians,20:30,7,1.1236
+Northern Territory,Amphibians,21:00,8,1.2841
+Northern Territory,Amphibians,21:30,8,1.2841
+Northern Territory,Amphibians,22:00,9,1.4446
+Northern Territory,Amphibians,22:30,9,1.4446
+Northern Territory,Amphibians,23:00,9,1.4446
+Northern Territory,Amphibians,23:30,3,0.4815
+Northern Territory,Amphibians,24:00,1,0.1605
+Northern Territory,Birds,00:00,1976,0.9181
+Northern Territory,Birds,00:30,3953,1.8366
+Northern Territory,Birds,01:00,5508,2.559
+Northern Territory,Birds,01:30,7023,3.2629
+Northern Territory,Birds,02:00,10138,4.7101
+Northern Territory,Birds,02:30,10212,4.7445
+Northern Territory,Birds,03:00,8412,3.9082
+Northern Territory,Birds,03:30,4931,2.291
+Northern Territory,Birds,04:00,2619,1.2168
+Northern Territory,Birds,04:30,679,0.3155
+Northern Territory,Birds,05:00,293,0.1361
+Northern Territory,Birds,05:30,198,0.092
+Northern Territory,Birds,06:00,140,0.065
+Northern Territory,Birds,06:30,107,0.0497
+Northern Territory,Birds,07:00,104,0.0483
+Northern Territory,Birds,07:30,94,0.0437
+Northern Territory,Birds,08:00,57,0.0265
+Northern Territory,Birds,08:30,28,0.013
+Northern Territory,Birds,09:00,41,0.019
+Northern Territory,Birds,09:30,23687,11.005
+Northern Territory,Birds,10:00,28,0.013
+Northern Territory,Birds,10:30,19,0.0088
+Northern Territory,Birds,11:00,22,0.0102
+Northern Territory,Birds,11:30,35,0.0163
+Northern Territory,Birds,12:00,18,0.0084
+Northern Territory,Birds,12:30,19,0.0088
+Northern Territory,Birds,13:00,51,0.0237
+Northern Territory,Birds,13:30,32,0.0149
+Northern Territory,Birds,14:00,16,0.0074
+Northern Territory,Birds,14:30,83,0.0386
+Northern Territory,Birds,15:00,144,0.0669
+Northern Territory,Birds,15:30,908,0.4219
+Northern Territory,Birds,16:00,6732,3.1277
+Northern Territory,Birds,16:30,18085,8.4023
+Northern Territory,Birds,17:00,17889,8.3113
+Northern Territory,Birds,17:30,12547,5.8294
+Northern Territory,Birds,18:00,12335,5.7309
+Northern Territory,Birds,18:30,9271,4.3073
+Northern Territory,Birds,19:00,8652,4.0197
+Northern Territory,Birds,19:30,7523,3.4952
+Northern Territory,Birds,20:00,6406,2.9762
+Northern Territory,Birds,20:30,5388,2.5033
+Northern Territory,Birds,21:00,6167,2.8652
+Northern Territory,Birds,21:30,4438,2.0619
+Northern Territory,Birds,22:00,4427,2.0568
+Northern Territory,Birds,22:30,3892,1.8082
+Northern Territory,Birds,23:00,4154,1.93
+Northern Territory,Birds,23:30,3953,1.8366
+Northern Territory,Birds,24:00,1804,0.8381
+Northern Territory,Fish,00:00,13,3.3333
+Northern Territory,Fish,00:30,23,5.8974
+Northern Territory,Fish,01:00,18,4.6154
+Northern Territory,Fish,01:30,17,4.359
+Northern Territory,Fish,02:00,12,3.0769
+Northern Territory,Fish,02:30,15,3.8462
+Northern Territory,Fish,03:00,10,2.5641
+Northern Territory,Fish,03:30,8,2.0513
+Northern Territory,Fish,04:00,7,1.7949
+Northern Territory,Fish,04:30,3,0.7692
+Northern Territory,Fish,05:00,1,0.2564
+Northern Territory,Fish,05:30,3,0.7692
+Northern Territory,Fish,06:00,3,0.7692
+Northern Territory,Fish,07:00,1,0.2564
+Northern Territory,Fish,07:30,4,1.0256
+Northern Territory,Fish,08:00,3,0.7692
+Northern Territory,Fish,08:30,5,1.2821
+Northern Territory,Fish,09:00,3,0.7692
+Northern Territory,Fish,09:30,14,3.5897
+Northern Territory,Fish,10:00,2,0.5128
+Northern Territory,Fish,11:00,1,0.2564
+Northern Territory,Fish,11:30,3,0.7692
+Northern Territory,Fish,12:00,4,1.0256
+Northern Territory,Fish,12:30,13,3.3333
+Northern Territory,Fish,13:00,2,0.5128
+Northern Territory,Fish,13:30,4,1.0256
+Northern Territory,Fish,14:00,6,1.5385
+Northern Territory,Fish,14:30,1,0.2564
+Northern Territory,Fish,16:00,4,1.0256
+Northern Territory,Fish,16:30,3,0.7692
+Northern Territory,Fish,17:00,4,1.0256
+Northern Territory,Fish,17:30,3,0.7692
+Northern Territory,Fish,18:00,10,2.5641
+Northern Territory,Fish,18:30,12,3.0769
+Northern Territory,Fish,19:00,11,2.8205
+Northern Territory,Fish,19:30,14,3.5897
+Northern Territory,Fish,20:00,17,4.359
+Northern Territory,Fish,20:30,13,3.3333
+Northern Territory,Fish,21:00,22,5.641
+Northern Territory,Fish,21:30,25,6.4103
+Northern Territory,Fish,22:00,11,2.8205
+Northern Territory,Fish,22:30,12,3.0769
+Northern Territory,Fish,23:00,15,3.8462
+Northern Territory,Fish,23:30,10,2.5641
+Northern Territory,Fish,24:00,5,1.2821
+Northern Territory,Invertebrates,00:00,135,2.1676
+Northern Territory,Invertebrates,00:30,179,2.8741
+Northern Territory,Invertebrates,01:00,156,2.5048
+Northern Territory,Invertebrates,01:30,201,3.2274
+Northern Territory,Invertebrates,02:00,157,2.5209
+Northern Territory,Invertebrates,02:30,179,2.8741
+Northern Territory,Invertebrates,03:00,142,2.28
+Northern Territory,Invertebrates,03:30,82,1.3166
+Northern Territory,Invertebrates,04:00,55,0.8831
+Northern Territory,Invertebrates,04:30,39,0.6262
+Northern Territory,Invertebrates,05:00,45,0.7225
+Northern Territory,Invertebrates,05:30,63,1.0116
+Northern Territory,Invertebrates,06:00,74,1.1882
+Northern Territory,Invertebrates,06:30,89,1.429
+Northern Territory,Invertebrates,07:00,87,1.3969
+Northern Territory,Invertebrates,07:30,48,0.7707
+Northern Territory,Invertebrates,08:00,52,0.8349
+Northern Territory,Invertebrates,08:30,35,0.562
+Northern Territory,Invertebrates,09:00,18,0.289
+Northern Territory,Invertebrates,09:30,250,4.0141
+Northern Territory,Invertebrates,10:00,17,0.273
+Northern Territory,Invertebrates,10:30,12,0.1927
+Northern Territory,Invertebrates,11:00,7,0.1124
+Northern Territory,Invertebrates,11:30,13,0.2087
+Northern Territory,Invertebrates,12:00,16,0.2569
+Northern Territory,Invertebrates,12:30,20,0.3211
+Northern Territory,Invertebrates,13:00,15,0.2408
+Northern Territory,Invertebrates,13:30,9,0.1445
+Northern Territory,Invertebrates,14:00,10,0.1606
+Northern Territory,Invertebrates,14:30,21,0.3372
+Northern Territory,Invertebrates,15:00,14,0.2248
+Northern Territory,Invertebrates,15:30,14,0.2248
+Northern Territory,Invertebrates,16:00,25,0.4014
+Northern Territory,Invertebrates,16:30,50,0.8028
+Northern Territory,Invertebrates,17:00,71,1.14
+Northern Territory,Invertebrates,17:30,108,1.7341
+Northern Territory,Invertebrates,18:00,200,3.2113
+Northern Territory,Invertebrates,18:30,203,3.2595
+Northern Territory,Invertebrates,19:00,299,4.8009
+Northern Territory,Invertebrates,19:30,338,5.4271
+Northern Territory,Invertebrates,20:00,405,6.5029
+Northern Territory,Invertebrates,20:30,335,5.3789
+Northern Territory,Invertebrates,21:00,402,6.4547
+Northern Territory,Invertebrates,21:30,308,4.9454
+Northern Territory,Invertebrates,22:00,300,4.817
+Northern Territory,Invertebrates,22:30,279,4.4798
+Northern Territory,Invertebrates,23:00,252,4.0462
+Northern Territory,Invertebrates,23:30,257,4.1265
+Northern Territory,Invertebrates,24:00,142,2.28
+Northern Territory,Mammals,00:00,9,0.2633
+Northern Territory,Mammals,00:30,14,0.4096
+Northern Territory,Mammals,01:00,15,0.4389
+Northern Territory,Mammals,01:30,28,0.8192
+Northern Territory,Mammals,02:00,27,0.7899
+Northern Territory,Mammals,02:30,28,0.8192
+Northern Territory,Mammals,03:00,39,1.141
+Northern Territory,Mammals,03:30,33,0.9655
+Northern Territory,Mammals,04:00,19,0.5559
+Northern Territory,Mammals,04:30,12,0.3511
+Northern Territory,Mammals,05:00,10,0.2926
+Northern Territory,Mammals,05:30,16,0.4681
+Northern Territory,Mammals,06:00,14,0.4096
+Northern Territory,Mammals,06:30,12,0.3511
+Northern Territory,Mammals,07:00,14,0.4096
+Northern Territory,Mammals,07:30,16,0.4681
+Northern Territory,Mammals,08:00,12,0.3511
+Northern Territory,Mammals,08:30,4,0.117
+Northern Territory,Mammals,09:00,3,0.0878
+Northern Territory,Mammals,09:30,2747,80.3686
+Northern Territory,Mammals,10:00,1,0.0293
+Northern Territory,Mammals,10:30,4,0.117
+Northern Territory,Mammals,11:00,1,0.0293
+Northern Territory,Mammals,11:30,2,0.0585
+Northern Territory,Mammals,12:00,2,0.0585
+Northern Territory,Mammals,13:00,1,0.0293
+Northern Territory,Mammals,14:00,2,0.0585
+Northern Territory,Mammals,15:00,7,0.2048
+Northern Territory,Mammals,15:30,9,0.2633
+Northern Territory,Mammals,16:00,4,0.117
+Northern Territory,Mammals,16:30,17,0.4974
+Northern Territory,Mammals,17:00,17,0.4974
+Northern Territory,Mammals,17:30,22,0.6437
+Northern Territory,Mammals,18:00,25,0.7314
+Northern Territory,Mammals,18:30,20,0.5851
+Northern Territory,Mammals,19:00,19,0.5559
+Northern Territory,Mammals,19:30,23,0.6729
+Northern Territory,Mammals,20:00,26,0.7607
+Northern Territory,Mammals,20:30,28,0.8192
+Northern Territory,Mammals,21:00,15,0.4389
+Northern Territory,Mammals,21:30,21,0.6144
+Northern Territory,Mammals,22:00,19,0.5559
+Northern Territory,Mammals,22:30,19,0.5559
+Northern Territory,Mammals,23:00,14,0.4096
+Northern Territory,Mammals,23:30,13,0.3803
+Northern Territory,Mammals,24:00,15,0.4389
+Northern Territory,Reptiles,00:00,44,1.2486
+Northern Territory,Reptiles,00:30,73,2.0715
+Northern Territory,Reptiles,01:00,78,2.2134
+Northern Territory,Reptiles,01:30,77,2.185
+Northern Territory,Reptiles,02:00,62,1.7594
+Northern Territory,Reptiles,02:30,77,2.185
+Northern Territory,Reptiles,03:00,86,2.4404
+Northern Territory,Reptiles,03:30,75,2.1283
+Northern Territory,Reptiles,04:00,58,1.6459
+Northern Territory,Reptiles,04:30,45,1.277
+Northern Territory,Reptiles,05:00,80,2.2701
+Northern Territory,Reptiles,05:30,135,3.8309
+Northern Territory,Reptiles,06:00,127,3.6039
+Northern Territory,Reptiles,06:30,104,2.9512
+Northern Territory,Reptiles,07:00,91,2.5823
+Northern Territory,Reptiles,07:30,69,1.958
+Northern Territory,Reptiles,08:00,64,1.8161
+Northern Territory,Reptiles,08:30,35,0.9932
+Northern Territory,Reptiles,09:00,20,0.5675
+Northern Territory,Reptiles,09:30,780,22.1339
+Northern Territory,Reptiles,10:00,7,0.1986
+Northern Territory,Reptiles,10:30,2,0.0568
+Northern Territory,Reptiles,11:00,5,0.1419
+Northern Territory,Reptiles,11:30,3,0.0851
+Northern Territory,Reptiles,12:00,3,0.0851
+Northern Territory,Reptiles,12:30,6,0.1703
+Northern Territory,Reptiles,13:00,4,0.1135
+Northern Territory,Reptiles,13:30,6,0.1703
+Northern Territory,Reptiles,14:00,3,0.0851
+Northern Territory,Reptiles,14:30,7,0.1986
+Northern Territory,Reptiles,15:00,5,0.1419
+Northern Territory,Reptiles,15:30,12,0.3405
+Northern Territory,Reptiles,16:00,17,0.4824
+Northern Territory,Reptiles,16:30,34,0.9648
+Northern Territory,Reptiles,17:00,46,1.3053
+Northern Territory,Reptiles,17:30,56,1.5891
+Northern Territory,Reptiles,18:00,72,2.0431
+Northern Territory,Reptiles,18:30,98,2.7809
+Northern Territory,Reptiles,19:00,130,3.689
+Northern Territory,Reptiles,19:30,93,2.639
+Northern Territory,Reptiles,20:00,109,3.0931
+Northern Territory,Reptiles,20:30,81,2.2985
+Northern Territory,Reptiles,21:00,102,2.8944
+Northern Territory,Reptiles,21:30,97,2.7526
+Northern Territory,Reptiles,22:00,95,2.6958
+Northern Territory,Reptiles,22:30,83,2.3553
+Northern Territory,Reptiles,23:00,70,1.9864
+Northern Territory,Reptiles,23:30,67,1.9012
+Northern Territory,Reptiles,24:00,31,0.8797
+Queensland,Amphibians,00:00,35,0.4261
+Queensland,Amphibians,00:30,72,0.8766
+Queensland,Amphibians,01:00,104,1.2661
+Queensland,Amphibians,01:30,73,0.8887
+Queensland,Amphibians,02:00,80,0.9739
+Queensland,Amphibians,02:30,90,1.0957
+Queensland,Amphibians,03:00,82,0.9983
+Queensland,Amphibians,03:30,80,0.9739
+Queensland,Amphibians,04:00,92,1.12
+Queensland,Amphibians,04:30,241,2.934
+Queensland,Amphibians,05:00,516,6.282
+Queensland,Amphibians,05:30,806,9.8125
+Queensland,Amphibians,06:00,876,10.6647
+Queensland,Amphibians,06:30,749,9.1186
+Queensland,Amphibians,07:00,651,7.9255
+Queensland,Amphibians,07:30,481,5.8559
+Queensland,Amphibians,08:00,338,4.1149
+Queensland,Amphibians,08:30,248,3.0192
+Queensland,Amphibians,09:00,153,1.8627
+Queensland,Amphibians,09:30,107,1.3027
+Queensland,Amphibians,10:00,558,6.7933
+Queensland,Amphibians,10:30,52,0.6331
+Queensland,Amphibians,11:00,50,0.6087
+Queensland,Amphibians,11:30,21,0.2557
+Queensland,Amphibians,12:00,22,0.2678
+Queensland,Amphibians,12:30,15,0.1826
+Queensland,Amphibians,13:00,15,0.1826
+Queensland,Amphibians,13:30,14,0.1704
+Queensland,Amphibians,14:00,9,0.1096
+Queensland,Amphibians,14:30,21,0.2557
+Queensland,Amphibians,15:00,18,0.2191
+Queensland,Amphibians,15:30,18,0.2191
+Queensland,Amphibians,16:00,35,0.4261
+Queensland,Amphibians,16:30,42,0.5113
+Queensland,Amphibians,17:00,47,0.5722
+Queensland,Amphibians,17:30,120,1.4609
+Queensland,Amphibians,18:00,75,0.9131
+Queensland,Amphibians,18:30,102,1.2418
+Queensland,Amphibians,19:00,130,1.5827
+Queensland,Amphibians,19:30,99,1.2053
+Queensland,Amphibians,20:00,110,1.3392
+Queensland,Amphibians,20:30,120,1.4609
+Queensland,Amphibians,21:00,115,1.4
+Queensland,Amphibians,21:30,100,1.2174
+Queensland,Amphibians,22:00,111,1.3514
+Queensland,Amphibians,22:30,87,1.0592
+Queensland,Amphibians,23:00,87,1.0592
+Queensland,Amphibians,23:30,93,1.1322
+Queensland,Amphibians,24:00,54,0.6574
+Queensland,Birds,00:00,26590,1.5179
+Queensland,Birds,00:30,42138,2.4055
+Queensland,Birds,01:00,54371,3.1039
+Queensland,Birds,01:30,50593,2.8882
+Queensland,Birds,02:00,63866,3.6459
+Queensland,Birds,02:30,50302,2.8716
+Queensland,Birds,03:00,42874,2.4475
+Queensland,Birds,03:30,22907,1.3077
+Queensland,Birds,04:00,12430,0.7096
+Queensland,Birds,04:30,5089,0.2905
+Queensland,Birds,05:00,2274,0.1298
+Queensland,Birds,05:30,1384,0.079
+Queensland,Birds,06:00,1319,0.0753
+Queensland,Birds,06:30,999,0.057
+Queensland,Birds,07:00,999,0.057
+Queensland,Birds,07:30,806,0.046
+Queensland,Birds,08:00,738,0.0421
+Queensland,Birds,08:30,552,0.0315
+Queensland,Birds,09:00,677,0.0386
+Queensland,Birds,09:30,435,0.0248
+Queensland,Birds,10:00,165123,9.4263
+Queensland,Birds,10:30,474,0.0271
+Queensland,Birds,11:00,455,0.026
+Queensland,Birds,11:30,556,0.0317
+Queensland,Birds,12:00,408,0.0233
+Queensland,Birds,12:30,292,0.0167
+Queensland,Birds,13:00,444,0.0253
+Queensland,Birds,13:30,352,0.0201
+Queensland,Birds,14:00,643,0.0367
+Queensland,Birds,14:30,877,0.0501
+Queensland,Birds,15:00,5949,0.3396
+Queensland,Birds,15:30,16769,0.9573
+Queensland,Birds,16:00,57697,3.2937
+Queensland,Birds,16:30,101483,5.7933
+Queensland,Birds,17:00,147889,8.4425
+Queensland,Birds,17:30,121922,6.9601
+Queensland,Birds,18:00,107978,6.1641
+Queensland,Birds,18:30,79936,4.5633
+Queensland,Birds,19:00,81515,4.6534
+Queensland,Birds,19:30,65088,3.7157
+Queensland,Birds,20:00,70161,4.0053
+Queensland,Birds,20:30,59264,3.3832
+Queensland,Birds,21:00,57649,3.291
+Queensland,Birds,21:30,45163,2.5782
+Queensland,Birds,22:00,44966,2.567
+Queensland,Birds,22:30,36415,2.0788
+Queensland,Birds,23:00,42061,2.4011
+Queensland,Birds,23:30,38150,2.1779
+Queensland,Birds,24:00,20700,1.1817
+Queensland,Fish,00:00,351,2.6672
+Queensland,Fish,00:30,522,3.9666
+Queensland,Fish,01:00,345,2.6216
+Queensland,Fish,01:30,294,2.234
+Queensland,Fish,02:00,262,1.9909
+Queensland,Fish,02:30,232,1.7629
+Queensland,Fish,03:00,277,2.1049
+Queensland,Fish,03:30,228,1.7325
+Queensland,Fish,04:00,149,1.1322
+Queensland,Fish,04:30,139,1.0562
+Queensland,Fish,05:00,108,0.8207
+Queensland,Fish,05:30,69,0.5243
+Queensland,Fish,06:00,124,0.9422
+Queensland,Fish,06:30,120,0.9119
+Queensland,Fish,07:00,158,1.2006
+Queensland,Fish,07:30,128,0.9726
+Queensland,Fish,08:00,79,0.6003
+Queensland,Fish,08:30,74,0.5623
+Queensland,Fish,09:00,113,0.8587
+Queensland,Fish,09:30,55,0.4179
+Queensland,Fish,10:00,2356,17.9027
+Queensland,Fish,10:30,19,0.1444
+Queensland,Fish,11:00,36,0.2736
+Queensland,Fish,11:30,20,0.152
+Queensland,Fish,12:00,26,0.1976
+Queensland,Fish,12:30,26,0.1976
+Queensland,Fish,13:00,27,0.2052
+Queensland,Fish,13:30,25,0.19
+Queensland,Fish,14:00,36,0.2736
+Queensland,Fish,14:30,72,0.5471
+Queensland,Fish,15:00,40,0.304
+Queensland,Fish,15:30,27,0.2052
+Queensland,Fish,16:00,44,0.3343
+Queensland,Fish,16:30,130,0.9878
+Queensland,Fish,17:00,127,0.965
+Queensland,Fish,17:30,126,0.9574
+Queensland,Fish,18:00,173,1.3146
+Queensland,Fish,18:30,200,1.5198
+Queensland,Fish,19:00,354,2.69
+Queensland,Fish,19:30,325,2.4696
+Queensland,Fish,20:00,624,4.7416
+Queensland,Fish,20:30,712,5.4103
+Queensland,Fish,21:00,716,5.4407
+Queensland,Fish,21:30,565,4.2933
+Queensland,Fish,22:00,593,4.5061
+Queensland,Fish,22:30,597,4.5365
+Queensland,Fish,23:00,495,3.7614
+Queensland,Fish,23:30,566,4.3009
+Queensland,Fish,24:00,276,2.0973
+Queensland,Invertebrates,00:00,1687,2.1316
+Queensland,Invertebrates,00:30,2856,3.6087
+Queensland,Invertebrates,01:00,2636,3.3308
+Queensland,Invertebrates,01:30,2422,3.0604
+Queensland,Invertebrates,02:00,2094,2.6459
+Queensland,Invertebrates,02:30,1820,2.2997
+Queensland,Invertebrates,03:00,1578,1.9939
+Queensland,Invertebrates,03:30,1192,1.5062
+Queensland,Invertebrates,04:00,890,1.1246
+Queensland,Invertebrates,04:30,612,0.7733
+Queensland,Invertebrates,05:00,660,0.834
+Queensland,Invertebrates,05:30,1080,1.3647
+Queensland,Invertebrates,06:00,1803,2.2782
+Queensland,Invertebrates,06:30,1850,2.3376
+Queensland,Invertebrates,07:00,1780,2.2492
+Queensland,Invertebrates,07:30,1400,1.769
+Queensland,Invertebrates,08:00,1135,1.4341
+Queensland,Invertebrates,08:30,713,0.9009
+Queensland,Invertebrates,09:00,573,0.724
+Queensland,Invertebrates,09:30,307,0.3879
+Queensland,Invertebrates,10:00,1434,1.812
+Queensland,Invertebrates,10:30,261,0.3298
+Queensland,Invertebrates,11:00,357,0.4511
+Queensland,Invertebrates,11:30,220,0.278
+Queensland,Invertebrates,12:00,427,0.5395
+Queensland,Invertebrates,12:30,276,0.3487
+Queensland,Invertebrates,13:00,323,0.4081
+Queensland,Invertebrates,13:30,235,0.2969
+Queensland,Invertebrates,14:00,294,0.3715
+Queensland,Invertebrates,14:30,232,0.2931
+Queensland,Invertebrates,15:00,280,0.3538
+Queensland,Invertebrates,15:30,338,0.4271
+Queensland,Invertebrates,16:00,445,0.5623
+Queensland,Invertebrates,16:30,661,0.8352
+Queensland,Invertebrates,17:00,963,1.2168
+Queensland,Invertebrates,17:30,1223,1.5453
+Queensland,Invertebrates,18:00,1673,2.1139
+Queensland,Invertebrates,18:30,2108,2.6636
+Queensland,Invertebrates,19:00,2736,3.4571
+Queensland,Invertebrates,19:30,3302,4.1723
+Queensland,Invertebrates,20:00,4464,5.6406
+Queensland,Invertebrates,20:30,4232,5.3474
+Queensland,Invertebrates,21:00,4591,5.801
+Queensland,Invertebrates,21:30,4045,5.1111
+Queensland,Invertebrates,22:00,4133,5.2223
+Queensland,Invertebrates,22:30,3247,4.1028
+Queensland,Invertebrates,23:00,3198,4.0409
+Queensland,Invertebrates,23:30,2917,3.6858
+Queensland,Invertebrates,24:00,1438,1.817
+Queensland,Mammals,00:00,810,4.5809
+Queensland,Mammals,00:30,384,2.1717
+Queensland,Mammals,01:00,444,2.511
+Queensland,Mammals,01:30,501,2.8334
+Queensland,Mammals,02:00,572,3.2349
+Queensland,Mammals,02:30,634,3.5856
+Queensland,Mammals,03:00,642,3.6308
+Queensland,Mammals,03:30,509,2.8786
+Queensland,Mammals,04:00,380,2.1491
+Queensland,Mammals,04:30,344,1.9455
+Queensland,Mammals,05:00,319,1.8041
+Queensland,Mammals,05:30,362,2.0473
+Queensland,Mammals,06:00,370,2.0925
+Queensland,Mammals,06:30,359,2.0303
+Queensland,Mammals,07:00,344,1.9455
+Queensland,Mammals,07:30,234,1.3234
+Queensland,Mammals,08:00,199,1.1254
+Queensland,Mammals,08:30,139,0.7861
+Queensland,Mammals,09:00,114,0.6447
+Queensland,Mammals,09:30,74,0.4185
+Queensland,Mammals,10:00,2807,15.8749
+Queensland,Mammals,10:30,80,0.4524
+Queensland,Mammals,11:00,89,0.5033
+Queensland,Mammals,11:30,54,0.3054
+Queensland,Mammals,12:00,68,0.3846
+Queensland,Mammals,12:30,62,0.3506
+Queensland,Mammals,13:00,64,0.362
+Queensland,Mammals,13:30,61,0.345
+Queensland,Mammals,14:00,53,0.2997
+Queensland,Mammals,14:30,48,0.2715
+Queensland,Mammals,15:00,92,0.5203
+Queensland,Mammals,15:30,101,0.5712
+Queensland,Mammals,16:00,189,1.0689
+Queensland,Mammals,16:30,327,1.8493
+Queensland,Mammals,17:00,519,2.9352
+Queensland,Mammals,17:30,531,3.0031
+Queensland,Mammals,18:00,505,2.856
+Queensland,Mammals,18:30,439,2.4828
+Queensland,Mammals,19:00,462,2.6128
+Queensland,Mammals,19:30,441,2.4941
+Queensland,Mammals,20:00,406,2.2961
+Queensland,Mammals,20:30,347,1.9624
+Queensland,Mammals,21:00,359,2.0303
+Queensland,Mammals,21:30,350,1.9794
+Queensland,Mammals,22:00,350,1.9794
+Queensland,Mammals,22:30,335,1.8946
+Queensland,Mammals,23:00,351,1.9851
+Queensland,Mammals,23:30,278,1.5722
+Queensland,Mammals,24:00,180,1.018
+Queensland,Reptiles,00:00,418,2.3181
+Queensland,Reptiles,00:30,646,3.5825
+Queensland,Reptiles,01:00,640,3.5492
+Queensland,Reptiles,01:30,589,3.2664
+Queensland,Reptiles,02:00,540,2.9947
+Queensland,Reptiles,02:30,494,2.7396
+Queensland,Reptiles,03:00,387,2.1462
+Queensland,Reptiles,03:30,322,1.7857
+Queensland,Reptiles,04:00,246,1.3642
+Queensland,Reptiles,04:30,266,1.4752
+Queensland,Reptiles,05:00,354,1.9632
+Queensland,Reptiles,05:30,450,2.4956
+Queensland,Reptiles,06:00,481,2.6675
+Queensland,Reptiles,06:30,507,2.8117
+Queensland,Reptiles,07:00,420,2.3292
+Queensland,Reptiles,07:30,343,1.9022
+Queensland,Reptiles,08:00,285,1.5805
+Queensland,Reptiles,08:30,200,1.1091
+Queensland,Reptiles,09:00,157,0.8707
+Queensland,Reptiles,09:30,123,0.6821
+Queensland,Reptiles,10:00,696,3.8598
+Queensland,Reptiles,10:30,62,0.3438
+Queensland,Reptiles,11:00,55,0.305
+Queensland,Reptiles,11:30,32,0.1775
+Queensland,Reptiles,12:00,33,0.183
+Queensland,Reptiles,12:30,22,0.122
+Queensland,Reptiles,13:00,20,0.1109
+Queensland,Reptiles,13:30,14,0.0776
+Queensland,Reptiles,14:00,23,0.1276
+Queensland,Reptiles,14:30,21,0.1165
+Queensland,Reptiles,15:00,37,0.2052
+Queensland,Reptiles,15:30,54,0.2995
+Queensland,Reptiles,16:00,75,0.4159
+Queensland,Reptiles,16:30,93,0.5157
+Queensland,Reptiles,17:00,153,0.8485
+Queensland,Reptiles,17:30,239,1.3254
+Queensland,Reptiles,18:00,347,1.9244
+Queensland,Reptiles,18:30,424,2.3514
+Queensland,Reptiles,19:00,590,3.272
+Queensland,Reptiles,19:30,612,3.394
+Queensland,Reptiles,20:00,717,3.9763
+Queensland,Reptiles,20:30,817,4.5308
+Queensland,Reptiles,21:00,799,4.431
+Queensland,Reptiles,21:30,799,4.431
+Queensland,Reptiles,22:00,839,4.6528
+Queensland,Reptiles,22:30,756,4.1925
+Queensland,Reptiles,23:00,764,4.2369
+Queensland,Reptiles,23:30,740,4.1038
+Queensland,Reptiles,24:00,331,1.8356
+South Australia,Amphibians,00:00,5,0.1695
+South Australia,Amphibians,00:30,11,0.373
+South Australia,Amphibians,01:00,16,0.5426
+South Australia,Amphibians,01:30,10,0.3391
+South Australia,Amphibians,02:00,15,0.5086
+South Australia,Amphibians,02:30,10,0.3391
+South Australia,Amphibians,03:00,9,0.3052
+South Australia,Amphibians,03:30,15,0.5086
+South Australia,Amphibians,04:00,8,0.2713
+South Australia,Amphibians,04:30,31,1.0512
+South Australia,Amphibians,05:00,42,1.4242
+South Australia,Amphibians,05:30,38,1.2886
+South Australia,Amphibians,06:00,29,0.9834
+South Australia,Amphibians,06:30,28,0.9495
+South Australia,Amphibians,07:00,17,0.5765
+South Australia,Amphibians,07:30,35,1.1868
+South Australia,Amphibians,08:00,30,1.0173
+South Australia,Amphibians,08:30,24,0.8138
+South Australia,Amphibians,09:00,8,0.2713
+South Australia,Amphibians,09:30,1369,46.4225
+South Australia,Amphibians,10:00,7,0.2374
+South Australia,Amphibians,10:30,1033,35.0288
+South Australia,Amphibians,12:00,2,0.0678
+South Australia,Amphibians,14:30,1,0.0339
+South Australia,Amphibians,16:30,1,0.0339
+South Australia,Amphibians,17:00,2,0.0678
+South Australia,Amphibians,17:30,4,0.1356
+South Australia,Amphibians,18:00,3,0.1017
+South Australia,Amphibians,18:30,6,0.2035
+South Australia,Amphibians,19:00,7,0.2374
+South Australia,Amphibians,19:30,12,0.4069
+South Australia,Amphibians,20:00,14,0.4747
+South Australia,Amphibians,20:30,13,0.4408
+South Australia,Amphibians,21:00,16,0.5426
+South Australia,Amphibians,21:30,14,0.4747
+South Australia,Amphibians,22:00,10,0.3391
+South Australia,Amphibians,22:30,20,0.6782
+South Australia,Amphibians,23:00,16,0.5426
+South Australia,Amphibians,23:30,13,0.4408
+South Australia,Amphibians,24:00,5,0.1695
+South Australia,Birds,00:00,8952,2.4715
+South Australia,Birds,00:30,7419,2.0483
+South Australia,Birds,01:00,8298,2.2909
+South Australia,Birds,01:30,8073,2.2288
+South Australia,Birds,02:00,7525,2.0775
+South Australia,Birds,02:30,6351,1.7534
+South Australia,Birds,03:00,4086,1.1281
+South Australia,Birds,03:30,3139,0.8666
+South Australia,Birds,04:00,2670,0.7371
+South Australia,Birds,04:30,2716,0.7498
+South Australia,Birds,05:00,2749,0.7589
+South Australia,Birds,05:30,2640,0.7289
+South Australia,Birds,06:00,1435,0.3962
+South Australia,Birds,06:30,907,0.2504
+South Australia,Birds,07:00,561,0.1549
+South Australia,Birds,07:30,199,0.0549
+South Australia,Birds,08:00,103,0.0284
+South Australia,Birds,08:30,89,0.0246
+South Australia,Birds,09:00,78,0.0215
+South Australia,Birds,09:30,65329,18.0362
+South Australia,Birds,10:00,73,0.0202
+South Australia,Birds,10:30,68620,18.9448
+South Australia,Birds,11:00,57,0.0157
+South Australia,Birds,11:30,68,0.0188
+South Australia,Birds,12:00,57,0.0157
+South Australia,Birds,12:30,83,0.0229
+South Australia,Birds,13:00,89,0.0246
+South Australia,Birds,13:30,52,0.0144
+South Australia,Birds,14:00,53,0.0146
+South Australia,Birds,14:30,88,0.0243
+South Australia,Birds,15:00,222,0.0613
+South Australia,Birds,15:30,425,0.1173
+South Australia,Birds,16:00,2024,0.5588
+South Australia,Birds,16:30,5287,1.4596
+South Australia,Birds,17:00,10148,2.8017
+South Australia,Birds,17:30,10898,3.0087
+South Australia,Birds,18:00,15519,4.2845
+South Australia,Birds,18:30,11267,3.1106
+South Australia,Birds,19:00,13866,3.8282
+South Australia,Birds,19:30,12698,3.5057
+South Australia,Birds,20:00,12835,3.5435
+South Australia,Birds,20:30,11123,3.0709
+South Australia,Birds,21:00,10345,2.8561
+South Australia,Birds,21:30,8733,2.411
+South Australia,Birds,22:00,8705,2.4033
+South Australia,Birds,22:30,7719,2.1311
+South Australia,Birds,23:00,7406,2.0447
+South Australia,Birds,23:30,6820,1.8829
+South Australia,Birds,24:00,3612,0.9972
+South Australia,Fish,00:00,885,1.7706
+South Australia,Fish,00:30,1486,2.973
+South Australia,Fish,01:00,1576,3.1531
+South Australia,Fish,01:30,1563,3.1271
+South Australia,Fish,02:00,1421,2.843
+South Australia,Fish,02:30,1404,2.809
+South Australia,Fish,03:00,1264,2.5289
+South Australia,Fish,03:30,557,1.1144
+South Australia,Fish,04:00,432,0.8643
+South Australia,Fish,04:30,926,1.8526
+South Australia,Fish,05:00,742,1.4845
+South Australia,Fish,05:30,763,1.5265
+South Australia,Fish,06:00,676,1.3525
+South Australia,Fish,06:30,225,0.4502
+South Australia,Fish,07:00,149,0.2981
+South Australia,Fish,07:30,141,0.2821
+South Australia,Fish,08:00,159,0.3181
+South Australia,Fish,08:30,155,0.3101
+South Australia,Fish,09:00,109,0.2181
+South Australia,Fish,09:30,995,1.9907
+South Australia,Fish,10:00,70,0.14
+South Australia,Fish,10:30,372,0.7443
+South Australia,Fish,11:00,45,0.09
+South Australia,Fish,11:30,19,0.038
+South Australia,Fish,12:00,26,0.052
+South Australia,Fish,12:30,15,0.03
+South Australia,Fish,13:00,17,0.034
+South Australia,Fish,13:30,15,0.03
+South Australia,Fish,14:00,36,0.072
+South Australia,Fish,14:30,62,0.124
+South Australia,Fish,15:00,49,0.098
+South Australia,Fish,15:30,61,0.122
+South Australia,Fish,16:00,120,0.2401
+South Australia,Fish,16:30,330,0.6602
+South Australia,Fish,17:00,929,1.8586
+South Australia,Fish,17:30,1378,2.7569
+South Australia,Fish,18:00,1710,3.4212
+South Australia,Fish,18:30,3323,6.6483
+South Australia,Fish,19:00,3696,7.3945
+South Australia,Fish,19:30,3023,6.0481
+South Australia,Fish,20:00,2920,5.842
+South Australia,Fish,20:30,2981,5.964
+South Australia,Fish,21:00,2705,5.4118
+South Australia,Fish,21:30,2121,4.2434
+South Australia,Fish,22:00,2116,4.2334
+South Australia,Fish,22:30,1591,3.1831
+South Australia,Fish,23:00,1920,3.8413
+South Australia,Fish,23:30,1708,3.4172
+South Australia,Fish,24:00,997,1.9947
+South Australia,Invertebrates,00:00,730,1.7172
+South Australia,Invertebrates,00:30,1385,3.2579
+South Australia,Invertebrates,01:00,1533,3.606
+South Australia,Invertebrates,01:30,1366,3.2132
+South Australia,Invertebrates,02:00,1270,2.9874
+South Australia,Invertebrates,02:30,1064,2.5028
+South Australia,Invertebrates,03:00,966,2.2723
+South Australia,Invertebrates,03:30,562,1.322
+South Australia,Invertebrates,04:00,815,1.9171
+South Australia,Invertebrates,04:30,961,2.2605
+South Australia,Invertebrates,05:00,881,2.0724
+South Australia,Invertebrates,05:30,884,2.0794
+South Australia,Invertebrates,06:00,750,1.7642
+South Australia,Invertebrates,06:30,489,1.1503
+South Australia,Invertebrates,07:00,416,0.9785
+South Australia,Invertebrates,07:30,336,0.7904
+South Australia,Invertebrates,08:00,375,0.8821
+South Australia,Invertebrates,08:30,376,0.8845
+South Australia,Invertebrates,09:00,255,0.5998
+South Australia,Invertebrates,09:30,481,1.1314
+South Australia,Invertebrates,10:00,132,0.3105
+South Australia,Invertebrates,10:30,172,0.4046
+South Australia,Invertebrates,11:00,64,0.1505
+South Australia,Invertebrates,11:30,65,0.1529
+South Australia,Invertebrates,12:00,42,0.0988
+South Australia,Invertebrates,12:30,29,0.0682
+South Australia,Invertebrates,13:00,20,0.047
+South Australia,Invertebrates,13:30,12,0.0282
+South Australia,Invertebrates,14:00,42,0.0988
+South Australia,Invertebrates,14:30,24,0.0565
+South Australia,Invertebrates,15:00,17,0.04
+South Australia,Invertebrates,15:30,39,0.0917
+South Australia,Invertebrates,16:00,68,0.16
+South Australia,Invertebrates,16:30,205,0.4822
+South Australia,Invertebrates,17:00,708,1.6654
+South Australia,Invertebrates,17:30,1027,2.4158
+South Australia,Invertebrates,18:00,1365,3.2109
+South Australia,Invertebrates,18:30,2021,4.754
+South Australia,Invertebrates,19:00,2357,5.5443
+South Australia,Invertebrates,19:30,2355,5.5396
+South Australia,Invertebrates,20:00,2025,4.7634
+South Australia,Invertebrates,20:30,2164,5.0903
+South Australia,Invertebrates,21:00,2273,5.3467
+South Australia,Invertebrates,21:30,2093,4.9233
+South Australia,Invertebrates,22:00,1995,4.6928
+South Australia,Invertebrates,22:30,1687,3.9683
+South Australia,Invertebrates,23:00,1588,3.7354
+South Australia,Invertebrates,23:30,1358,3.1944
+South Australia,Invertebrates,24:00,670,1.576
+South Australia,Mammals,00:00,101,0.7273
+South Australia,Mammals,00:30,147,1.0585
+South Australia,Mammals,01:00,165,1.1882
+South Australia,Mammals,01:30,188,1.3538
+South Australia,Mammals,02:00,199,1.433
+South Australia,Mammals,02:30,165,1.1882
+South Australia,Mammals,03:00,168,1.2098
+South Australia,Mammals,03:30,135,0.9721
+South Australia,Mammals,04:00,132,0.9505
+South Australia,Mammals,04:30,114,0.8209
+South Australia,Mammals,05:00,159,1.145
+South Australia,Mammals,05:30,114,0.8209
+South Australia,Mammals,06:00,112,0.8065
+South Australia,Mammals,06:30,101,0.7273
+South Australia,Mammals,07:00,84,0.6049
+South Australia,Mammals,07:30,76,0.5473
+South Australia,Mammals,08:00,50,0.36
+South Australia,Mammals,08:30,40,0.288
+South Australia,Mammals,09:00,28,0.2016
+South Australia,Mammals,09:30,6592,47.4689
+South Australia,Mammals,10:00,21,0.1512
+South Australia,Mammals,10:30,2877,20.7172
+South Australia,Mammals,11:00,9,0.0648
+South Australia,Mammals,11:30,11,0.0792
+South Australia,Mammals,12:00,4,0.0288
+South Australia,Mammals,12:30,7,0.0504
+South Australia,Mammals,13:00,6,0.0432
+South Australia,Mammals,13:30,3,0.0216
+South Australia,Mammals,14:00,3,0.0216
+South Australia,Mammals,14:30,6,0.0432
+South Australia,Mammals,15:00,5,0.036
+South Australia,Mammals,15:30,5,0.036
+South Australia,Mammals,16:00,9,0.0648
+South Australia,Mammals,16:30,27,0.1944
+South Australia,Mammals,17:00,42,0.3024
+South Australia,Mammals,17:30,80,0.5761
+South Australia,Mammals,18:00,95,0.6841
+South Australia,Mammals,18:30,148,1.0657
+South Australia,Mammals,19:00,158,1.1378
+South Australia,Mammals,19:30,184,1.325
+South Australia,Mammals,20:00,194,1.397
+South Australia,Mammals,20:30,181,1.3034
+South Australia,Mammals,21:00,169,1.217
+South Australia,Mammals,21:30,158,1.1378
+South Australia,Mammals,22:00,158,1.1378
+South Australia,Mammals,22:30,143,1.0297
+South Australia,Mammals,23:00,119,0.8569
+South Australia,Mammals,23:30,121,0.8713
+South Australia,Mammals,24:00,74,0.5329
+South Australia,Reptiles,00:00,109,1.3009
+South Australia,Reptiles,00:30,176,2.1005
+South Australia,Reptiles,01:00,185,2.2079
+South Australia,Reptiles,01:30,148,1.7663
+South Australia,Reptiles,02:00,141,1.6828
+South Australia,Reptiles,02:30,130,1.5515
+South Australia,Reptiles,03:00,106,1.2651
+South Australia,Reptiles,03:30,84,1.0025
+South Australia,Reptiles,04:00,78,0.9309
+South Australia,Reptiles,04:30,89,1.0622
+South Australia,Reptiles,05:00,81,0.9667
+South Australia,Reptiles,05:30,57,0.6803
+South Australia,Reptiles,06:00,50,0.5967
+South Australia,Reptiles,06:30,38,0.4535
+South Australia,Reptiles,07:00,63,0.7519
+South Australia,Reptiles,07:30,81,0.9667
+South Australia,Reptiles,08:00,52,0.6206
+South Australia,Reptiles,08:30,64,0.7638
+South Australia,Reptiles,09:00,36,0.4296
+South Australia,Reptiles,09:30,1166,13.9157
+South Australia,Reptiles,10:00,22,0.2626
+South Australia,Reptiles,10:30,3158,37.6895
+South Australia,Reptiles,11:00,11,0.1313
+South Australia,Reptiles,11:30,9,0.1074
+South Australia,Reptiles,12:00,4,0.0477
+South Australia,Reptiles,12:30,8,0.0955
+South Australia,Reptiles,13:00,5,0.0597
+South Australia,Reptiles,13:30,5,0.0597
+South Australia,Reptiles,14:00,3,0.0358
+South Australia,Reptiles,14:30,2,0.0239
+South Australia,Reptiles,15:00,6,0.0716
+South Australia,Reptiles,15:30,3,0.0358
+South Australia,Reptiles,16:00,7,0.0835
+South Australia,Reptiles,16:30,7,0.0835
+South Australia,Reptiles,17:00,13,0.1551
+South Australia,Reptiles,17:30,24,0.2864
+South Australia,Reptiles,18:00,28,0.3342
+South Australia,Reptiles,18:30,62,0.7399
+South Australia,Reptiles,19:00,86,1.0264
+South Australia,Reptiles,19:30,113,1.3486
+South Australia,Reptiles,20:00,164,1.9573
+South Australia,Reptiles,20:30,208,2.4824
+South Australia,Reptiles,21:00,245,2.924
+South Australia,Reptiles,21:30,224,2.6734
+South Australia,Reptiles,22:00,269,3.2104
+South Australia,Reptiles,22:30,257,3.0672
+South Australia,Reptiles,23:00,211,2.5182
+South Australia,Reptiles,23:30,186,2.2198
+South Australia,Reptiles,24:00,105,1.2531
+Tasmania,Amphibians,00:00,4,1.3115
+Tasmania,Amphibians,00:30,13,4.2623
+Tasmania,Amphibians,01:00,15,4.918
+Tasmania,Amphibians,01:30,11,3.6066
+Tasmania,Amphibians,02:00,12,3.9344
+Tasmania,Amphibians,02:30,14,4.5902
+Tasmania,Amphibians,03:00,10,3.2787
+Tasmania,Amphibians,03:30,7,2.2951
+Tasmania,Amphibians,04:00,11,3.6066
+Tasmania,Amphibians,04:30,10,3.2787
+Tasmania,Amphibians,05:00,6,1.9672
+Tasmania,Amphibians,05:30,3,0.9836
+Tasmania,Amphibians,06:00,1,0.3279
+Tasmania,Amphibians,06:30,4,1.3115
+Tasmania,Amphibians,07:00,5,1.6393
+Tasmania,Amphibians,07:30,6,1.9672
+Tasmania,Amphibians,08:00,6,1.9672
+Tasmania,Amphibians,08:30,8,2.623
+Tasmania,Amphibians,09:00,20,6.5574
+Tasmania,Amphibians,09:30,9,2.9508
+Tasmania,Amphibians,10:00,3,0.9836
+Tasmania,Amphibians,10:30,2,0.6557
+Tasmania,Amphibians,11:00,4,1.3115
+Tasmania,Amphibians,14:30,1,0.3279
+Tasmania,Amphibians,17:00,1,0.3279
+Tasmania,Amphibians,18:00,3,0.9836
+Tasmania,Amphibians,18:30,3,0.9836
+Tasmania,Amphibians,19:00,6,1.9672
+Tasmania,Amphibians,19:30,11,3.6066
+Tasmania,Amphibians,20:00,2,0.6557
+Tasmania,Amphibians,20:30,4,1.3115
+Tasmania,Amphibians,21:00,13,4.2623
+Tasmania,Amphibians,21:30,14,4.5902
+Tasmania,Amphibians,22:00,17,5.5738
+Tasmania,Amphibians,22:30,13,4.2623
+Tasmania,Amphibians,23:00,11,3.6066
+Tasmania,Amphibians,23:30,16,5.2459
+Tasmania,Amphibians,24:00,6,1.9672
+Tasmania,Birds,00:00,5236,1.7483
+Tasmania,Birds,00:30,7981,2.6648
+Tasmania,Birds,01:00,9167,3.0608
+Tasmania,Birds,01:30,7933,2.6488
+Tasmania,Birds,02:00,7081,2.3643
+Tasmania,Birds,02:30,6261,2.0905
+Tasmania,Birds,03:00,4673,1.5603
+Tasmania,Birds,03:30,3611,1.2057
+Tasmania,Birds,04:00,3665,1.2237
+Tasmania,Birds,04:30,3005,1.0034
+Tasmania,Birds,05:00,2485,0.8297
+Tasmania,Birds,05:30,2512,0.8387
+Tasmania,Birds,06:00,2727,0.9105
+Tasmania,Birds,06:30,1384,0.4621
+Tasmania,Birds,07:00,1452,0.4848
+Tasmania,Birds,07:30,539,0.18
+Tasmania,Birds,08:00,325,0.1085
+Tasmania,Birds,08:30,165,0.0551
+Tasmania,Birds,09:00,148,0.0494
+Tasmania,Birds,09:30,67,0.0224
+Tasmania,Birds,10:00,31074,10.3754
+Tasmania,Birds,10:30,70,0.0234
+Tasmania,Birds,11:00,42440,14.1705
+Tasmania,Birds,11:30,44,0.0147
+Tasmania,Birds,12:00,47,0.0157
+Tasmania,Birds,12:30,41,0.0137
+Tasmania,Birds,13:00,51,0.017
+Tasmania,Birds,13:30,25,0.0083
+Tasmania,Birds,14:00,35,0.0117
+Tasmania,Birds,14:30,57,0.019
+Tasmania,Birds,15:00,43,0.0144
+Tasmania,Birds,15:30,62,0.0207
+Tasmania,Birds,16:00,219,0.0731
+Tasmania,Birds,16:30,964,0.3219
+Tasmania,Birds,17:00,9746,3.2541
+Tasmania,Birds,17:30,6648,2.2197
+Tasmania,Birds,18:00,10459,3.4922
+Tasmania,Birds,18:30,9647,3.2211
+Tasmania,Birds,19:00,12245,4.0885
+Tasmania,Birds,19:30,10435,3.4842
+Tasmania,Birds,20:00,13916,4.6465
+Tasmania,Birds,20:30,11439,3.8194
+Tasmania,Birds,21:00,13907,4.6435
+Tasmania,Birds,21:30,11761,3.9269
+Tasmania,Birds,22:00,11120,3.7129
+Tasmania,Birds,22:30,9258,3.0912
+Tasmania,Birds,23:00,9851,3.2892
+Tasmania,Birds,23:30,8888,2.9677
+Tasmania,Birds,24:00,4587,1.5316
+Tasmania,Fish,00:00,30,3.5928
+Tasmania,Fish,00:30,26,3.1138
+Tasmania,Fish,01:00,29,3.4731
+Tasmania,Fish,01:30,21,2.515
+Tasmania,Fish,02:00,41,4.9102
+Tasmania,Fish,02:30,20,2.3952
+Tasmania,Fish,03:00,29,3.4731
+Tasmania,Fish,03:30,31,3.7126
+Tasmania,Fish,04:00,15,1.7964
+Tasmania,Fish,04:30,10,1.1976
+Tasmania,Fish,05:00,8,0.9581
+Tasmania,Fish,05:30,25,2.994
+Tasmania,Fish,06:00,18,2.1557
+Tasmania,Fish,06:30,24,2.8743
+Tasmania,Fish,07:00,15,1.7964
+Tasmania,Fish,07:30,14,1.6766
+Tasmania,Fish,08:00,11,1.3174
+Tasmania,Fish,08:30,2,0.2395
+Tasmania,Fish,09:00,4,0.479
+Tasmania,Fish,09:30,1,0.1198
+Tasmania,Fish,10:00,20,2.3952
+Tasmania,Fish,11:00,5,0.5988
+Tasmania,Fish,11:30,6,0.7186
+Tasmania,Fish,12:00,1,0.1198
+Tasmania,Fish,12:30,3,0.3593
+Tasmania,Fish,13:00,2,0.2395
+Tasmania,Fish,15:00,1,0.1198
+Tasmania,Fish,17:30,1,0.1198
+Tasmania,Fish,18:00,8,0.9581
+Tasmania,Fish,18:30,7,0.8383
+Tasmania,Fish,19:00,39,4.6707
+Tasmania,Fish,19:30,50,5.988
+Tasmania,Fish,20:00,26,3.1138
+Tasmania,Fish,20:30,30,3.5928
+Tasmania,Fish,21:00,46,5.509
+Tasmania,Fish,21:30,55,6.5868
+Tasmania,Fish,22:00,43,5.1497
+Tasmania,Fish,22:30,25,2.994
+Tasmania,Fish,23:00,31,3.7126
+Tasmania,Fish,23:30,30,3.5928
+Tasmania,Fish,24:00,32,3.8323
+Tasmania,Invertebrates,00:00,167,1.9055
+Tasmania,Invertebrates,00:30,410,4.6782
+Tasmania,Invertebrates,01:00,370,4.2218
+Tasmania,Invertebrates,01:30,300,3.4231
+Tasmania,Invertebrates,02:00,320,3.6513
+Tasmania,Invertebrates,02:30,293,3.3432
+Tasmania,Invertebrates,03:00,292,3.3318
+Tasmania,Invertebrates,03:30,226,2.5787
+Tasmania,Invertebrates,04:00,198,2.2592
+Tasmania,Invertebrates,04:30,190,2.168
+Tasmania,Invertebrates,05:00,148,1.6887
+Tasmania,Invertebrates,05:30,134,1.529
+Tasmania,Invertebrates,06:00,116,1.3236
+Tasmania,Invertebrates,06:30,90,1.0269
+Tasmania,Invertebrates,07:00,97,1.1068
+Tasmania,Invertebrates,07:30,104,1.1867
+Tasmania,Invertebrates,08:00,102,1.1639
+Tasmania,Invertebrates,08:30,100,1.141
+Tasmania,Invertebrates,09:00,78,0.89
+Tasmania,Invertebrates,09:30,60,0.6846
+Tasmania,Invertebrates,10:00,177,2.0196
+Tasmania,Invertebrates,10:30,29,0.3309
+Tasmania,Invertebrates,11:00,961,10.9653
+Tasmania,Invertebrates,11:30,7,0.0799
+Tasmania,Invertebrates,12:00,13,0.1483
+Tasmania,Invertebrates,12:30,15,0.1712
+Tasmania,Invertebrates,13:00,12,0.1369
+Tasmania,Invertebrates,13:30,5,0.0571
+Tasmania,Invertebrates,14:00,7,0.0799
+Tasmania,Invertebrates,14:30,9,0.1027
+Tasmania,Invertebrates,15:00,11,0.1255
+Tasmania,Invertebrates,15:30,5,0.0571
+Tasmania,Invertebrates,16:00,10,0.1141
+Tasmania,Invertebrates,16:30,18,0.2054
+Tasmania,Invertebrates,17:00,38,0.4336
+Tasmania,Invertebrates,17:30,52,0.5933
+Tasmania,Invertebrates,18:00,69,0.7873
+Tasmania,Invertebrates,18:30,155,1.7686
+Tasmania,Invertebrates,19:00,175,1.9968
+Tasmania,Invertebrates,19:30,180,2.0539
+Tasmania,Invertebrates,20:00,252,2.8754
+Tasmania,Invertebrates,20:30,283,3.2291
+Tasmania,Invertebrates,21:00,310,3.5372
+Tasmania,Invertebrates,21:30,353,4.0278
+Tasmania,Invertebrates,22:00,412,4.701
+Tasmania,Invertebrates,22:30,457,5.2145
+Tasmania,Invertebrates,23:00,419,4.7809
+Tasmania,Invertebrates,23:30,381,4.3473
+Tasmania,Invertebrates,24:00,154,1.7572
+Tasmania,Mammals,00:00,48,1.7417
+Tasmania,Mammals,00:30,37,1.3425
+Tasmania,Mammals,01:00,69,2.5036
+Tasmania,Mammals,01:30,57,2.0682
+Tasmania,Mammals,02:00,55,1.9956
+Tasmania,Mammals,02:30,70,2.5399
+Tasmania,Mammals,03:00,73,2.6488
+Tasmania,Mammals,03:30,43,1.5602
+Tasmania,Mammals,04:00,63,2.2859
+Tasmania,Mammals,04:30,77,2.7939
+Tasmania,Mammals,05:00,58,2.1045
+Tasmania,Mammals,05:30,55,1.9956
+Tasmania,Mammals,06:00,58,2.1045
+Tasmania,Mammals,06:30,63,2.2859
+Tasmania,Mammals,07:00,66,2.3948
+Tasmania,Mammals,07:30,71,2.5762
+Tasmania,Mammals,08:00,66,2.3948
+Tasmania,Mammals,08:30,63,2.2859
+Tasmania,Mammals,09:00,48,1.7417
+Tasmania,Mammals,09:30,24,0.8708
+Tasmania,Mammals,10:00,371,13.4615
+Tasmania,Mammals,10:30,11,0.3991
+Tasmania,Mammals,11:00,387,14.0421
+Tasmania,Mammals,11:30,12,0.4354
+Tasmania,Mammals,12:00,6,0.2177
+Tasmania,Mammals,12:30,6,0.2177
+Tasmania,Mammals,13:00,10,0.3628
+Tasmania,Mammals,13:30,6,0.2177
+Tasmania,Mammals,14:00,10,0.3628
+Tasmania,Mammals,14:30,8,0.2903
+Tasmania,Mammals,15:00,10,0.3628
+Tasmania,Mammals,15:30,10,0.3628
+Tasmania,Mammals,16:00,16,0.5806
+Tasmania,Mammals,16:30,9,0.3266
+Tasmania,Mammals,17:00,8,0.2903
+Tasmania,Mammals,17:30,18,0.6531
+Tasmania,Mammals,18:00,32,1.1611
+Tasmania,Mammals,18:30,25,0.9071
+Tasmania,Mammals,19:00,46,1.6691
+Tasmania,Mammals,19:30,62,2.2496
+Tasmania,Mammals,20:00,59,2.1408
+Tasmania,Mammals,20:30,67,2.4311
+Tasmania,Mammals,21:00,74,2.6851
+Tasmania,Mammals,21:30,71,2.5762
+Tasmania,Mammals,22:00,79,2.8665
+Tasmania,Mammals,22:30,60,2.1771
+Tasmania,Mammals,23:00,45,1.6328
+Tasmania,Mammals,23:30,46,1.6691
+Tasmania,Mammals,24:00,28,1.016
+Tasmania,Reptiles,00:00,36,3.7775
+Tasmania,Reptiles,00:30,66,6.9255
+Tasmania,Reptiles,01:00,62,6.5058
+Tasmania,Reptiles,01:30,67,7.0304
+Tasmania,Reptiles,02:00,41,4.3022
+Tasmania,Reptiles,02:30,44,4.617
+Tasmania,Reptiles,03:00,46,4.8269
+Tasmania,Reptiles,03:30,35,3.6726
+Tasmania,Reptiles,04:00,27,2.8332
+Tasmania,Reptiles,04:30,12,1.2592
+Tasmania,Reptiles,05:00,5,0.5247
+Tasmania,Reptiles,05:30,6,0.6296
+Tasmania,Reptiles,06:00,5,0.5247
+Tasmania,Reptiles,06:30,3,0.3148
+Tasmania,Reptiles,07:00,5,0.5247
+Tasmania,Reptiles,07:30,2,0.2099
+Tasmania,Reptiles,08:00,2,0.2099
+Tasmania,Reptiles,08:30,1,0.1049
+Tasmania,Reptiles,09:00,1,0.1049
+Tasmania,Reptiles,09:30,1,0.1049
+Tasmania,Reptiles,10:00,12,1.2592
+Tasmania,Reptiles,11:00,16,1.6789
+Tasmania,Reptiles,12:00,3,0.3148
+Tasmania,Reptiles,12:30,2,0.2099
+Tasmania,Reptiles,13:00,2,0.2099
+Tasmania,Reptiles,14:00,2,0.2099
+Tasmania,Reptiles,14:30,7,0.7345
+Tasmania,Reptiles,15:00,3,0.3148
+Tasmania,Reptiles,15:30,1,0.1049
+Tasmania,Reptiles,16:30,1,0.1049
+Tasmania,Reptiles,17:00,2,0.2099
+Tasmania,Reptiles,17:30,1,0.1049
+Tasmania,Reptiles,18:00,3,0.3148
+Tasmania,Reptiles,18:30,3,0.3148
+Tasmania,Reptiles,19:00,8,0.8395
+Tasmania,Reptiles,19:30,14,1.469
+Tasmania,Reptiles,20:00,15,1.574
+Tasmania,Reptiles,20:30,23,2.4134
+Tasmania,Reptiles,21:00,38,3.9874
+Tasmania,Reptiles,21:30,45,4.7219
+Tasmania,Reptiles,22:00,67,7.0304
+Tasmania,Reptiles,22:30,54,5.6663
+Tasmania,Reptiles,23:00,62,6.5058
+Tasmania,Reptiles,23:30,70,7.3452
+Tasmania,Reptiles,24:00,32,3.3578
+Victoria,Amphibians,00:00,31,0.6999
+Victoria,Amphibians,00:30,57,1.287
+Victoria,Amphibians,01:00,83,1.874
+Victoria,Amphibians,01:30,50,1.1289
+Victoria,Amphibians,02:00,50,1.1289
+Victoria,Amphibians,02:30,49,1.1063
+Victoria,Amphibians,03:00,38,0.858
+Victoria,Amphibians,03:30,39,0.8806
+Victoria,Amphibians,04:00,57,1.287
+Victoria,Amphibians,04:30,39,0.8806
+Victoria,Amphibians,05:00,59,1.3321
+Victoria,Amphibians,05:30,49,1.1063
+Victoria,Amphibians,06:00,61,1.3773
+Victoria,Amphibians,06:30,54,1.2192
+Victoria,Amphibians,07:00,75,1.6934
+Victoria,Amphibians,07:30,111,2.5062
+Victoria,Amphibians,08:00,126,2.8449
+Victoria,Amphibians,08:30,146,3.2965
+Victoria,Amphibians,09:00,138,3.1158
+Victoria,Amphibians,09:30,63,1.4224
+Victoria,Amphibians,10:00,1075,24.2718
+Victoria,Amphibians,10:30,21,0.4741
+Victoria,Amphibians,11:00,1192,26.9135
+Victoria,Amphibians,11:30,14,0.3161
+Victoria,Amphibians,12:00,7,0.158
+Victoria,Amphibians,12:30,10,0.2258
+Victoria,Amphibians,13:00,20,0.4516
+Victoria,Amphibians,13:30,20,0.4516
+Victoria,Amphibians,14:00,10,0.2258
+Victoria,Amphibians,14:30,8,0.1806
+Victoria,Amphibians,15:00,5,0.1129
+Victoria,Amphibians,15:30,8,0.1806
+Victoria,Amphibians,16:00,5,0.1129
+Victoria,Amphibians,16:30,5,0.1129
+Victoria,Amphibians,17:00,3,0.0677
+Victoria,Amphibians,17:30,5,0.1129
+Victoria,Amphibians,18:00,14,0.3161
+Victoria,Amphibians,18:30,16,0.3613
+Victoria,Amphibians,19:00,31,0.6999
+Victoria,Amphibians,19:30,32,0.7225
+Victoria,Amphibians,20:00,62,1.3999
+Victoria,Amphibians,20:30,55,1.2418
+Victoria,Amphibians,21:00,67,1.5128
+Victoria,Amphibians,21:30,61,1.3773
+Victoria,Amphibians,22:00,87,1.9643
+Victoria,Amphibians,22:30,79,1.7837
+Victoria,Amphibians,23:00,54,1.2192
+Victoria,Amphibians,23:30,61,1.3773
+Victoria,Amphibians,24:00,27,0.6096
+Victoria,Birds,00:00,27712,1.6529
+Victoria,Birds,00:30,47510,2.8338
+Victoria,Birds,01:00,51790,3.0891
+Victoria,Birds,01:30,46253,2.7588
+Victoria,Birds,02:00,50779,3.0288
+Victoria,Birds,02:30,41901,2.4992
+Victoria,Birds,03:00,42646,2.5437
+Victoria,Birds,03:30,26927,1.6061
+Victoria,Birds,04:00,21489,1.2817
+Victoria,Birds,04:30,17622,1.0511
+Victoria,Birds,05:00,18627,1.111
+Victoria,Birds,05:30,15054,0.8979
+Victoria,Birds,06:00,17295,1.0316
+Victoria,Birds,06:30,12585,0.7506
+Victoria,Birds,07:00,10134,0.6045
+Victoria,Birds,07:30,4699,0.2803
+Victoria,Birds,08:00,1678,0.1001
+Victoria,Birds,08:30,655,0.0391
+Victoria,Birds,09:00,588,0.0351
+Victoria,Birds,09:30,372,0.0222
+Victoria,Birds,10:00,100582,5.9993
+Victoria,Birds,10:30,408,0.0243
+Victoria,Birds,11:00,126140,7.5238
+Victoria,Birds,11:30,394,0.0235
+Victoria,Birds,12:00,360,0.0215
+Victoria,Birds,12:30,344,0.0205
+Victoria,Birds,13:00,308,0.0184
+Victoria,Birds,13:30,215,0.0128
+Victoria,Birds,14:00,258,0.0154
+Victoria,Birds,14:30,218,0.013
+Victoria,Birds,15:00,273,0.0163
+Victoria,Birds,15:30,291,0.0174
+Victoria,Birds,16:00,1021,0.0609
+Victoria,Birds,16:30,5810,0.3465
+Victoria,Birds,17:00,26679,1.5913
+Victoria,Birds,17:30,44781,2.671
+Victoria,Birds,18:00,80580,4.8063
+Victoria,Birds,18:30,85891,5.1231
+Victoria,Birds,19:00,100752,6.0095
+Victoria,Birds,19:30,91696,5.4693
+Victoria,Birds,20:00,95259,5.6819
+Victoria,Birds,20:30,83374,4.973
+Victoria,Birds,21:00,79802,4.7599
+Victoria,Birds,21:30,62259,3.7135
+Victoria,Birds,22:00,61267,3.6544
+Victoria,Birds,22:30,50367,3.0042
+Victoria,Birds,23:00,51672,3.082
+Victoria,Birds,23:30,46061,2.7474
+Victoria,Birds,24:00,23171,1.3821
+Victoria,Fish,00:00,79,0.5925
+Victoria,Fish,00:30,130,0.975
+Victoria,Fish,01:00,151,1.1324
+Victoria,Fish,01:30,139,1.0424
+Victoria,Fish,02:00,101,0.7575
+Victoria,Fish,02:30,100,0.75
+Victoria,Fish,03:00,104,0.78
+Victoria,Fish,03:30,97,0.7275
+Victoria,Fish,04:00,92,0.69
+Victoria,Fish,04:30,39,0.2925
+Victoria,Fish,05:00,66,0.495
+Victoria,Fish,05:30,57,0.4275
+Victoria,Fish,06:00,73,0.5475
+Victoria,Fish,06:30,62,0.465
+Victoria,Fish,07:00,60,0.45
+Victoria,Fish,07:30,66,0.495
+Victoria,Fish,08:00,57,0.4275
+Victoria,Fish,08:30,37,0.2775
+Victoria,Fish,09:00,33,0.2475
+Victoria,Fish,09:30,19,0.1425
+Victoria,Fish,10:00,2418,18.1341
+Victoria,Fish,10:30,8,0.06
+Victoria,Fish,11:00,6878,51.5824
+Victoria,Fish,11:30,4,0.03
+Victoria,Fish,12:00,5,0.0375
+Victoria,Fish,12:30,16,0.12
+Victoria,Fish,13:00,3,0.0225
+Victoria,Fish,14:00,2,0.015
+Victoria,Fish,14:30,3,0.0225
+Victoria,Fish,15:00,4,0.03
+Victoria,Fish,15:30,2,0.015
+Victoria,Fish,17:00,1,0.0075
+Victoria,Fish,17:30,26,0.195
+Victoria,Fish,18:00,57,0.4275
+Victoria,Fish,18:30,112,0.84
+Victoria,Fish,19:00,115,0.8625
+Victoria,Fish,19:30,143,1.0724
+Victoria,Fish,20:00,166,1.2449
+Victoria,Fish,20:30,241,1.8074
+Victoria,Fish,21:00,272,2.0399
+Victoria,Fish,21:30,232,1.7399
+Victoria,Fish,22:00,272,2.0399
+Victoria,Fish,22:30,264,1.9799
+Victoria,Fish,23:00,227,1.7024
+Victoria,Fish,23:30,218,1.6349
+Victoria,Fish,24:00,83,0.6225
+Victoria,Invertebrates,00:00,1496,1.623
+Victoria,Invertebrates,00:30,2811,3.0497
+Victoria,Invertebrates,01:00,2845,3.0866
+Victoria,Invertebrates,01:30,2770,3.0052
+Victoria,Invertebrates,02:00,2522,2.7361
+Victoria,Invertebrates,02:30,2248,2.4389
+Victoria,Invertebrates,03:00,2114,2.2935
+Victoria,Invertebrates,03:30,1768,1.9181
+Victoria,Invertebrates,04:00,1564,1.6968
+Victoria,Invertebrates,04:30,1494,1.6208
+Victoria,Invertebrates,05:00,1460,1.584
+Victoria,Invertebrates,05:30,1510,1.6382
+Victoria,Invertebrates,06:00,1594,1.7293
+Victoria,Invertebrates,06:30,1363,1.4787
+Victoria,Invertebrates,07:00,1485,1.6111
+Victoria,Invertebrates,07:30,1664,1.8053
+Victoria,Invertebrates,08:00,2100,2.2783
+Victoria,Invertebrates,08:30,2372,2.5734
+Victoria,Invertebrates,09:00,2602,2.8229
+Victoria,Invertebrates,09:30,2488,2.6992
+Victoria,Invertebrates,10:00,2415,2.62
+Victoria,Invertebrates,10:30,1059,1.1489
+Victoria,Invertebrates,11:00,19387,21.033
+Victoria,Invertebrates,11:30,296,0.3211
+Victoria,Invertebrates,12:00,209,0.2267
+Victoria,Invertebrates,12:30,178,0.1931
+Victoria,Invertebrates,13:00,179,0.1942
+Victoria,Invertebrates,13:30,200,0.217
+Victoria,Invertebrates,14:00,224,0.243
+Victoria,Invertebrates,14:30,323,0.3504
+Victoria,Invertebrates,15:00,220,0.2387
+Victoria,Invertebrates,15:30,137,0.1486
+Victoria,Invertebrates,16:00,125,0.1356
+Victoria,Invertebrates,16:30,98,0.1063
+Victoria,Invertebrates,17:00,133,0.1443
+Victoria,Invertebrates,17:30,231,0.2506
+Victoria,Invertebrates,18:00,526,0.5707
+Victoria,Invertebrates,18:30,670,0.7269
+Victoria,Invertebrates,19:00,943,1.0231
+Victoria,Invertebrates,19:30,1371,1.4874
+Victoria,Invertebrates,20:00,1754,1.9029
+Victoria,Invertebrates,20:30,2065,2.2403
+Victoria,Invertebrates,21:00,2677,2.9043
+Victoria,Invertebrates,21:30,2830,3.0703
+Victoria,Invertebrates,22:00,3111,3.3751
+Victoria,Invertebrates,22:30,3043,3.3014
+Victoria,Invertebrates,23:00,3212,3.4847
+Victoria,Invertebrates,23:30,2841,3.0822
+Victoria,Invertebrates,24:00,1447,1.5699
+Victoria,Mammals,00:00,176,0.7496
+Victoria,Mammals,00:30,303,1.2905
+Victoria,Mammals,01:00,316,1.3458
+Victoria,Mammals,01:30,338,1.4395
+Victoria,Mammals,02:00,344,1.4651
+Victoria,Mammals,02:30,393,1.6738
+Victoria,Mammals,03:00,359,1.529
+Victoria,Mammals,03:30,261,1.1116
+Victoria,Mammals,04:00,255,1.086
+Victoria,Mammals,04:30,260,1.1073
+Victoria,Mammals,05:00,281,1.1968
+Victoria,Mammals,05:30,338,1.4395
+Victoria,Mammals,06:00,291,1.2394
+Victoria,Mammals,06:30,270,1.1499
+Victoria,Mammals,07:00,217,0.9242
+Victoria,Mammals,07:30,237,1.0094
+Victoria,Mammals,08:00,244,1.0392
+Victoria,Mammals,08:30,231,0.9838
+Victoria,Mammals,09:00,214,0.9114
+Victoria,Mammals,09:30,184,0.7836
+Victoria,Mammals,10:00,5648,24.0545
+Victoria,Mammals,10:30,112,0.477
+Victoria,Mammals,11:00,7516,32.0102
+Victoria,Mammals,11:30,64,0.2726
+Victoria,Mammals,12:00,78,0.3322
+Victoria,Mammals,12:30,56,0.2385
+Victoria,Mammals,13:00,63,0.2683
+Victoria,Mammals,13:30,58,0.247
+Victoria,Mammals,14:00,51,0.2172
+Victoria,Mammals,14:30,58,0.247
+Victoria,Mammals,15:00,51,0.2172
+Victoria,Mammals,15:30,51,0.2172
+Victoria,Mammals,16:00,49,0.2087
+Victoria,Mammals,16:30,66,0.2811
+Victoria,Mammals,17:00,99,0.4216
+Victoria,Mammals,17:30,127,0.5409
+Victoria,Mammals,18:00,206,0.8773
+Victoria,Mammals,18:30,299,1.2734
+Victoria,Mammals,19:00,336,1.431
+Victoria,Mammals,19:30,331,1.4097
+Victoria,Mammals,20:00,391,1.6652
+Victoria,Mammals,20:30,345,1.4693
+Victoria,Mammals,21:00,312,1.3288
+Victoria,Mammals,21:30,319,1.3586
+Victoria,Mammals,22:00,344,1.4651
+Victoria,Mammals,22:30,274,1.167
+Victoria,Mammals,23:00,274,1.167
+Victoria,Mammals,23:30,262,1.1158
+Victoria,Mammals,24:00,128,0.5451
+Victoria,Reptiles,00:00,167,2.4136
+Victoria,Reptiles,00:30,356,5.1453
+Victoria,Reptiles,01:00,343,4.9574
+Victoria,Reptiles,01:30,314,4.5382
+Victoria,Reptiles,02:00,311,4.4949
+Victoria,Reptiles,02:30,293,4.2347
+Victoria,Reptiles,03:00,222,3.2086
+Victoria,Reptiles,03:30,218,3.1507
+Victoria,Reptiles,04:00,194,2.8039
+Victoria,Reptiles,04:30,176,2.5437
+Victoria,Reptiles,05:00,131,1.8933
+Victoria,Reptiles,05:30,96,1.3875
+Victoria,Reptiles,06:00,82,1.1851
+Victoria,Reptiles,06:30,64,0.925
+Victoria,Reptiles,07:00,54,0.7805
+Victoria,Reptiles,07:30,48,0.6937
+Victoria,Reptiles,08:00,49,0.7082
+Victoria,Reptiles,08:30,27,0.3902
+Victoria,Reptiles,09:00,33,0.4769
+Victoria,Reptiles,09:30,40,0.5781
+Victoria,Reptiles,10:00,163,2.3558
+Victoria,Reptiles,10:30,24,0.3469
+Victoria,Reptiles,11:00,767,11.0854
+Victoria,Reptiles,11:30,10,0.1445
+Victoria,Reptiles,12:00,5,0.0723
+Victoria,Reptiles,12:30,6,0.0867
+Victoria,Reptiles,13:00,4,0.0578
+Victoria,Reptiles,13:30,7,0.1012
+Victoria,Reptiles,14:00,7,0.1012
+Victoria,Reptiles,14:30,3,0.0434
+Victoria,Reptiles,15:00,2,0.0289
+Victoria,Reptiles,15:30,5,0.0723
+Victoria,Reptiles,16:00,4,0.0578
+Victoria,Reptiles,16:30,7,0.1012
+Victoria,Reptiles,17:00,6,0.0867
+Victoria,Reptiles,17:30,12,0.1734
+Victoria,Reptiles,18:00,26,0.3758
+Victoria,Reptiles,18:30,51,0.7371
+Victoria,Reptiles,19:00,58,0.8383
+Victoria,Reptiles,19:30,102,1.4742
+Victoria,Reptiles,20:00,131,1.8933
+Victoria,Reptiles,20:30,182,2.6304
+Victoria,Reptiles,21:00,283,4.0902
+Victoria,Reptiles,21:30,289,4.1769
+Victoria,Reptiles,22:00,346,5.0007
+Victoria,Reptiles,22:30,333,4.8128
+Victoria,Reptiles,23:00,363,5.2464
+Victoria,Reptiles,23:30,332,4.7984
+Victoria,Reptiles,24:00,173,2.5004
+Western Australia,Amphibians,00:00,18,0.3162
+Western Australia,Amphibians,00:30,14,0.246
+Western Australia,Amphibians,01:00,19,0.3338
+Western Australia,Amphibians,01:30,32,0.5622
+Western Australia,Amphibians,02:00,40,0.7027
+Western Australia,Amphibians,02:30,69,1.2122
+Western Australia,Amphibians,03:00,124,2.1785
+Western Australia,Amphibians,03:30,124,2.1785
+Western Australia,Amphibians,04:00,115,2.0204
+Western Australia,Amphibians,04:30,124,2.1785
+Western Australia,Amphibians,05:00,95,1.669
+Western Australia,Amphibians,05:30,46,0.8082
+Western Australia,Amphibians,06:00,37,0.65
+Western Australia,Amphibians,06:30,35,0.6149
+Western Australia,Amphibians,07:00,14,0.246
+Western Australia,Amphibians,07:30,8,0.1405
+Western Australia,Amphibians,08:00,4338,76.2122
+Western Australia,Amphibians,08:30,3,0.0527
+Western Australia,Amphibians,09:00,3,0.0527
+Western Australia,Amphibians,09:30,2,0.0351
+Western Australia,Amphibians,10:00,2,0.0351
+Western Australia,Amphibians,10:30,3,0.0527
+Western Australia,Amphibians,11:00,1,0.0176
+Western Australia,Amphibians,11:30,1,0.0176
+Western Australia,Amphibians,12:00,3,0.0527
+Western Australia,Amphibians,12:30,2,0.0351
+Western Australia,Amphibians,13:00,1,0.0176
+Western Australia,Amphibians,13:30,2,0.0351
+Western Australia,Amphibians,14:00,1,0.0176
+Western Australia,Amphibians,14:30,8,0.1405
+Western Australia,Amphibians,15:00,9,0.1581
+Western Australia,Amphibians,15:30,14,0.246
+Western Australia,Amphibians,16:00,6,0.1054
+Western Australia,Amphibians,16:30,25,0.4392
+Western Australia,Amphibians,17:00,12,0.2108
+Western Australia,Amphibians,17:30,24,0.4216
+Western Australia,Amphibians,18:00,29,0.5095
+Western Australia,Amphibians,18:30,25,0.4392
+Western Australia,Amphibians,19:00,29,0.5095
+Western Australia,Amphibians,19:30,23,0.4041
+Western Australia,Amphibians,20:00,39,0.6852
+Western Australia,Amphibians,20:30,17,0.2987
+Western Australia,Amphibians,21:00,29,0.5095
+Western Australia,Amphibians,21:30,19,0.3338
+Western Australia,Amphibians,22:00,18,0.3162
+Western Australia,Amphibians,22:30,35,0.6149
+Western Australia,Amphibians,23:00,25,0.4392
+Western Australia,Amphibians,23:30,13,0.2284
+Western Australia,Amphibians,24:00,17,0.2987
+Western Australia,Birds,00:00,8701,1.6784
+Western Australia,Birds,00:30,14473,2.7918
+Western Australia,Birds,01:00,13938,2.6886
+Western Australia,Birds,01:30,8142,1.5706
+Western Australia,Birds,02:00,5498,1.0606
+Western Australia,Birds,02:30,2858,0.5513
+Western Australia,Birds,03:00,1430,0.2758
+Western Australia,Birds,03:30,587,0.1132
+Western Australia,Birds,04:00,485,0.0936
+Western Australia,Birds,04:30,331,0.0638
+Western Australia,Birds,05:00,196,0.0378
+Western Australia,Birds,05:30,124,0.0239
+Western Australia,Birds,06:00,130,0.0251
+Western Australia,Birds,06:30,58,0.0112
+Western Australia,Birds,07:00,76,0.0147
+Western Australia,Birds,07:30,75,0.0145
+Western Australia,Birds,08:00,124209,23.9598
+Western Australia,Birds,08:30,75,0.0145
+Western Australia,Birds,09:00,64,0.0123
+Western Australia,Birds,09:30,57,0.011
+Western Australia,Birds,10:00,102,0.0197
+Western Australia,Birds,10:30,78,0.015
+Western Australia,Birds,11:00,133,0.0257
+Western Australia,Birds,11:30,104,0.0201
+Western Australia,Birds,12:00,175,0.0338
+Western Australia,Birds,12:30,148,0.0285
+Western Australia,Birds,13:00,764,0.1474
+Western Australia,Birds,13:30,4393,0.8474
+Western Australia,Birds,14:00,11040,2.1296
+Western Australia,Birds,14:30,16265,3.1375
+Western Australia,Birds,15:00,25756,4.9683
+Western Australia,Birds,15:30,22990,4.4348
+Western Australia,Birds,16:00,26576,5.1265
+Western Australia,Birds,16:30,20370,3.9294
+Western Australia,Birds,17:00,21470,4.1415
+Western Australia,Birds,17:30,20193,3.8952
+Western Australia,Birds,18:00,19424,3.7469
+Western Australia,Birds,18:30,15269,2.9454
+Western Australia,Birds,19:00,14809,2.8566
+Western Australia,Birds,19:30,13313,2.5681
+Western Australia,Birds,20:00,11953,2.3057
+Western Australia,Birds,20:30,9825,1.8952
+Western Australia,Birds,21:00,11761,2.2687
+Western Australia,Birds,21:30,11810,2.2781
+Western Australia,Birds,22:00,12921,2.4925
+Western Australia,Birds,22:30,11481,2.2147
+Western Australia,Birds,23:00,13293,2.5642
+Western Australia,Birds,23:30,13799,2.6618
+Western Australia,Birds,24:00,6683,1.2891
+Western Australia,Fish,00:00,97,1.5438
+Western Australia,Fish,00:30,146,2.3237
+Western Australia,Fish,01:00,168,2.6739
+Western Australia,Fish,01:30,91,1.4484
+Western Australia,Fish,02:00,164,2.6102
+Western Australia,Fish,02:30,193,3.0718
+Western Australia,Fish,03:00,216,3.4378
+Western Australia,Fish,03:30,161,2.5625
+Western Australia,Fish,04:00,137,2.1805
+Western Australia,Fish,04:30,44,0.7003
+Western Australia,Fish,05:00,52,0.8276
+Western Australia,Fish,05:30,23,0.3661
+Western Australia,Fish,06:00,19,0.3024
+Western Australia,Fish,06:30,5,0.0796
+Western Australia,Fish,07:00,15,0.2387
+Western Australia,Fish,07:30,10,0.1592
+Western Australia,Fish,08:00,92,1.4643
+Western Australia,Fish,08:30,5,0.0796
+Western Australia,Fish,09:00,4,0.0637
+Western Australia,Fish,09:30,6,0.0955
+Western Australia,Fish,10:00,3,0.0477
+Western Australia,Fish,10:30,1,0.0159
+Western Australia,Fish,11:00,3,0.0477
+Western Australia,Fish,11:30,9,0.1432
+Western Australia,Fish,12:00,6,0.0955
+Western Australia,Fish,12:30,14,0.2228
+Western Australia,Fish,13:00,7,0.1114
+Western Australia,Fish,13:30,10,0.1592
+Western Australia,Fish,14:00,7,0.1114
+Western Australia,Fish,14:30,13,0.2069
+Western Australia,Fish,15:00,28,0.4456
+Western Australia,Fish,15:30,64,1.0186
+Western Australia,Fish,16:00,117,1.8622
+Western Australia,Fish,16:30,236,3.7562
+Western Australia,Fish,17:00,314,4.9976
+Western Australia,Fish,17:30,311,4.9499
+Western Australia,Fish,18:00,448,7.1304
+Western Australia,Fish,18:30,462,7.3532
+Western Australia,Fish,19:00,470,7.4805
+Western Australia,Fish,19:30,322,5.1249
+Western Australia,Fish,20:00,318,5.0613
+Western Australia,Fish,20:30,276,4.3928
+Western Australia,Fish,21:00,145,2.3078
+Western Australia,Fish,21:30,179,2.849
+Western Australia,Fish,22:00,184,2.9285
+Western Australia,Fish,22:30,186,2.9604
+Western Australia,Fish,23:00,244,3.8835
+Western Australia,Fish,23:30,157,2.4988
+Western Australia,Fish,24:00,101,1.6075
+Western Australia,Invertebrates,00:00,253,1.6608
+Western Australia,Invertebrates,00:30,398,2.6126
+Western Australia,Invertebrates,01:00,439,2.8817
+Western Australia,Invertebrates,01:30,392,2.5732
+Western Australia,Invertebrates,02:00,405,2.6585
+Western Australia,Invertebrates,02:30,220,1.4441
+Western Australia,Invertebrates,03:00,244,1.6017
+Western Australia,Invertebrates,03:30,246,1.6148
+Western Australia,Invertebrates,04:00,268,1.7592
+Western Australia,Invertebrates,04:30,405,2.6585
+Western Australia,Invertebrates,05:00,436,2.862
+Western Australia,Invertebrates,05:30,414,2.7176
+Western Australia,Invertebrates,06:00,348,2.2844
+Western Australia,Invertebrates,06:30,200,1.3129
+Western Australia,Invertebrates,07:00,164,1.0765
+Western Australia,Invertebrates,07:30,66,0.4332
+Western Australia,Invertebrates,08:00,153,1.0043
+Western Australia,Invertebrates,08:30,31,0.2035
+Western Australia,Invertebrates,09:00,18,0.1182
+Western Australia,Invertebrates,09:30,14,0.0919
+Western Australia,Invertebrates,10:00,13,0.0853
+Western Australia,Invertebrates,10:30,8,0.0525
+Western Australia,Invertebrates,11:00,22,0.1444
+Western Australia,Invertebrates,11:30,14,0.0919
+Western Australia,Invertebrates,12:00,24,0.1575
+Western Australia,Invertebrates,12:30,21,0.1378
+Western Australia,Invertebrates,13:00,56,0.3676
+Western Australia,Invertebrates,13:30,77,0.5054
+Western Australia,Invertebrates,14:00,177,1.1619
+Western Australia,Invertebrates,14:30,205,1.3457
+Western Australia,Invertebrates,15:00,219,1.4376
+Western Australia,Invertebrates,15:30,300,1.9693
+Western Australia,Invertebrates,16:00,396,2.5994
+Western Australia,Invertebrates,16:30,418,2.7439
+Western Australia,Invertebrates,17:00,489,3.2099
+Western Australia,Invertebrates,17:30,543,3.5644
+Western Australia,Invertebrates,18:00,576,3.781
+Western Australia,Invertebrates,18:30,587,3.8532
+Western Australia,Invertebrates,19:00,674,4.4243
+Western Australia,Invertebrates,19:30,656,4.3062
+Western Australia,Invertebrates,20:00,647,4.2471
+Western Australia,Invertebrates,20:30,506,3.3215
+Western Australia,Invertebrates,21:00,497,3.2624
+Western Australia,Invertebrates,21:30,617,4.0502
+Western Australia,Invertebrates,22:00,573,3.7613
+Western Australia,Invertebrates,22:30,547,3.5907
+Western Australia,Invertebrates,23:00,501,3.2887
+Western Australia,Invertebrates,23:30,542,3.5578
+Western Australia,Invertebrates,24:00,215,1.4113
+Western Australia,Mammals,00:00,61,0.2357
+Western Australia,Mammals,00:30,104,0.4018
+Western Australia,Mammals,01:00,123,0.4752
+Western Australia,Mammals,01:30,91,0.3516
+Western Australia,Mammals,02:00,97,0.3748
+Western Australia,Mammals,02:30,64,0.2473
+Western Australia,Mammals,03:00,65,0.2511
+Western Australia,Mammals,03:30,74,0.2859
+Western Australia,Mammals,04:00,99,0.3825
+Western Australia,Mammals,04:30,81,0.313
+Western Australia,Mammals,05:00,79,0.3052
+Western Australia,Mammals,05:30,55,0.2125
+Western Australia,Mammals,06:00,45,0.1739
+Western Australia,Mammals,06:30,33,0.1275
+Western Australia,Mammals,07:00,29,0.112
+Western Australia,Mammals,07:30,24,0.0927
+Western Australia,Mammals,08:00,23108,89.2821
+Western Australia,Mammals,08:30,20,0.0773
+Western Australia,Mammals,09:00,24,0.0927
+Western Australia,Mammals,09:30,18,0.0695
+Western Australia,Mammals,10:00,17,0.0657
+Western Australia,Mammals,10:30,12,0.0464
+Western Australia,Mammals,11:00,19,0.0734
+Western Australia,Mammals,11:30,17,0.0657
+Western Australia,Mammals,12:00,32,0.1236
+Western Australia,Mammals,12:30,18,0.0695
+Western Australia,Mammals,13:00,21,0.0811
+Western Australia,Mammals,13:30,29,0.112
+Western Australia,Mammals,14:00,36,0.1391
+Western Australia,Mammals,14:30,33,0.1275
+Western Australia,Mammals,15:00,57,0.2202
+Western Australia,Mammals,15:30,73,0.282
+Western Australia,Mammals,16:00,71,0.2743
+Western Australia,Mammals,16:30,66,0.255
+Western Australia,Mammals,17:00,64,0.2473
+Western Australia,Mammals,17:30,69,0.2666
+Western Australia,Mammals,18:00,88,0.34
+Western Australia,Mammals,18:30,66,0.255
+Western Australia,Mammals,19:00,78,0.3014
+Western Australia,Mammals,19:30,72,0.2782
+Western Australia,Mammals,20:00,78,0.3014
+Western Australia,Mammals,20:30,65,0.2511
+Western Australia,Mammals,21:00,74,0.2859
+Western Australia,Mammals,21:30,83,0.3207
+Western Australia,Mammals,22:00,70,0.2705
+Western Australia,Mammals,22:30,78,0.3014
+Western Australia,Mammals,23:00,79,0.3052
+Western Australia,Mammals,23:30,78,0.3014
+Western Australia,Mammals,24:00,45,0.1739
+Western Australia,Reptiles,00:00,192,2.4568
+Western Australia,Reptiles,00:30,267,3.4165
+Western Australia,Reptiles,01:00,239,3.0582
+Western Australia,Reptiles,01:30,166,2.1241
+Western Australia,Reptiles,02:00,163,2.0857
+Western Australia,Reptiles,02:30,112,1.4331
+Western Australia,Reptiles,03:00,121,1.5483
+Western Australia,Reptiles,03:30,147,1.881
+Western Australia,Reptiles,04:00,148,1.8938
+Western Australia,Reptiles,04:30,146,1.8682
+Western Australia,Reptiles,05:00,104,1.3308
+Western Australia,Reptiles,05:30,101,1.2924
+Western Australia,Reptiles,06:00,63,0.8061
+Western Australia,Reptiles,06:30,34,0.4351
+Western Australia,Reptiles,07:00,34,0.4351
+Western Australia,Reptiles,07:30,20,0.2559
+Western Australia,Reptiles,08:00,1257,16.0845
+Western Australia,Reptiles,08:30,12,0.1536
+Western Australia,Reptiles,09:00,10,0.128
+Western Australia,Reptiles,09:30,12,0.1536
+Western Australia,Reptiles,10:00,9,0.1152
+Western Australia,Reptiles,10:30,15,0.1919
+Western Australia,Reptiles,11:00,13,0.1663
+Western Australia,Reptiles,11:30,12,0.1536
+Western Australia,Reptiles,12:00,18,0.2303
+Western Australia,Reptiles,12:30,16,0.2047
+Western Australia,Reptiles,13:00,16,0.2047
+Western Australia,Reptiles,13:30,20,0.2559
+Western Australia,Reptiles,14:00,25,0.3199
+Western Australia,Reptiles,14:30,39,0.499
+Western Australia,Reptiles,15:00,49,0.627
+Western Australia,Reptiles,15:30,75,0.9597
+Western Australia,Reptiles,16:00,131,1.6763
+Western Australia,Reptiles,16:30,156,1.9962
+Western Australia,Reptiles,17:00,200,2.5592
+Western Australia,Reptiles,17:30,204,2.6104
+Western Australia,Reptiles,18:00,245,3.135
+Western Australia,Reptiles,18:30,258,3.3013
+Western Australia,Reptiles,19:00,277,3.5445
+Western Australia,Reptiles,19:30,238,3.0454
+Western Australia,Reptiles,20:00,269,3.4421
+Western Australia,Reptiles,20:30,241,3.0838
+Western Australia,Reptiles,21:00,292,3.7364
+Western Australia,Reptiles,21:30,257,3.2885
+Western Australia,Reptiles,22:00,286,3.6596
+Western Australia,Reptiles,22:30,319,4.0819
+Western Australia,Reptiles,23:00,327,4.1843
+Western Australia,Reptiles,23:30,296,3.7876
+Western Australia,Reptiles,24:00,164,2.0985

@@ -1,0 +1,147 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px 10px 20px 10px;
+    background-color: #fff2e0;
+}
+
+p {
+    padding: 5px 20px 5px 20px;
+    box-sizing: border-box;
+    border: 1px solid black;
+    text-align: left;
+}
+
+.main_container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffdbac;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: rgb(255, 132, 95);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 100%;
+}
+
+h2 {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: rgb(255, 177, 76);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 1.75rem;
+}
+
+.standard_card {
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0px 20px 0px;
+    text-align: center;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+
+.inner_card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border: 1px solid rgb(131, 78, 255);
+    box-sizing: border-box;
+}
+
+.inner_inner_card {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    border: 1px solid rgb(255, 0, 0);
+    box-sizing: border-box;
+    display: flex;
+}
+
+.inner_inner_card_2 {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border: 1px solid rgb(255, 0, 0);
+    box-sizing: border-box;
+    display: flex;
+}
+
+.inner_card p {
+    width: 50%;
+}
+
+#ways_to_give_back_vis,
+#binned_wildlife_data_vis,
+#wildlife_endangered_2025_vis,
+#observations_by_animal_group_vis,
+#top_10_species_by_animal_group_vis,
+#combined_species_checklist_2023_2025_vis,
+#wildlife_time_observations_vis,
+#monthly_observations_by_state_animal_group_vis,
+#distinct_animals_by_state_vis,
+#activity_reason_vis,
+#activity_vis {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: white;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+
+.image_card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 0px 0px 0px;
+    box-sizing: border-box;
+    border: 1px solid rgb(43, 211, 241);
+    width: 50%;
+}
+
+.image_card img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+#image_reference {
+    width: 100%;
+    text-align: left;
+    font-size: 14px;
+    padding: 0px 0px 20px 0px;
+}
+
+.paragraph_container {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid brown;
+    width: 50%;
+}
+
+.paragraph_container p {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+}

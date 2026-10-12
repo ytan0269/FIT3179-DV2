@@ -1,0 +1,392 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v6.json",
+  "height": 450,
+  "width": 720,
+  "padding": {"left": 230, "right": 230, "top": 80, "bottom": 20},
+  "autosize": "none",
+
+  "signals": [
+    {
+      "name": "reasonOrder",
+      "value": [
+        "Support for local environment",
+        "Social reasons",
+        "Nature conservation",
+        "Education or work",
+        "Exercise",
+        "Other reasons",
+        "Enjoyment",
+        "Did not know"
+      ]
+    }
+  ],
+
+  "title": {
+    "text": "Why Australians Take Part in Nature Activities, by State and Territory",
+    "subtitle": "Each flow shows how many participants from a state or territory gave a particular reason",
+    "anchor": "middle",
+    "frame": "group",
+    "fontSize": 18,
+    "subtitleFontSize": 13,
+    "offset": 16,
+    "subtitlePadding": 6,
+    "subtitleColor": "#555"
+  },
+
+  "data": [
+    {
+      "name": "rawData",
+      "url": "datasets/activity_reason.csv",
+      "format": {
+        "type": "csv"
+      },
+      "transform": [
+        {
+          "type": "fold",
+          "fields": ["NSW", "VIC", "QLD", "SA", "WA", "TAS", "NT", "ACT"],
+          "as": ["state", "size"]
+        },
+        {
+          "type": "formula",
+          "expr": "{'NSW': 'New South Wales', 'VIC': 'Victoria', 'QLD': 'Queensland', 'SA': 'South Australia', 'WA': 'Western Australia', 'TAS': 'Tasmania', 'NT': 'Northern Territory', 'ACT': 'Australian Capital Territory'}[datum.state]",
+          "as": "stk1"
+        },
+        {
+          "type": "formula",
+          "expr": "datum.Reason",
+          "as": "stk2"
+        },
+        {
+          "type": "formula",
+          "expr": "toNumber(datum.size)",
+          "as": "size"
+        }
+      ]
+    },
+
+    {
+      "name": "links",
+      "source": "rawData",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "datum.size > 0"
+        },
+        {
+          "type": "aggregate",
+          "groupby": ["stk1", "stk2"],
+          "fields": ["size"],
+          "ops": ["sum"],
+          "as": ["size"]
+        }
+      ]
+    },
+
+    {
+      "name": "nodes",
+      "source": "links",
+      "transform": [
+        {
+          "type": "formula",
+          "expr": "datum.stk1 + '|' + datum.stk2",
+          "as": "key"
+        },
+        {
+          "type": "fold",
+          "fields": ["stk1", "stk2"],
+          "as": ["stack", "grpId"]
+        },
+        {
+          "type": "formula",
+          "expr": "datum.stack == 'stk1' ? datum.stk1 + ' ' + datum.stk2 : (9 - indexof(reasonOrder, datum.stk2)) + ' ' + datum.stk1",
+          "as": "sortField"
+        },
+        {
+          "type": "stack",
+          "groupby": ["stack"],
+          "sort": {
+            "field": "sortField",
+            "order": "descending"
+          },
+          "field": "size"
+        },
+        {
+          "type": "formula",
+          "expr": "(datum.y0 + datum.y1) / 2",
+          "as": "yc"
+        }
+      ]
+    },
+
+    {
+      "name": "groups",
+      "source": "nodes",
+      "transform": [
+        {
+          "type": "aggregate",
+          "groupby": ["stack", "grpId"],
+          "fields": ["size"],
+          "ops": ["sum"],
+          "as": ["total"]
+        },
+        {
+          "type": "formula",
+          "expr": "datum.stack == 'stk1' ? datum.grpId : '' + (9 - indexof(reasonOrder, datum.grpId))",
+          "as": "orderField"
+        },
+        {
+          "type": "stack",
+          "groupby": ["stack"],
+          "sort": {
+            "field": "orderField",
+            "order": "descending"
+          },
+          "field": "total"
+        },
+        {
+          "type": "formula",
+          "expr": "scale('y', datum.y0)",
+          "as": "scaledY0"
+        },
+        {
+          "type": "formula",
+          "expr": "scale('y', datum.y1)",
+          "as": "scaledY1"
+        }
+      ]
+    },
+
+    {
+      "name": "destinationNodes",
+      "source": "nodes",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "datum.stack == 'stk2'"
+        }
+      ]
+    },
+
+    {
+      "name": "edges",
+      "source": "nodes",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "datum.stack == 'stk1'"
+        },
+        {
+          "type": "lookup",
+          "from": "destinationNodes",
+          "key": "key",
+          "fields": ["key"],
+          "as": ["target"]
+        },
+        {
+          "type": "linkpath",
+          "orient": "horizontal",
+          "shape": "diagonal",
+          "sourceY": {
+            "expr": "scale('y', datum.yc)"
+          },
+          "sourceX": {
+            "expr": "scale('x', 'stk1') + bandwidth('x')"
+          },
+          "targetY": {
+            "expr": "scale('y', datum.target.yc)"
+          },
+          "targetX": {
+            "expr": "scale('x', 'stk2')"
+          }
+        },
+        {
+          "type": "formula",
+          "expr": "range('y')[0] - scale('y', datum.size)",
+          "as": "strokeWidth"
+        }
+      ]
+    }
+  ],
+
+  "scales": [
+    {
+      "name": "x",
+      "type": "band",
+      "range": "width",
+      "domain": ["stk1", "stk2"],
+      "paddingOuter": 0.05,
+      "paddingInner": 0.95
+    },
+
+    {
+      "name": "y",
+      "type": "linear",
+      "range": "height",
+      "domain": {
+        "data": "nodes",
+        "field": "y1"
+      }
+    },
+
+    {
+      "name": "stateColor",
+      "type": "ordinal",
+      "domain": [
+        "New South Wales",
+        "Victoria",
+        "Queensland",
+        "South Australia",
+        "Western Australia",
+        "Tasmania",
+        "Northern Territory",
+        "Australian Capital Territory"
+      ],
+      "range": [
+        "#4C78A8",
+        "#F58518",
+        "#54A24B",
+        "#E45756",
+        "#72B7B2",
+        "#B279A2",
+        "#FF9DA6",
+        "#79706E"
+      ]
+    },
+
+    {
+      "name": "reasonColor",
+      "type": "ordinal",
+      "domain": [
+        "Support for local environment",
+        "Nature conservation",
+        "Enjoyment",
+        "Social reasons",
+        "Exercise",
+        "Education or work",
+        "Other reasons",
+        "Did not know"
+      ],
+      "range": [
+        "#4C78A8",
+        "#F58518",
+        "#54A24B",
+        "#E45756",
+        "#72B7B2",
+        "#B279A2",
+        "#FF9DA6",
+        "#79706E"
+      ]
+    }
+  ],
+
+  "marks": [
+    {
+      "type": "path",
+      "name": "edgeMark",
+      "from": {
+        "data": "edges"
+      },
+      "clip": true,
+      "encode": {
+        "update": {
+          "stroke": {
+            "scale": "stateColor",
+            "field": "stk1"
+          },
+          "strokeWidth": {
+            "field": "strokeWidth"
+          },
+          "path": {
+            "field": "path"
+          },
+          "strokeOpacity": {
+            "value": 0.3
+          },
+          "tooltip": {
+            "signal": "datum.stk1 + ' → ' + datum.stk2 + '    ' + format(datum.size, ',.0f') + ' participants'"
+          }
+        },
+        "hover": {
+          "strokeOpacity": {
+            "value": 0.8
+          }
+        }
+      }
+    },
+
+    {
+      "type": "rect",
+      "name": "groupMark",
+      "from": {
+        "data": "groups"
+      },
+      "encode": {
+        "enter": {
+          "width": {
+            "scale": "x",
+            "band": 1
+          }
+        },
+        "update": {
+          "x": {
+            "scale": "x",
+            "field": "stack"
+          },
+          "y": {
+            "field": "scaledY0"
+          },
+          "y2": {
+            "field": "scaledY1"
+          },
+          "fill": {
+            "signal": "datum.stack == 'stk1' ? scale('stateColor', datum.grpId) : scale('reasonColor', datum.grpId)"
+          },
+          "fillOpacity": {
+            "value": 0.8
+          },
+          "tooltip": {
+            "signal": "datum.grpId + '    ' + format(datum.total, ',.0f') + ' participants'"
+          }
+        },
+        "hover": {
+          "fillOpacity": {
+            "value": 1
+          }
+        }
+      }
+    },
+
+    {
+      "type": "text",
+      "from": {
+        "data": "groups"
+      },
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": {
+            "signal": "datum.stack == 'stk1' ? scale('x', datum.stack) - 10 : scale('x', datum.stack) + bandwidth('x') + 10"
+          },
+          "y": {
+            "signal": "(datum.scaledY0 + datum.scaledY1) / 2"
+          },
+          "align": {
+            "signal": "datum.stack == 'stk1' ? 'right' : 'left'"
+          },
+          "baseline": {
+            "value": "middle"
+          },
+          "fontSize": {
+            "value": 13
+          },
+          "fontWeight": {
+            "value": "bold"
+          },
+          "text": {
+            "field": "grpId"
+          }
+        }
+      }
+    }
+  ]
+}

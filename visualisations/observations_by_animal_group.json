@@ -1,0 +1,72 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+
+  "width": 400,
+  "height": 400,
+  "padding": {"left": 10, "right": 10, "top": 15, "bottom": 15},
+
+  "title": {
+    "text": "Wildlife Observations by Animal Group",
+    "subtitle": "Share of total observations recorded, split by animal group",
+    "anchor": "middle",
+    "frame": "bounds",
+    "fontSize": 18,
+    "subtitleFontSize": 13,
+    "subtitleColor": "#555",
+    "offset": 16,
+    "subtitlePadding": 6
+  },
+
+  "data": {
+    "url": "datasets/observations_by_animal_group.csv",
+    "format": {"type": "csv"}
+  },
+
+  "transform": [
+    {"calculate": "toNumber(datum.observations)", "as": "obs"},
+    {"joinaggregate": [{"op": "sum", "field": "obs", "as": "total"}]},
+    {"calculate": "datum.obs / datum.total", "as": "pct"}
+  ],
+
+  "mark": {
+    "type": "arc",
+    "innerRadius": 85,
+    "outerRadius": 190,
+    "stroke": "#fff",
+    "strokeWidth": 2
+  },
+
+  "encoding": {
+    "theta": {
+      "field": "obs",
+      "type": "quantitative",
+      "stack": true
+    },
+    "order": {
+      "field": "obs",
+      "type": "quantitative",
+      "sort": "descending"
+    },
+    "color": {
+      "field": "animal_group",
+      "type": "nominal",
+      "scale": {"scheme": "set2"},
+      "legend": {
+        "title": "Animal Group",
+        "titleFontSize": 13,
+        "labelFontSize": 12,
+        "orient": "none",
+        "legendX": 415,
+        "legendY": 40,
+        "padding": 0
+      }
+    },
+    "tooltip": [
+      {"field": "animal_group", "type": "nominal", "title": "Animal Group"},
+      {"field": "obs", "type": "quantitative", "title": "Observations", "format": ","},
+      {"field": "pct", "type": "quantitative", "title": "Share", "format": ".1%"}
+    ]
+  },
+
+  "view": {"stroke": null}
+}

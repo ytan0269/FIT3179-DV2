@@ -1,0 +1,402 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v6.json",
+  "width": 750,
+  "height": 520,
+  "padding": {"left": 15, "right": 15, "top": 15, "bottom": 0},
+  "autosize": "none",
+
+  "title": {
+    "text": "Participation by Activity Across Australian States and Territories",
+    "subtitle": "Each section shows how that state's participants are split across activities",
+    "anchor": "middle",
+    "fontSize": 22,
+    "subtitleFontSize": 17,
+    "offset": 40,
+    "subtitlePadding": 6,
+    "subtitleColor": "#555"
+  },
+
+  "signals": [
+    {"name": "R", "value": 260},
+    {"name": "ringW", "update": "R / 2"},
+    {"name": "topPad", "value": 60},
+    {"name": "cx", "update": "width / 2"},
+    {"name": "cy", "update": "topPad + R"},
+    {"name": "colGap", "value": 90},
+    {"name": "labelStep", "value": 22},
+    {"name": "advLy", "update": "cy - R - 40 + labelStep"},
+    {"name": "exitGap", "value": 0.2},
+    {"name": "charsPerLine", "value": 14},
+    {"name": "charW", "value": 7.7},
+    {"name": "lineH", "value": 16},
+    {
+      "name": "hoverId",
+      "value": null,
+      "on": [
+        {"events": "arc:mouseover", "update": "datum.id"},
+        {"events": "arc:mouseout", "update": "null"}
+      ]
+    }
+  ],
+
+  "data": [
+    {
+      "name": "raw",
+      "url": "datasets/ways_to_give_back.csv",
+      "format": {"type": "csv", "parse": {"Frequency": "number"}},
+      "transform": [
+        {"type": "filter", "expr": "datum.State === 'AUST'"}
+      ]
+    },
+    {
+      "name": "rootnode",
+      "values": [{"id": "All", "parent": null, "size": null, "total": null}]
+    },
+    {
+      "name": "types",
+      "source": "raw",
+      "transform": [
+        {
+          "type": "aggregate",
+          "groupby": ["Activity Type"],
+          "ops": ["sum"],
+          "fields": ["Frequency"],
+          "as": ["total"]
+        },
+        {"type": "formula", "as": "id", "expr": "datum['Activity Type']"},
+        {"type": "formula", "as": "parent", "expr": "'All'"},
+        {"type": "formula", "as": "size", "expr": "null"}
+      ]
+    },
+    {
+      "name": "leaves",
+      "source": "raw",
+      "transform": [
+        {"type": "formula", "as": "id", "expr": "datum['Activity Subtype']"},
+        {"type": "formula", "as": "parent", "expr": "datum['Activity Type']"},
+        {"type": "formula", "as": "size", "expr": "datum.Frequency"},
+        {"type": "formula", "as": "total", "expr": "datum.Frequency"}
+      ]
+    },
+    {
+      "name": "tree",
+      "source": ["rootnode", "types", "leaves"],
+      "transform": [
+        {
+          "type": "stratify",
+          "key": "id",
+          "parentKey": "parent"
+        },
+        {
+          "type": "partition",
+          "field": "size",
+          "sort": {"field": "value"},
+          "size": [{"signal": "2 * PI"}, {"signal": "3 * ringW"}],
+          "as": ["a0", "r0", "a1", "r1", "depth", "children"]
+        }
+      ]
+    },
+    {
+      "name": "nodes",
+      "source": "tree",
+      "transform": [
+        {"type": "filter", "expr": "datum.depth > 0"},
+        {"type": "formula", "as": "mid", "expr": "(datum.a0 + datum.a1) / 2"},
+        {"type": "formula", "as": "ri0", "expr": "datum.r0 - ringW"},
+        {"type": "formula", "as": "ri1", "expr": "datum.r1 - ringW"},
+        {
+          "type": "formula",
+          "as": "short",
+          "expr": "datum.depth === 1 ? replace(datum.id, ' work undertaken for nature conservation', '') : datum.id"
+        },
+        {
+          "type": "formula",
+          "as": "label",
+          "expr": "datum.depth === 1 ? datum.short : trim(replace(datum.short, regexp('(.{1,' + charsPerLine + '})(\\\\s+|$)', 'g'), '$1\\n'))"
+        },
+        {
+          "type": "formula",
+          "as": "nlines",
+          "expr": "length(split(datum.label, '\\n'))"
+        },
+        {
+          "type": "formula",
+          "as": "lw",
+          "expr": "datum.depth === 1 ? length(datum.short) * 8.4 : min(length(datum.short), charsPerLine) * charW"
+        },
+        {"type": "formula", "as": "lh", "expr": "datum.nlines * lineH"},
+        {
+          "type": "formula",
+          "as": "arcLen",
+          "expr": "(datum.a1 - datum.a0) * (datum.ri0 + datum.ri1) / 2"
+        },
+        {
+          "type": "formula",
+          "as": "fits",
+          "expr": "datum.lw * abs(cos(datum.mid)) + datum.lh * abs(sin(datum.mid)) + 6 <= datum.arcLen && datum.lw * abs(sin(datum.mid)) + datum.lh * abs(cos(datum.mid)) + 6 <= ringW"
+        }
+      ]
+    },
+    {
+      "name": "hoverNode",
+      "source": "nodes",
+      "transform": [
+        {"type": "filter", "expr": "hoverId !== null && datum.id === hoverId"}
+      ]
+    },
+    {
+      "name": "inside",
+      "source": "nodes",
+      "transform": [{"type": "filter", "expr": "datum.fits"}]
+    },
+    {
+      "name": "outSub",
+      "source": "nodes",
+      "transform": [
+        {"type": "filter", "expr": "!datum.fits && datum.depth === 2"},
+        {
+          "type": "window",
+          "groupby": ["parent"],
+          "sort": {"field": "mid", "order": "ascending"},
+          "ops": ["row_number"],
+          "as": ["rk"]
+        },
+        {
+          "type": "joinaggregate",
+          "groupby": ["parent"],
+          "ops": ["count"],
+          "fields": [null],
+          "as": ["n"]
+        },
+        {
+          "type": "formula",
+          "as": "side",
+          "expr": "datum.rk <= ceil(datum.n / 2) ? 'L' : 'R'"
+        },
+        {
+          "type": "formula",
+          "as": "k",
+          "expr": "datum.side === 'L' ? datum.rk - 1 : datum.n - datum.rk"
+        },
+        {
+          "type": "formula",
+          "as": "ly",
+          "expr": "cy - R - 40 - datum.k * labelStep"
+        },
+        {
+          "type": "formula",
+          "as": "ax",
+          "expr": "datum.side === 'L' ? cx - colGap : cx + colGap"
+        }
+      ]
+    },
+    {
+      "name": "outType",
+      "source": "nodes",
+      "transform": [
+        {"type": "filter", "expr": "!datum.fits && datum.depth === 1"},
+        {"type": "formula", "as": "exAng", "expr": "datum.a0 - exitGap"}
+      ]
+    }
+  ],
+
+  "scales": [
+    {
+      "name": "color",
+      "type": "ordinal",
+      "domain": {"data": "nodes", "field": "depth"},
+      "range": ["#6d93bd", "#bcdcf0"]
+    }
+  ],
+
+  "marks": [
+    {
+      "type": "arc",
+      "from": {"data": "nodes"},
+      "encode": {
+        "enter": {
+          "x": {"signal": "cx"},
+          "y": {"signal": "cy"},
+          "fill": {"scale": "color", "field": "depth"}
+        },
+        "update": {
+          "startAngle": {"field": "a0"},
+          "endAngle": {"field": "a1"},
+          "innerRadius": {"field": "ri0"},
+          "outerRadius": {"field": "ri1"},
+          "stroke": {"value": "white"},
+          "strokeWidth": {"value": 1.5},
+          "tooltip": {"signal": "datum.id + ', ' + format(datum.total, ',')"}
+        }
+      }
+    },
+    {
+      "type": "arc",
+      "from": {"data": "hoverNode"},
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": {"signal": "cx"},
+          "y": {"signal": "cy"},
+          "startAngle": {"field": "a0"},
+          "endAngle": {"field": "a1"},
+          "innerRadius": {"field": "ri0"},
+          "outerRadius": {"field": "ri1"},
+          "fill": {"value": null},
+          "stroke": {"value": "red"},
+          "strokeWidth": {"value": 2.5},
+          "strokeJoin": {"value": "miter"}
+        }
+      }
+    },
+    {
+      "type": "rule",
+      "from": {"data": "outSub"},
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": {"signal": "cx + (R - 6) * sin(datum.mid)"},
+          "y": {"signal": "cy - (R - 6) * cos(datum.mid)"},
+          "x2": {"field": "ax"},
+          "y2": {"field": "ly"},
+          "stroke": {"value": "#444444"},
+          "strokeWidth": {"value": 0.75}
+        }
+      }
+    },
+    {
+      "type": "symbol",
+      "from": {"data": "outSub"},
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": {"signal": "cx + (R - 6) * sin(datum.mid)"},
+          "y": {"signal": "cy - (R - 6) * cos(datum.mid)"},
+          "size": {"value": 16},
+          "fill": {"value": "#333333"},
+          "stroke": {"value": "white"},
+          "strokeWidth": {"value": 0.75}
+        }
+      }
+    },
+    {
+      "type": "rule",
+      "from": {"data": "outType"},
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": {"signal": "cx + ringW * 0.55 * sin(datum.mid)"},
+          "y": {"signal": "cy - ringW * 0.55 * cos(datum.mid)"},
+          "x2": {"signal": "cx + R * sin(datum.exAng)"},
+          "y2": {"signal": "cy - R * cos(datum.exAng)"},
+          "stroke": {"value": "white"},
+          "strokeWidth": {"value": 3.5},
+          "strokeOpacity": {"value": 0.8}
+        }
+      }
+    },
+    {
+      "type": "rule",
+      "from": {"data": "outType"},
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": {"signal": "cx + ringW * 0.55 * sin(datum.mid)"},
+          "y": {"signal": "cy - ringW * 0.55 * cos(datum.mid)"},
+          "x2": {"signal": "cx + R * sin(datum.exAng)"},
+          "y2": {"signal": "cy - R * cos(datum.exAng)"},
+          "stroke": {"value": "#222222"},
+          "strokeWidth": {"value": 1.25}
+        }
+      }
+    },
+    {
+      "type": "rule",
+      "from": {"data": "outType"},
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": {"signal": "cx + R * sin(datum.exAng)"},
+          "y": {"signal": "cy - R * cos(datum.exAng)"},
+          "x2": {"signal": "cx - colGap"},
+          "y2": {"signal": "advLy"},
+          "stroke": {"value": "#222222"},
+          "strokeWidth": {"value": 1.25}
+        }
+      }
+    },
+    {
+      "type": "symbol",
+      "from": {"data": "outType"},
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": {"signal": "cx + ringW * 0.55 * sin(datum.mid)"},
+          "y": {"signal": "cy - ringW * 0.55 * cos(datum.mid)"},
+          "size": {"value": 30},
+          "fill": {"value": "#222222"},
+          "stroke": {"value": "white"},
+          "strokeWidth": {"value": 1}
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {"data": "inside"},
+      "interactive": false,
+      "encode": {
+        "enter": {
+          "align": {"value": "center"},
+          "baseline": {"value": "middle"},
+          "lineBreak": {"value": "\n"},
+          "lineHeight": {"signal": "lineH"},
+          "fontSize": {"value": 16},
+          "fontWeight": {"signal": "datum.depth === 1 ? 'bold' : 'normal'"},
+          "fill": {"value": "#000000"},
+          "text": {"field": "label"}
+        },
+        "update": {
+          "x": {"signal": "cx + (datum.ri0 + datum.ri1) / 2 * sin(datum.mid)"},
+          "y": {"signal": "cy - (datum.ri0 + datum.ri1) / 2 * cos(datum.mid)"}
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {"data": "outSub"},
+      "interactive": false,
+      "encode": {
+        "enter": {
+          "baseline": {"value": "middle"},
+          "fontSize": {"value": 16},
+          "fill": {"value": "#000000"},
+          "text": {"field": "short"}
+        },
+        "update": {
+          "x": {"signal": "datum.side === 'L' ? datum.ax - 6 : datum.ax + 6"},
+          "y": {"field": "ly"},
+          "align": {"signal": "datum.side === 'L' ? 'right' : 'left'"}
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {"data": "outType"},
+      "interactive": false,
+      "encode": {
+        "enter": {
+          "align": {"value": "right"},
+          "baseline": {"value": "middle"},
+          "fontSize": {"value": 16},
+          "fontWeight": {"value": "bold"},
+          "fill": {"value": "#000000"},
+          "text": {"field": "short"}
+        },
+        "update": {
+          "x": {"signal": "cx - colGap - 6"},
+          "y": {"signal": "advLy"}
+        }
+      }
+    }
+  ]
+}

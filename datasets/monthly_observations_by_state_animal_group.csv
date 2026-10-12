@@ -1,0 +1,757 @@
+state,animal_group,month,year,season,observations,percentage_observation
+All States,All,1,2025,Summer,1006303,13.199949052519846
+All States,All,2,2025,Summer,773185,10.142077096234988
+All States,All,3,2025,Autumn,796495,10.447840680775865
+All States,All,4,2025,Autumn,852363,11.180676371086019
+All States,All,5,2025,Autumn,756408,9.922008642445102
+All States,All,6,2025,Winter,778482,10.211559280160902
+All States,All,7,2025,Winter,824276,10.81225158348415
+All States,All,8,2025,Winter,919448,12.060648489015007
+All States,All,9,2025,Spring,228606,2.998686830010794
+All States,All,10,2025,Spring,265461,3.4821238488119097
+All States,All,11,2025,Spring,219880,2.8842255241891
+All States,All,12,2025,Summer,202630,2.6579526012663153
+All States,Amphibians,1,2025,Summer,2768,8.655950966289323
+All States,Amphibians,2,2025,Summer,2638,8.24942147726562
+All States,Amphibians,3,2025,Autumn,2209,6.9078741634873975
+All States,Amphibians,4,2025,Autumn,1966,6.147976734004628
+All States,Amphibians,5,2025,Autumn,1290,4.0340233910813685
+All States,Amphibians,6,2025,Winter,1031,3.224091562949528
+All States,Amphibians,7,2025,Winter,1263,3.9495903433610606
+All States,Amphibians,8,2025,Winter,2007,6.276189880542874
+All States,Amphibians,9,2025,Spring,5975,18.68472074551254
+All States,Amphibians,10,2025,Spring,4463,13.956470073175309
+All States,Amphibians,11,2025,Spring,3772,11.795609481518545
+All States,Amphibians,12,2025,Summer,2596,8.118081180811808
+All States,Birds,1,2025,Summer,930751,13.50539642122978
+All States,Birds,2,2025,Summer,711227,10.320056148725053
+All States,Birds,3,2025,Autumn,730370,10.597825180068131
+All States,Birds,4,2025,Autumn,797758,11.575639497789876
+All States,Birds,5,2025,Autumn,713208,10.34880088314968
+All States,Birds,6,2025,Winter,743358,10.786283842716824
+All States,Birds,7,2025,Winter,784229,11.379330809233197
+All States,Birds,8,2025,Winter,873582,12.675861982904937
+All States,Birds,9,2025,Spring,163631,2.3743208675599057
+All States,Birds,10,2025,Spring,175024,2.5396357384835695
+All States,Birds,11,2025,Spring,139765,2.0280200943250986
+All States,Birds,12,2025,Summer,128794,1.8688285338139505
+All States,Fish,1,2025,Summer,5060,4.936778020605683
+All States,Fish,2,2025,Summer,6179,6.028527942553856
+All States,Fish,3,2025,Autumn,10395,10.141859194505152
+All States,Fish,4,2025,Autumn,6979,6.809046206681237
+All States,Fish,5,2025,Autumn,5754,5.613877614736184
+All States,Fish,6,2025,Winter,5353,5.222642834842335
+All States,Fish,7,2025,Winter,9185,8.961325320012488
+All States,Fish,8,2025,Winter,11181,10.908718389010302
+All States,Fish,9,2025,Spring,9829,9.58964252263503
+All States,Fish,10,2025,Spring,12610,12.302919138307837
+All States,Fish,11,2025,Spring,12342,12.041445519825164
+All States,Fish,12,2025,Summer,7629,7.443217296284733
+All States,Invertebrates,1,2025,Summer,44647,12.951182509362319
+All States,Invertebrates,2,2025,Summer,32365,9.388425245044715
+All States,Invertebrates,3,2025,Autumn,30146,8.744738681820422
+All States,Invertebrates,4,2025,Autumn,23937,6.943634638981473
+All States,Invertebrates,5,2025,Autumn,14532,4.215436294175492
+All States,Invertebrates,6,2025,Winter,11026,3.1984173258724864
+All States,Invertebrates,7,2025,Winter,11890,3.4490460733379162
+All States,Invertebrates,8,2025,Winter,15648,4.539165092985006
+All States,Invertebrates,9,2025,Spring,27281,7.91366071713471
+All States,Invertebrates,10,2025,Spring,44884,13.019931367174015
+All States,Invertebrates,11,2025,Spring,40853,11.850620625237502
+All States,Invertebrates,12,2025,Summer,47524,13.78574142887394
+All States,Mammals,1,2025,Summer,15668,8.67994770314889
+All States,Mammals,2,2025,Summer,14743,8.167505041327807
+All States,Mammals,3,2025,Autumn,16333,9.048352427593237
+All States,Mammals,4,2025,Autumn,15922,8.820661688124625
+All States,Mammals,5,2025,Autumn,18235,10.102045338710749
+All States,Mammals,6,2025,Winter,15528,8.602388813792187
+All States,Mammals,7,2025,Winter,15689,8.691581536552397
+All States,Mammals,8,2025,Winter,13827,7.660048308108228
+All States,Mammals,9,2025,Spring,14304,7.924302523987857
+All States,Mammals,10,2025,Spring,17607,9.754138320739248
+All States,Mammals,11,2025,Spring,13618,7.544263966140005
+All States,Mammals,12,2025,Summer,9034,5.004764331774769
+All States,Reptiles,1,2025,Summer,7409,10.272443674176776
+All States,Reptiles,2,2025,Summer,6033,8.364644714038128
+All States,Reptiles,3,2025,Autumn,7042,9.763604852686308
+All States,Reptiles,4,2025,Autumn,5801,8.042980935875217
+All States,Reptiles,5,2025,Autumn,3389,4.698786828422877
+All States,Reptiles,6,2025,Winter,2186,3.030849220103986
+All States,Reptiles,7,2025,Winter,2020,2.800693240901213
+All States,Reptiles,8,2025,Winter,3203,4.440901213171577
+All States,Reptiles,9,2025,Spring,7586,10.51785095320624
+All States,Reptiles,10,2025,Spring,10873,15.07521663778163
+All States,Reptiles,11,2025,Spring,9530,13.21317157712305
+All States,Reptiles,12,2025,Summer,7053,9.778856152512997
+Australian Capital Territory,All,1,2025,Summer,41604,16.8507515279651
+Australian Capital Territory,All,2,2025,Summer,28747,11.643316848726391
+Australian Capital Territory,All,3,2025,Autumn,28016,11.347241967298103
+Australian Capital Territory,All,4,2025,Autumn,33548,13.587852424290292
+Australian Capital Territory,All,5,2025,Autumn,27434,11.111516138308687
+Australian Capital Territory,All,6,2025,Winter,20710,8.388113261805529
+Australian Capital Territory,All,7,2025,Winter,21784,8.823112472002496
+Australian Capital Territory,All,8,2025,Winter,28541,11.55988124602567
+Australian Capital Territory,All,9,2025,Spring,3662,1.4832095975244737
+Australian Capital Territory,All,10,2025,Spring,4285,1.7355415416145195
+Australian Capital Territory,All,11,2025,Spring,4233,1.7144801273405508
+Australian Capital Territory,All,12,2025,Summer,4333,1.7549828470981828
+Australian Capital Territory,Amphibians,1,2025,Summer,19,11.377245508982035
+Australian Capital Territory,Amphibians,2,2025,Summer,12,7.18562874251497
+Australian Capital Territory,Amphibians,3,2025,Autumn,18,10.778443113772456
+Australian Capital Territory,Amphibians,4,2025,Autumn,6,3.592814371257485
+Australian Capital Territory,Amphibians,5,2025,Autumn,5,2.9940119760479043
+Australian Capital Territory,Amphibians,6,2025,Winter,3,1.7964071856287425
+Australian Capital Territory,Amphibians,7,2025,Winter,7,4.191616766467066
+Australian Capital Territory,Amphibians,8,2025,Winter,10,5.9880239520958085
+Australian Capital Territory,Amphibians,9,2025,Spring,20,11.976047904191617
+Australian Capital Territory,Amphibians,10,2025,Spring,29,17.365269461077844
+Australian Capital Territory,Amphibians,11,2025,Spring,21,12.574850299401197
+Australian Capital Territory,Amphibians,12,2025,Summer,17,10.179640718562874
+Australian Capital Territory,Birds,1,2025,Summer,39373,17.119588848113814
+Australian Capital Territory,Birds,2,2025,Summer,26769,11.639302920152355
+Australian Capital Territory,Birds,3,2025,Autumn,26174,11.380593770109746
+Australian Capital Territory,Birds,4,2025,Autumn,32543,14.149868688801154
+Australian Capital Territory,Birds,5,2025,Autumn,26885,11.68974033427831
+Australian Capital Territory,Birds,6,2025,Winter,20400,8.870028001460946
+Australian Capital Territory,Birds,7,2025,Winter,21492,9.34483538271562
+Australian Capital Territory,Birds,8,2025,Winter,27872,12.118893159643111
+Australian Capital Territory,Birds,9,2025,Spring,2638,1.1470163660712733
+Australian Capital Territory,Birds,10,2025,Spring,2152,0.935700993095292
+Australian Capital Territory,Birds,11,2025,Spring,1738,0.7556916013009374
+Australian Capital Territory,Birds,12,2025,Summer,1952,0.8487399342574395
+Australian Capital Territory,Fish,1,2025,Summer,32,16.93121693121693
+Australian Capital Territory,Fish,2,2025,Summer,19,10.052910052910052
+Australian Capital Territory,Fish,3,2025,Autumn,18,9.523809523809524
+Australian Capital Territory,Fish,4,2025,Autumn,13,6.878306878306878
+Australian Capital Territory,Fish,5,2025,Autumn,27,14.285714285714285
+Australian Capital Territory,Fish,6,2025,Winter,1,0.5291005291005291
+Australian Capital Territory,Fish,7,2025,Winter,3,1.5873015873015872
+Australian Capital Territory,Fish,8,2025,Winter,1,0.5291005291005291
+Australian Capital Territory,Fish,9,2025,Spring,21,11.11111111111111
+Australian Capital Territory,Fish,10,2025,Spring,10,5.291005291005291
+Australian Capital Territory,Fish,11,2025,Spring,29,15.343915343915343
+Australian Capital Territory,Fish,12,2025,Summer,15,7.936507936507936
+Australian Capital Territory,Invertebrates,1,2025,Summer,1852,14.053725906814387
+Australian Capital Territory,Invertebrates,2,2025,Summer,1682,12.7636970708757
+Australian Capital Territory,Invertebrates,3,2025,Autumn,1542,11.701320382455608
+Australian Capital Territory,Invertebrates,4,2025,Autumn,749,5.683715283047503
+Australian Capital Territory,Invertebrates,5,2025,Autumn,360,2.7318257702230992
+Australian Capital Territory,Invertebrates,6,2025,Winter,118,0.8954317802397936
+Australian Capital Territory,Invertebrates,7,2025,Winter,100,0.7588404917286387
+Australian Capital Territory,Invertebrates,8,2025,Winter,426,3.2326604947640005
+Australian Capital Territory,Invertebrates,9,2025,Spring,707,5.3650022765214755
+Australian Capital Territory,Invertebrates,10,2025,Spring,1662,12.611928972529974
+Australian Capital Territory,Invertebrates,11,2025,Spring,2036,15.449992411595082
+Australian Capital Territory,Invertebrates,12,2025,Summer,1944,14.751859159204736
+Australian Capital Territory,Mammals,1,2025,Summer,146,7.381193124368049
+Australian Capital Territory,Mammals,2,2025,Summer,88,4.448938321536906
+Australian Capital Territory,Mammals,3,2025,Autumn,123,6.21840242669363
+Australian Capital Territory,Mammals,4,2025,Autumn,176,8.897876643073811
+Australian Capital Territory,Mammals,5,2025,Autumn,137,6.9261880687563195
+Australian Capital Territory,Mammals,6,2025,Winter,180,9.100101112234581
+Australian Capital Territory,Mammals,7,2025,Winter,172,8.695652173913043
+Australian Capital Territory,Mammals,8,2025,Winter,214,10.819009100101113
+Australian Capital Territory,Mammals,9,2025,Spring,182,9.201213346814964
+Australian Capital Territory,Mammals,10,2025,Spring,181,9.150657229524771
+Australian Capital Territory,Mammals,11,2025,Spring,163,8.240647118301315
+Australian Capital Territory,Mammals,12,2025,Summer,216,10.920121334681497
+Australian Capital Territory,Reptiles,1,2025,Summer,182,13.027916964924838
+Australian Capital Territory,Reptiles,2,2025,Summer,177,12.670007158196134
+Australian Capital Territory,Reptiles,3,2025,Autumn,141,10.093056549749463
+Australian Capital Territory,Reptiles,4,2025,Autumn,61,4.366499642090194
+Australian Capital Territory,Reptiles,5,2025,Autumn,20,1.4316392269148175
+Australian Capital Territory,Reptiles,6,2025,Winter,8,0.5726556907659269
+Australian Capital Territory,Reptiles,7,2025,Winter,10,0.7158196134574087
+Australian Capital Territory,Reptiles,8,2025,Winter,18,1.288475304223336
+Australian Capital Territory,Reptiles,9,2025,Spring,94,6.728704366499643
+Australian Capital Territory,Reptiles,10,2025,Spring,251,17.96707229778096
+Australian Capital Territory,Reptiles,11,2025,Spring,246,17.609162491052256
+Australian Capital Territory,Reptiles,12,2025,Summer,189,13.528990694345024
+New South Wales,All,1,2025,Summer,272061,13.14277681322408
+New South Wales,All,2,2025,Summer,235310,11.367402207298209
+New South Wales,All,3,2025,Autumn,229708,11.096779678866419
+New South Wales,All,4,2025,Autumn,252300,12.188158501131861
+New South Wales,All,5,2025,Autumn,201386,9.728594878751252
+New South Wales,All,6,2025,Winter,201161,9.71772553407129
+New South Wales,All,7,2025,Winter,184879,8.931171444830587
+New South Wales,All,8,2025,Winter,216385,10.453169549216875
+New South Wales,All,9,2025,Spring,64852,3.132883294155384
+New South Wales,All,10,2025,Spring,81789,3.951079253464423
+New South Wales,All,11,2025,Spring,63777,3.08095198068445
+New South Wales,All,12,2025,Summer,66434,3.2093068643051685
+New South Wales,Amphibians,1,2025,Summer,1209,12.595061985623502
+New South Wales,Amphibians,2,2025,Summer,1480,15.418272736743411
+New South Wales,Amphibians,3,2025,Autumn,952,9.917699760391708
+New South Wales,Amphibians,4,2025,Autumn,694,7.229919783310762
+New South Wales,Amphibians,5,2025,Autumn,412,4.292113761850193
+New South Wales,Amphibians,6,2025,Winter,194,2.021043858735285
+New South Wales,Amphibians,7,2025,Winter,319,3.3232628398791544
+New South Wales,Amphibians,8,2025,Winter,696,7.250755287009064
+New South Wales,Amphibians,9,2025,Spring,977,10.178143556620482
+New South Wales,Amphibians,10,2025,Spring,788,8.209188457130951
+New South Wales,Amphibians,11,2025,Spring,952,9.917699760391708
+New South Wales,Amphibians,12,2025,Summer,926,9.646838212313783
+New South Wales,Birds,1,2025,Summer,246256,13.397399906859736
+New South Wales,Birds,2,2025,Summer,212918,11.58366737609951
+New South Wales,Birds,3,2025,Autumn,206444,11.231453553910367
+New South Wales,Birds,4,2025,Autumn,232797,12.66517163487276
+New South Wales,Birds,5,2025,Autumn,183103,9.961601403197236
+New South Wales,Birds,6,2025,Winter,186533,10.14820835563912
+New South Wales,Birds,7,2025,Winter,175656,9.556452139397026
+New South Wales,Birds,8,2025,Winter,207129,11.268720540039432
+New South Wales,Birds,9,2025,Spring,47601,2.589701907634455
+New South Wales,Birds,10,2025,Spring,53592,2.9156384242756603
+New South Wales,Birds,11,2025,Spring,41058,2.233734184652748
+New South Wales,Birds,12,2025,Summer,45001,2.448250573421947
+New South Wales,Fish,1,2025,Summer,2029,11.074118546010261
+New South Wales,Fish,2,2025,Summer,2082,11.36338827638904
+New South Wales,Fish,3,2025,Autumn,2768,15.10752101298985
+New South Wales,Fish,4,2025,Autumn,2030,11.07957646545137
+New South Wales,Fish,5,2025,Autumn,1108,6.047374740748826
+New South Wales,Fish,6,2025,Winter,1343,7.329985809409453
+New South Wales,Fish,7,2025,Winter,759,4.142560855801769
+New South Wales,Fish,8,2025,Winter,491,2.679838445584543
+New South Wales,Fish,9,2025,Spring,1045,5.703525815958956
+New South Wales,Fish,10,2025,Spring,1641,8.95644580285995
+New South Wales,Fish,11,2025,Spring,1238,6.756904268093003
+New South Wales,Fish,12,2025,Summer,1788,9.75875996070298
+New South Wales,Invertebrates,1,2025,Summer,10380,11.86258599803433
+New South Wales,Invertebrates,2,2025,Summer,8021,9.166647619482983
+New South Wales,Invertebrates,3,2025,Autumn,8466,9.675207423830312
+New South Wales,Invertebrates,4,2025,Autumn,6241,7.132408402093667
+New South Wales,Invertebrates,5,2025,Autumn,3698,4.226189115677356
+New South Wales,Invertebrates,6,2025,Winter,2493,2.849077735366049
+New South Wales,Invertebrates,7,2025,Winter,2761,3.1553564489954513
+New South Wales,Invertebrates,8,2025,Winter,2856,3.2639253959909484
+New South Wales,Invertebrates,9,2025,Spring,6573,7.511828301067404
+New South Wales,Invertebrates,10,2025,Spring,12907,14.750519988114558
+New South Wales,Invertebrates,11,2025,Spring,11203,12.803135928321637
+New South Wales,Invertebrates,12,2025,Summer,11903,13.603117643025303
+New South Wales,Mammals,1,2025,Summer,8828,9.656002187585452
+New South Wales,Mammals,2,2025,Summer,7666,8.385015039649986
+New South Wales,Mammals,3,2025,Autumn,8417,9.206453377085042
+New South Wales,Mammals,4,2025,Autumn,8197,8.965818977303801
+New South Wales,Mammals,5,2025,Autumn,11837,12.94722450095707
+New South Wales,Mammals,6,2025,Winter,9914,10.843861088323763
+New South Wales,Mammals,7,2025,Winter,5089,5.566311184030626
+New South Wales,Mammals,8,2025,Winter,4499,4.920973475526388
+New South Wales,Mammals,9,2025,Spring,6250,6.836204539239814
+New South Wales,Mammals,10,2025,Spring,9825,10.746513535684986
+New South Wales,Mammals,11,2025,Spring,6544,7.157779600765656
+New South Wales,Mammals,12,2025,Summer,4359,4.767842493847415
+New South Wales,Reptiles,1,2025,Summer,3359,13.37927188719828
+New South Wales,Reptiles,2,2025,Summer,3143,12.51891978013224
+New South Wales,Reptiles,3,2025,Autumn,2661,10.599059985660798
+New South Wales,Reptiles,4,2025,Autumn,2341,9.324464271488887
+New South Wales,Reptiles,5,2025,Autumn,1228,4.891261053134708
+New South Wales,Reptiles,6,2025,Winter,684,2.72444833904246
+New South Wales,Reptiles,7,2025,Winter,295,1.1750179240022305
+New South Wales,Reptiles,8,2025,Winter,714,2.8439416872460765
+New South Wales,Reptiles,9,2025,Spring,2406,9.583366525930057
+New South Wales,Reptiles,10,2025,Spring,3036,12.092726838206007
+New South Wales,Reptiles,11,2025,Spring,2782,11.081016490082051
+New South Wales,Reptiles,12,2025,Summer,2457,9.786505217876206
+Northern Territory,All,1,2025,Summer,16363,7.132302622689292
+Northern Territory,All,2,2025,Summer,13418,5.8486363497674585
+Northern Territory,All,3,2025,Autumn,15196,6.623630792298874
+Northern Territory,All,4,2025,Autumn,17099,7.453110220947516
+Northern Territory,All,5,2025,Autumn,25562,11.141961721028155
+Northern Territory,All,6,2025,Winter,27137,11.828472546105196
+Northern Territory,All,7,2025,Winter,51016,22.236848414051025
+Northern Territory,All,8,2025,Winter,46522,20.27800419316453
+Northern Territory,All,9,2025,Spring,7657,3.3375323095967677
+Northern Territory,All,10,2025,Spring,4248,1.8516177682077928
+Northern Territory,All,11,2025,Spring,3413,1.487658060944726
+Northern Territory,All,12,2025,Summer,1790,0.7802250011986697
+Northern Territory,Amphibians,1,2025,Summer,52,8.346709470304976
+Northern Territory,Amphibians,2,2025,Summer,45,7.223113964686998
+Northern Territory,Amphibians,3,2025,Autumn,37,5.9390048154093105
+Northern Territory,Amphibians,4,2025,Autumn,43,6.902086677367576
+Northern Territory,Amphibians,5,2025,Autumn,54,8.667736757624397
+Northern Territory,Amphibians,6,2025,Winter,57,9.149277688603531
+Northern Territory,Amphibians,7,2025,Winter,41,6.5810593900481535
+Northern Territory,Amphibians,8,2025,Winter,32,5.136436597110754
+Northern Territory,Amphibians,9,2025,Spring,70,11.235955056179774
+Northern Territory,Amphibians,10,2025,Spring,48,7.704654895666131
+Northern Territory,Amphibians,11,2025,Spring,102,16.37239165329053
+Northern Territory,Amphibians,12,2025,Summer,42,6.741573033707865
+Northern Territory,Birds,1,2025,Summer,15497,7.199936814131333
+Northern Territory,Birds,2,2025,Summer,12689,5.8953344669621535
+Northern Territory,Birds,3,2025,Autumn,14692,6.825932223863816
+Northern Territory,Birds,4,2025,Autumn,16278,7.562790956987149
+Northern Territory,Birds,5,2025,Autumn,24777,11.51144314665626
+Northern Territory,Birds,6,2025,Winter,25772,11.973722112266422
+Northern Territory,Birds,7,2025,Winter,48703,22.62751001217257
+Northern Territory,Birds,8,2025,Winter,45145,20.97445618338769
+Northern Territory,Birds,9,2025,Spring,5644,2.622213549652013
+Northern Territory,Birds,10,2025,Spring,2790,1.2962395116104035
+Northern Territory,Birds,11,2025,Spring,2140,0.9942482275434636
+Northern Territory,Birds,12,2025,Summer,1111,0.5161727947667233
+Northern Territory,Fish,1,2025,Summer,4,1.0256410256410255
+Northern Territory,Fish,2,2025,Summer,7,1.7948717948717947
+Northern Territory,Fish,3,2025,Autumn,27,6.923076923076923
+Northern Territory,Fish,4,2025,Autumn,23,5.897435897435897
+Northern Territory,Fish,5,2025,Autumn,23,5.897435897435897
+Northern Territory,Fish,6,2025,Winter,36,9.230769230769232
+Northern Territory,Fish,7,2025,Winter,61,15.64102564102564
+Northern Territory,Fish,8,2025,Winter,78,20.0
+Northern Territory,Fish,9,2025,Spring,50,12.82051282051282
+Northern Territory,Fish,10,2025,Spring,33,8.461538461538462
+Northern Territory,Fish,11,2025,Spring,31,7.948717948717948
+Northern Territory,Fish,12,2025,Summer,17,4.358974358974359
+Northern Territory,Invertebrates,1,2025,Summer,219,3.5163776493256265
+Northern Territory,Invertebrates,2,2025,Summer,457,7.3378291586384075
+Northern Territory,Invertebrates,3,2025,Autumn,234,3.7572254335260116
+Northern Territory,Invertebrates,4,2025,Autumn,387,6.213872832369942
+Northern Territory,Invertebrates,5,2025,Autumn,467,7.498394348105331
+Northern Territory,Invertebrates,6,2025,Winter,828,13.294797687861271
+Northern Territory,Invertebrates,7,2025,Winter,700,11.23956326268465
+Northern Territory,Invertebrates,8,2025,Winter,480,7.7071290944123305
+Northern Territory,Invertebrates,9,2025,Spring,732,11.753371868978805
+Northern Territory,Invertebrates,10,2025,Spring,761,12.219010918432884
+Northern Territory,Invertebrates,11,2025,Spring,565,9.071933204881182
+Northern Territory,Invertebrates,12,2025,Summer,398,6.390494540783558
+Northern Territory,Mammals,1,2025,Summer,350,10.23990637799883
+Northern Territory,Mammals,2,2025,Summer,58,1.6968987712112347
+Northern Territory,Mammals,3,2025,Autumn,28,0.8191925102399065
+Northern Territory,Mammals,4,2025,Autumn,31,0.9069631363370393
+Northern Territory,Mammals,5,2025,Autumn,58,1.6968987712112347
+Northern Territory,Mammals,6,2025,Winter,126,3.6863662960795787
+Northern Territory,Mammals,7,2025,Winter,1256,36.74663545933294
+Northern Territory,Mammals,8,2025,Winter,583,17.05675833820948
+Northern Territory,Mammals,9,2025,Spring,630,18.431831480397893
+Northern Territory,Mammals,10,2025,Spring,148,4.330017554125219
+Northern Territory,Mammals,11,2025,Spring,102,2.984201287302516
+Northern Territory,Mammals,12,2025,Summer,48,1.4043300175541251
+Northern Territory,Reptiles,1,2025,Summer,241,6.838819523269013
+Northern Territory,Reptiles,2,2025,Summer,162,4.597048808172531
+Northern Territory,Reptiles,3,2025,Autumn,178,5.051078320090806
+Northern Territory,Reptiles,4,2025,Autumn,337,9.56299659477866
+Northern Territory,Reptiles,5,2025,Autumn,183,5.192962542565267
+Northern Territory,Reptiles,6,2025,Winter,318,9.023836549375709
+Northern Territory,Reptiles,7,2025,Winter,255,7.236095346197503
+Northern Territory,Reptiles,8,2025,Winter,204,5.788876276958002
+Northern Territory,Reptiles,9,2025,Spring,531,15.06810442678774
+Northern Territory,Reptiles,10,2025,Spring,468,13.280363223609534
+Northern Territory,Reptiles,11,2025,Spring,473,13.422247446083995
+Northern Territory,Reptiles,12,2025,Summer,174,4.937570942111237
+Queensland,All,1,2025,Summer,216462,11.465445872271049
+Queensland,All,2,2025,Summer,164388,8.707217507234033
+Queensland,All,3,2025,Autumn,157276,8.330512815216073
+Queensland,All,4,2025,Autumn,188238,9.970491818908437
+Queensland,All,5,2025,Autumn,197756,10.474636259097826
+Queensland,All,6,2025,Winter,248287,13.151135808079765
+Queensland,All,7,2025,Winter,276390,14.639680796800342
+Queensland,All,8,2025,Winter,279996,14.830681516628344
+Queensland,All,9,2025,Spring,45522,2.411185459792124
+Queensland,All,10,2025,Spring,43673,2.3132485959646196
+Queensland,All,11,2025,Spring,37810,2.002700281945877
+Queensland,All,12,2025,Summer,32153,1.703063268061512
+Queensland,Amphibians,1,2025,Summer,903,10.993425858290722
+Queensland,Amphibians,2,2025,Summer,763,9.289018748478208
+Queensland,Amphibians,3,2025,Autumn,697,8.485512539566594
+Queensland,Amphibians,4,2025,Autumn,609,7.414170927684441
+Queensland,Amphibians,5,2025,Autumn,421,5.125395665936206
+Queensland,Amphibians,6,2025,Winter,320,3.8957876795714634
+Queensland,Amphibians,7,2025,Winter,341,4.151448746043341
+Queensland,Amphibians,8,2025,Winter,377,4.589724859995131
+Queensland,Amphibians,9,2025,Spring,645,7.85244704163623
+Queensland,Amphibians,10,2025,Spring,1120,13.63525687850012
+Queensland,Amphibians,11,2025,Spring,1166,14.19527635743852
+Queensland,Amphibians,12,2025,Summer,852,10.372534696859022
+Queensland,Birds,1,2025,Summer,202790,11.576608617120755
+Queensland,Birds,2,2025,Summer,153160,8.743396497846119
+Queensland,Birds,3,2025,Autumn,148140,8.456821344939437
+Queensland,Birds,4,2025,Autumn,177225,10.117187544598972
+Queensland,Birds,5,2025,Autumn,189239,10.803026964324246
+Queensland,Birds,6,2025,Winter,241316,13.775930198969927
+Queensland,Birds,7,2025,Winter,268393,15.321666337466791
+Queensland,Birds,8,2025,Winter,270166,15.422881027925664
+Queensland,Birds,9,2025,Spring,32213,1.8389333467296751
+Queensland,Birds,10,2025,Spring,26849,1.5327203745799847
+Queensland,Birds,11,2025,Spring,23324,1.3314898140230014
+Queensland,Birds,12,2025,Summer,18907,1.0793379314754281
+Queensland,Fish,1,2025,Summer,1021,7.758358662613982
+Queensland,Fish,2,2025,Summer,511,3.882978723404255
+Queensland,Fish,3,2025,Autumn,646,4.908814589665654
+Queensland,Fish,4,2025,Autumn,1019,7.743161094224924
+Queensland,Fish,5,2025,Autumn,765,5.813069908814589
+Queensland,Fish,6,2025,Winter,762,5.790273556231003
+Queensland,Fish,7,2025,Winter,1314,9.984802431610943
+Queensland,Fish,8,2025,Winter,1014,7.7051671732522795
+Queensland,Fish,9,2025,Spring,1661,12.621580547112462
+Queensland,Fish,10,2025,Spring,1995,15.159574468085108
+Queensland,Fish,11,2025,Spring,1763,13.396656534954406
+Queensland,Fish,12,2025,Summer,689,5.235562310030395
+Queensland,Invertebrates,1,2025,Summer,9035,11.41633287423712
+Queensland,Invertebrates,2,2025,Summer,7706,9.737051591463338
+Queensland,Invertebrates,3,2025,Autumn,5526,6.982474317989411
+Queensland,Invertebrates,4,2025,Autumn,6166,7.791157554238637
+Queensland,Invertebrates,5,2025,Autumn,4933,6.233178756902237
+Queensland,Invertebrates,6,2025,Winter,3886,4.910223525100769
+Queensland,Invertebrates,7,2025,Winter,4029,5.090913685700206
+Queensland,Invertebrates,8,2025,Winter,4884,6.171263946626906
+Queensland,Invertebrates,9,2025,Spring,7172,9.06230651621789
+Queensland,Invertebrates,10,2025,Spring,8845,11.176255038475633
+Queensland,Invertebrates,11,2025,Spring,8122,10.262695695025334
+Queensland,Invertebrates,12,2025,Summer,8837,11.166146498022517
+Queensland,Mammals,1,2025,Summer,1066,6.028729781698903
+Queensland,Mammals,2,2025,Summer,989,5.5932586811446665
+Queensland,Mammals,3,2025,Autumn,999,5.649813369528333
+Queensland,Mammals,4,2025,Autumn,1750,9.897070467141726
+Queensland,Mammals,5,2025,Autumn,1379,7.7988915281076805
+Queensland,Mammals,6,2025,Winter,1298,7.340798552199977
+Queensland,Mammals,7,2025,Winter,1411,7.979866530935414
+Queensland,Mammals,8,2025,Winter,2266,12.815292387738944
+Queensland,Mammals,9,2025,Spring,1767,9.99321343739396
+Queensland,Mammals,10,2025,Spring,2101,11.882140029408438
+Queensland,Mammals,11,2025,Spring,1477,8.353127474267618
+Queensland,Mammals,12,2025,Summer,1179,6.66779776043434
+Queensland,Reptiles,1,2025,Summer,1647,9.133762200532388
+Queensland,Reptiles,2,2025,Summer,1259,6.982031943212068
+Queensland,Reptiles,3,2025,Autumn,1268,7.031943212067436
+Queensland,Reptiles,4,2025,Autumn,1469,8.146628216503993
+Queensland,Reptiles,5,2025,Autumn,1019,5.651064773735581
+Queensland,Reptiles,6,2025,Winter,705,3.9097160603371783
+Queensland,Reptiles,7,2025,Winter,902,5.0022182786157945
+Queensland,Reptiles,8,2025,Winter,1289,7.148402839396628
+Queensland,Reptiles,9,2025,Spring,2064,11.446317657497781
+Queensland,Reptiles,10,2025,Spring,2763,15.32275953859805
+Queensland,Reptiles,11,2025,Spring,1958,10.858473824312334
+Queensland,Reptiles,12,2025,Summer,1689,9.366681455190772
+South Australia,All,1,2025,Summer,50319,10.484850631666461
+South Australia,All,2,2025,Summer,34710,7.23244033913915
+South Australia,All,3,2025,Autumn,38056,7.929638419656568
+South Australia,All,4,2025,Autumn,47681,9.9351768311868
+South Australia,All,5,2025,Autumn,42732,8.90396544431271
+South Australia,All,6,2025,Winter,32905,6.856336772093741
+South Australia,All,7,2025,Winter,39800,8.293031561444488
+South Australia,All,8,2025,Winter,58329,12.153875325313958
+South Australia,All,9,2025,Spring,35656,7.429556114443836
+South Australia,All,10,2025,Spring,42487,8.852915375655575
+South Australia,All,11,2025,Spring,32919,6.859253918874147
+South Australia,All,12,2025,Summer,24327,5.068959266212564
+South Australia,Amphibians,1,2025,Summer,175,5.93421498813157
+South Australia,Amphibians,2,2025,Summer,56,1.8989487962021026
+South Australia,Amphibians,3,2025,Autumn,93,3.1536113936927768
+South Australia,Amphibians,4,2025,Autumn,88,2.9840623940318753
+South Australia,Amphibians,5,2025,Autumn,94,3.1875211936249577
+South Australia,Amphibians,6,2025,Winter,204,6.917599186164802
+South Australia,Amphibians,7,2025,Winter,197,6.6802305866395395
+South Australia,Amphibians,8,2025,Winter,329,11.156324177687353
+South Australia,Amphibians,9,2025,Spring,776,26.31400474737199
+South Australia,Amphibians,10,2025,Spring,310,10.512037978975924
+South Australia,Amphibians,11,2025,Spring,364,12.343167175313665
+South Australia,Amphibians,12,2025,Summer,263,8.918277382163446
+South Australia,Birds,1,2025,Summer,45799,12.644287445715344
+South Australia,Birds,2,2025,Summer,31969,8.82607099176999
+South Australia,Birds,3,2025,Autumn,33203,9.166756393372925
+South Australia,Birds,4,2025,Autumn,42756,11.804169392978125
+South Australia,Birds,5,2025,Autumn,37102,10.24320078628203
+South Australia,Birds,6,2025,Winter,28223,7.7918671713448795
+South Australia,Birds,7,2025,Winter,28614,7.899815301026197
+South Australia,Birds,8,2025,Winter,43006,11.873189936252626
+South Australia,Birds,9,2025,Spring,19754,5.45372724737791
+South Australia,Birds,10,2025,Spring,22797,6.293845300115127
+South Australia,Birds,11,2025,Spring,15440,4.262708752633134
+South Australia,Birds,12,2025,Summer,13548,3.740361281131716
+South Australia,Fish,1,2025,Summer,562,1.1243822899785927
+South Australia,Fish,2,2025,Summer,404,0.8082748134365684
+South Australia,Fish,3,2025,Autumn,906,1.812616289538443
+South Australia,Fish,4,2025,Autumn,1014,2.0286897545165354
+South Australia,Fish,5,2025,Autumn,2433,4.867655002700919
+South Australia,Fish,6,2025,Winter,2170,4.341476101874638
+South Australia,Fish,7,2025,Winter,6552,13.108456875337616
+South Australia,Fish,8,2025,Winter,9027,18.060140447752236
+South Australia,Fish,9,2025,Spring,6435,12.874377288278014
+South Australia,Fish,10,2025,Spring,8347,16.699677890482764
+South Australia,Fish,11,2025,Spring,8402,16.809715303203088
+South Australia,Fish,12,2025,Summer,3731,7.464537942900586
+South Australia,Invertebrates,1,2025,Summer,2511,5.906567557395559
+South Australia,Invertebrates,2,2025,Summer,1409,3.3143582988332705
+South Australia,Invertebrates,3,2025,Autumn,1352,3.1802785095972905
+South Australia,Invertebrates,4,2025,Autumn,1754,4.125893865261573
+South Australia,Invertebrates,5,2025,Autumn,1537,3.615449755363192
+South Australia,Invertebrates,6,2025,Winter,1424,3.3496424538953704
+South Australia,Invertebrates,7,2025,Winter,2176,5.118554761008657
+South Australia,Invertebrates,8,2025,Winter,3947,9.28443733534061
+South Australia,Invertebrates,9,2025,Spring,6092,14.330071509220927
+South Australia,Invertebrates,10,2025,Spring,8359,19.662683477606326
+South Australia,Invertebrates,11,2025,Spring,6362,14.965186300338729
+South Australia,Invertebrates,12,2025,Summer,5589,13.146876176138504
+South Australia,Mammals,1,2025,Summer,711,5.119896305897602
+South Australia,Mammals,2,2025,Summer,604,4.349391517246345
+South Australia,Mammals,3,2025,Autumn,916,6.596097069201412
+South Australia,Mammals,4,2025,Autumn,1242,8.943616331821127
+South Australia,Mammals,5,2025,Autumn,1114,8.021890977172895
+South Australia,Mammals,6,2025,Winter,736,5.299920789227335
+South Australia,Mammals,7,2025,Winter,2088,15.035644847699286
+South Australia,Mammals,8,2025,Winter,1817,13.084179448404983
+South Australia,Mammals,9,2025,Spring,1892,13.624252898394182
+South Australia,Mammals,10,2025,Spring,1332,9.591704471808166
+South Australia,Mammals,11,2025,Spring,887,6.387268668538922
+South Australia,Mammals,12,2025,Summer,548,3.946136674587744
+South Australia,Reptiles,1,2025,Summer,561,6.6953097028285
+South Australia,Reptiles,2,2025,Summer,268,3.1984723714047023
+South Australia,Reptiles,3,2025,Autumn,1586,18.92827306361141
+South Australia,Reptiles,4,2025,Autumn,827,9.869912877431675
+South Australia,Reptiles,5,2025,Autumn,452,5.394438477145244
+South Australia,Reptiles,6,2025,Winter,148,1.7663205633130445
+South Australia,Reptiles,7,2025,Winter,173,2.0646855233321397
+South Australia,Reptiles,8,2025,Winter,203,2.4227234753550544
+South Australia,Reptiles,9,2025,Spring,707,8.437761069340016
+South Australia,Reptiles,10,2025,Spring,1342,16.016231053825038
+South Australia,Reptiles,11,2025,Spring,1464,17.472252058718222
+South Australia,Reptiles,12,2025,Summer,648,7.733619763694952
+Tasmania,All,1,2025,Summer,47425,15.146482534836112
+Tasmania,All,2,2025,Summer,41855,13.367549319885407
+Tasmania,All,3,2025,Autumn,38436,12.275597315950677
+Tasmania,All,4,2025,Autumn,32035,10.231261317943591
+Tasmania,All,5,2025,Autumn,29697,9.48455649630001
+Tasmania,All,6,2025,Winter,29353,9.374690602952965
+Tasmania,All,7,2025,Winter,22863,7.301929998818303
+Tasmania,All,8,2025,Winter,31359,10.015362062412771
+Tasmania,All,9,2025,Spring,7228,2.308461270675707
+Tasmania,All,10,2025,Spring,9834,3.140759288298963
+Tasmania,All,11,2025,Spring,12247,3.911417429712975
+Tasmania,All,12,2025,Summer,10777,3.44193236221252
+Tasmania,Amphibians,1,2025,Summer,37,12.131147540983607
+Tasmania,Amphibians,2,2025,Summer,32,10.491803278688524
+Tasmania,Amphibians,3,2025,Autumn,28,9.180327868852459
+Tasmania,Amphibians,4,2025,Autumn,17,5.573770491803279
+Tasmania,Amphibians,5,2025,Autumn,7,2.2950819672131146
+Tasmania,Amphibians,6,2025,Winter,2,0.6557377049180327
+Tasmania,Amphibians,7,2025,Winter,8,2.622950819672131
+Tasmania,Amphibians,8,2025,Winter,15,4.918032786885246
+Tasmania,Amphibians,9,2025,Spring,13,4.2622950819672125
+Tasmania,Amphibians,10,2025,Spring,45,14.754098360655737
+Tasmania,Amphibians,11,2025,Spring,69,22.62295081967213
+Tasmania,Amphibians,12,2025,Summer,32,10.491803278688524
+Tasmania,Birds,1,2025,Summer,45285,15.120402275823382
+Tasmania,Birds,2,2025,Summer,40136,13.401180650158933
+Tasmania,Birds,3,2025,Autumn,36944,12.335390122071747
+Tasmania,Birds,4,2025,Autumn,31096,10.382776397681438
+Tasmania,Birds,5,2025,Autumn,29250,9.766407564708711
+Tasmania,Birds,6,2025,Winter,28890,9.646205625450758
+Tasmania,Birds,7,2025,Winter,22342,7.459865908058873
+Tasmania,Birds,8,2025,Winter,30797,10.282942009242193
+Tasmania,Birds,9,2025,Spring,6607,2.2060394796591605
+Tasmania,Birds,10,2025,Spring,8741,2.918569864038251
+Tasmania,Birds,11,2025,Spring,10419,3.4788444586906007
+Tasmania,Birds,12,2025,Summer,8989,3.001375644415952
+Tasmania,Fish,1,2025,Summer,98,11.736526946107785
+Tasmania,Fish,2,2025,Summer,110,13.17365269461078
+Tasmania,Fish,3,2025,Autumn,127,15.209580838323353
+Tasmania,Fish,4,2025,Autumn,120,14.37125748502994
+Tasmania,Fish,5,2025,Autumn,77,9.221556886227544
+Tasmania,Fish,6,2025,Winter,54,6.467065868263473
+Tasmania,Fish,7,2025,Winter,14,1.6766467065868262
+Tasmania,Fish,8,2025,Winter,54,6.467065868263473
+Tasmania,Fish,9,2025,Spring,21,2.5149700598802394
+Tasmania,Fish,10,2025,Spring,49,5.868263473053893
+Tasmania,Fish,11,2025,Spring,47,5.62874251497006
+Tasmania,Fish,12,2025,Summer,64,7.664670658682635
+Tasmania,Invertebrates,1,2025,Summer,1549,17.674577818347785
+Tasmania,Invertebrates,2,2025,Summer,1196,13.646736649931537
+Tasmania,Invertebrates,3,2025,Autumn,919,10.486079415791876
+Tasmania,Invertebrates,4,2025,Autumn,577,6.583751711547239
+Tasmania,Invertebrates,5,2025,Autumn,185,2.1109082610680057
+Tasmania,Invertebrates,6,2025,Winter,251,2.8639890460976725
+Tasmania,Invertebrates,7,2025,Winter,316,3.605659516202647
+Tasmania,Invertebrates,8,2025,Winter,322,3.6741214057507987
+Tasmania,Invertebrates,9,2025,Spring,310,3.5371976266544958
+Tasmania,Invertebrates,10,2025,Spring,730,8.329529895025102
+Tasmania,Invertebrates,11,2025,Spring,1131,12.905066179826562
+Tasmania,Invertebrates,12,2025,Summer,1278,14.582382473756276
+Tasmania,Mammals,1,2025,Summer,241,8.74455732946299
+Tasmania,Mammals,2,2025,Summer,254,9.216255442670537
+Tasmania,Mammals,3,2025,Autumn,292,10.595065312046444
+Tasmania,Mammals,4,2025,Autumn,197,7.148040638606676
+Tasmania,Mammals,5,2025,Autumn,158,5.732946298984035
+Tasmania,Mammals,6,2025,Winter,153,5.551523947750363
+Tasmania,Mammals,7,2025,Winter,180,6.531204644412192
+Tasmania,Mammals,8,2025,Winter,165,5.986937590711175
+Tasmania,Mammals,9,2025,Spring,229,8.309143686502177
+Tasmania,Mammals,10,2025,Spring,194,7.039187227866474
+Tasmania,Mammals,11,2025,Spring,422,15.312046444121915
+Tasmania,Mammals,12,2025,Summer,271,9.833091436865022
+Tasmania,Reptiles,1,2025,Summer,215,22.560335781741866
+Tasmania,Reptiles,2,2025,Summer,127,13.326337880377753
+Tasmania,Reptiles,3,2025,Autumn,126,13.221406086044071
+Tasmania,Reptiles,4,2025,Autumn,28,2.9380902413431267
+Tasmania,Reptiles,5,2025,Autumn,20,2.098635886673662
+Tasmania,Reptiles,6,2025,Winter,3,0.3147953830010493
+Tasmania,Reptiles,7,2025,Winter,3,0.3147953830010493
+Tasmania,Reptiles,8,2025,Winter,6,0.6295907660020986
+Tasmania,Reptiles,9,2025,Spring,48,5.036726128016789
+Tasmania,Reptiles,10,2025,Spring,75,7.869884575026233
+Tasmania,Reptiles,11,2025,Spring,159,16.684155299055615
+Tasmania,Reptiles,12,2025,Summer,143,15.005246589716684
+Victoria,All,1,2025,Summer,296888,16.340494857957438
+Victoria,All,2,2025,Summer,202714,11.157227892794536
+Victoria,All,3,2025,Autumn,226210,12.450430269389642
+Victoria,All,4,2025,Autumn,227151,12.502222209991276
+Victoria,All,5,2025,Autumn,177574,9.773540978102632
+Victoria,All,6,2025,Winter,151701,8.349510288213068
+Victoria,All,7,2025,Winter,159896,8.800556997278308
+Victoria,All,8,2025,Winter,187448,10.316998599250917
+Victoria,All,9,2025,Spring,39401,2.1686017552018977
+Victoria,All,10,2025,Spring,55008,3.0275994352972257
+Victoria,All,11,2025,Spring,45252,2.490636446445427
+Victoria,All,12,2025,Summer,47642,2.622180270077633
+Victoria,Amphibians,1,2025,Summer,233,5.260781214721156
+Victoria,Amphibians,2,2025,Summer,172,3.8834951456310676
+Victoria,Amphibians,3,2025,Autumn,228,5.147888913976066
+Victoria,Amphibians,4,2025,Autumn,408,9.212011740799278
+Victoria,Amphibians,5,2025,Autumn,179,4.041544366674192
+Victoria,Amphibians,6,2025,Winter,164,3.7028674644389254
+Victoria,Amphibians,7,2025,Winter,216,4.876947392187852
+Victoria,Amphibians,8,2025,Winter,422,9.528110182885527
+Victoria,Amphibians,9,2025,Spring,511,11.537593136148114
+Victoria,Amphibians,10,2025,Spring,635,14.337322194626326
+Victoria,Amphibians,11,2025,Spring,925,20.8850756378415
+Victoria,Amphibians,12,2025,Summer,336,7.586362610069994
+Victoria,Birds,1,2025,Summer,276156,16.471692745037576
+Victoria,Birds,2,2025,Summer,186018,11.095291578116715
+Victoria,Birds,3,2025,Autumn,206290,12.30444204135996
+Victoria,Birds,4,2025,Autumn,214658,12.80356255617939
+Victoria,Birds,5,2025,Autumn,171713,10.24205078408087
+Victoria,Birds,6,2025,Winter,148083,8.832607934513097
+Victoria,Birds,7,2025,Winter,156952,9.361611262182018
+Victoria,Birds,8,2025,Winter,183079,10.919991005332978
+Victoria,Birds,9,2025,Spring,31667,1.8888204281533076
+Victoria,Birds,10,2025,Spring,41329,2.4651232979173288
+Victoria,Birds,11,2025,Spring,31666,1.888760781820275
+Victoria,Birds,12,2025,Summer,28938,1.7260455853064838
+Victoria,Fish,1,2025,Summer,630,4.724763761811909
+Victoria,Fish,2,2025,Summer,2528,18.95905204739763
+Victoria,Fish,3,2025,Autumn,5252,39.388030598470074
+Victoria,Fish,4,2025,Autumn,2109,15.816709164541773
+Victoria,Fish,5,2025,Autumn,667,5.0022498875056245
+Victoria,Fish,6,2025,Winter,388,2.9098545072746362
+Victoria,Fish,7,2025,Winter,151,1.1324433778311085
+Victoria,Fish,8,2025,Winter,228,1.7099145042747863
+Victoria,Fish,9,2025,Spring,304,2.2798860056997152
+Victoria,Fish,10,2025,Spring,342,2.5648717564121792
+Victoria,Fish,11,2025,Spring,260,1.949902504874756
+Victoria,Fish,12,2025,Summer,475,3.562321883905805
+Victoria,Invertebrates,1,2025,Summer,17117,18.57031266951635
+Victoria,Invertebrates,2,2025,Summer,11132,12.077158417775077
+Victoria,Invertebrates,3,2025,Autumn,10780,11.695271985592466
+Victoria,Invertebrates,4,2025,Autumn,6862,7.444615618287152
+Victoria,Invertebrates,5,2025,Autumn,2688,2.9162236639399395
+Victoria,Invertebrates,6,2025,Winter,1296,1.4060364093996138
+Victoria,Invertebrates,7,2025,Winter,1115,1.2096686701238961
+Victoria,Invertebrates,8,2025,Winter,2023,2.194762080413132
+Victoria,Invertebrates,9,2025,Spring,4729,5.130514027816955
+Victoria,Invertebrates,10,2025,Spring,9563,10.374943042506564
+Victoria,Invertebrates,11,2025,Spring,9487,10.2924902901035
+Victoria,Invertebrates,12,2025,Summer,15382,16.688003124525356
+Victoria,Mammals,1,2025,Summer,1962,8.356047700170357
+Victoria,Mammals,2,2025,Summer,2289,9.748722316865416
+Victoria,Mammals,3,2025,Autumn,2957,12.593696763202725
+Victoria,Mammals,4,2025,Autumn,2718,11.57580919931857
+Victoria,Mammals,5,2025,Autumn,2169,9.237649063032368
+Victoria,Mammals,6,2025,Winter,1648,7.018739352640544
+Victoria,Mammals,7,2025,Winter,1361,5.796422487223168
+Victoria,Mammals,8,2025,Winter,1466,6.243611584327087
+Victoria,Mammals,9,2025,Spring,1590,6.771720613287904
+Victoria,Mammals,10,2025,Spring,2065,8.794718909710392
+Victoria,Mammals,11,2025,Spring,1811,7.712947189097104
+Victoria,Mammals,12,2025,Summer,1444,6.149914821124361
+Victoria,Reptiles,1,2025,Summer,790,11.417834947246712
+Victoria,Reptiles,2,2025,Summer,575,8.310449486920076
+Victoria,Reptiles,3,2025,Autumn,703,10.16042780748663
+Victoria,Reptiles,4,2025,Autumn,396,5.723370429252783
+Victoria,Reptiles,5,2025,Autumn,158,2.2835669894493424
+Victoria,Reptiles,6,2025,Winter,122,1.7632605867899986
+Victoria,Reptiles,7,2025,Winter,101,1.459748518572048
+Victoria,Reptiles,8,2025,Winter,230,3.32417979476803
+Victoria,Reptiles,9,2025,Spring,600,8.67177337765573
+Victoria,Reptiles,10,2025,Spring,1074,15.52247434600376
+Victoria,Reptiles,11,2025,Spring,1103,15.941610059257119
+Victoria,Reptiles,12,2025,Summer,1067,15.421303656597773
+Western Australia,All,1,2025,Summer,65181,11.251469417981015
+Western Australia,All,2,2025,Summer,52043,8.983602935210966
+Western Australia,All,3,2025,Autumn,63597,10.978041155786789
+Western Australia,All,4,2025,Autumn,54311,9.37510249244361
+Western Australia,All,5,2025,Autumn,54267,9.367507262938215
+Western Australia,All,6,2025,Winter,67228,11.604820208834287
+Western Australia,All,7,2025,Winter,67648,11.677320126840332
+Western Australia,All,8,2025,Winter,70868,12.233152831553346
+Western Australia,All,9,2025,Spring,24628,4.251257096792569
+Western Australia,All,10,2025,Spring,24137,4.166501240266454
+Western Australia,All,11,2025,Spring,20229,3.4919067651054445
+Western Australia,All,12,2025,Summer,15174,2.6193184662469724
+Western Australia,Amphibians,1,2025,Summer,140,2.459592410400562
+Western Australia,Amphibians,2,2025,Summer,78,1.3703443429374562
+Western Australia,Amphibians,3,2025,Autumn,156,2.7406886858749124
+Western Australia,Amphibians,4,2025,Autumn,101,1.7744202389318342
+Western Australia,Amphibians,5,2025,Autumn,118,2.073085031623331
+Western Australia,Amphibians,6,2025,Winter,87,1.528460997891778
+Western Australia,Amphibians,7,2025,Winter,134,2.354181307097681
+Western Australia,Amphibians,8,2025,Winter,126,2.2136331693605062
+Western Australia,Amphibians,9,2025,Spring,2963,52.055516514406186
+Western Australia,Amphibians,10,2025,Spring,1488,26.141953619114545
+Western Australia,Amphibians,11,2025,Spring,173,3.039353478566409
+Western Australia,Amphibians,12,2025,Summer,128,2.2487702037947996
+Western Australia,Birds,1,2025,Summer,59595,11.495838196005053
+Western Australia,Birds,2,2025,Summer,47568,9.175837424407558
+Western Australia,Birds,3,2025,Autumn,58483,11.281334092070871
+Western Australia,Birds,4,2025,Autumn,50405,9.723092948563382
+Western Australia,Birds,5,2025,Autumn,51139,9.864681089109865
+Western Australia,Birds,6,2025,Winter,64141,12.372758750397855
+Western Australia,Birds,7,2025,Winter,62077,11.974614442376135
+Western Australia,Birds,8,2025,Winter,66388,12.806203643869177
+Western Australia,Birds,9,2025,Spring,17507,3.3770893413450875
+Western Australia,Birds,10,2025,Spring,16774,3.2356941001726454
+Western Australia,Birds,11,2025,Spring,13980,2.6967332491006064
+Western Australia,Birds,12,2025,Summer,10348,1.996122722581765
+Western Australia,Fish,1,2025,Summer,684,10.886519178736274
+Western Australia,Fish,2,2025,Summer,518,8.244469202610217
+Western Australia,Fish,3,2025,Autumn,651,10.361292376253383
+Western Australia,Fish,4,2025,Autumn,651,10.361292376253383
+Western Australia,Fish,5,2025,Autumn,654,10.40904026738819
+Western Australia,Fish,6,2025,Winter,599,9.53366226325004
+Western Australia,Fish,7,2025,Winter,331,5.268183988540506
+Western Australia,Fish,8,2025,Winter,288,4.583797548941589
+Western Australia,Fish,9,2025,Spring,292,4.647461403787999
+Western Australia,Fish,10,2025,Spring,193,3.0717809963393283
+Western Australia,Fish,11,2025,Spring,572,9.103931243036765
+Western Australia,Fish,12,2025,Summer,850,13.528569154862327
+Western Australia,Invertebrates,1,2025,Summer,1984,13.02350006564264
+Western Australia,Invertebrates,2,2025,Summer,762,5.001969279243797
+Western Australia,Invertebrates,3,2025,Autumn,1327,8.710778521727715
+Western Australia,Invertebrates,4,2025,Autumn,1201,7.883681239333071
+Western Australia,Invertebrates,5,2025,Autumn,664,4.358671392936852
+Western Australia,Invertebrates,6,2025,Winter,730,4.791912826572141
+Western Australia,Invertebrates,7,2025,Winter,693,4.549035053170539
+Western Australia,Invertebrates,8,2025,Winter,710,4.660627543652356
+Western Australia,Invertebrates,9,2025,Spring,966,6.341079165025601
+Western Australia,Invertebrates,10,2025,Spring,2057,13.502691348299855
+Western Australia,Invertebrates,11,2025,Spring,1947,12.78062229224104
+Western Australia,Invertebrates,12,2025,Summer,2193,14.39543127215439
+Western Australia,Mammals,1,2025,Summer,2364,9.133760914921567
+Western Australia,Mammals,2,2025,Summer,2795,10.799010895603121
+Western Australia,Mammals,3,2025,Autumn,2601,10.049455219843907
+Western Australia,Mammals,4,2025,Autumn,1611,6.224403060041728
+Western Australia,Mammals,5,2025,Autumn,1383,5.343481956572135
+Western Australia,Mammals,6,2025,Winter,1473,5.691213971099606
+Western Australia,Mammals,7,2025,Winter,4132,15.964763155861217
+Western Australia,Mammals,8,2025,Winter,2817,10.884012054709837
+Western Australia,Mammals,9,2025,Spring,1764,6.8155474847384285
+Western Australia,Mammals,10,2025,Spring,1761,6.803956417587513
+Western Australia,Mammals,11,2025,Spring,2212,8.546480179275171
+Western Australia,Mammals,12,2025,Summer,969,3.743914689745769
+Western Australia,Reptiles,1,2025,Summer,414,5.297504798464491
+Western Australia,Reptiles,2,2025,Summer,322,4.120281509916826
+Western Australia,Reptiles,3,2025,Autumn,379,4.849648112603966
+Western Australia,Reptiles,4,2025,Autumn,342,4.376199616122841
+Western Australia,Reptiles,5,2025,Autumn,309,3.9539347408829175
+Western Australia,Reptiles,6,2025,Winter,198,2.5335892514395395
+Western Australia,Reptiles,7,2025,Winter,281,3.5956493921944976
+Western Australia,Reptiles,8,2025,Winter,539,6.89699296225208
+Western Australia,Reptiles,9,2025,Spring,1136,14.5361484325016
+Western Australia,Reptiles,10,2025,Spring,1864,23.85156749840051
+Western Australia,Reptiles,11,2025,Spring,1345,17.210492642354446
+Western Australia,Reptiles,12,2025,Summer,686,8.777991042866283

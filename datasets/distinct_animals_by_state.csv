@@ -1,9 +1,10 @@
-state,distinct_animals
-Queensland,4376
-New South Wales,3548
-Western Australia,2800
-Victoria,2399
-South Australia,2146
-Northern Territory,1413
-Tasmania,1236
-Australian Capital Territory,1208
+state,distinct_animals,pct_of_australia
+All,7668,100.0
+Queensland,4376,57.1
+New South Wales,3548,46.3
+Western Australia,2800,36.5
+Victoria,2399,31.3
+South Australia,2146,28.0
+Northern Territory,1413,18.4
+Tasmania,1236,16.1
+Australian Capital Territory,1208,15.8

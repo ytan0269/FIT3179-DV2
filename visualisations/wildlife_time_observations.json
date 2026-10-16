@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v6.json",
-  "width": 860,
+  "width": 1060,
   "height": { "signal": "titleSpace + rows * (panelH + gapY) - gapY + 40" },
   "padding": {"left": 5, "right": 5, "top": 20, "bottom": 20},
   "autosize": "pad",
@@ -32,11 +32,12 @@
   },
 
   "signals": [
-    { "name": "cols", "value": 2 },
+    { "name": "cols", "value": 3 },
     { "name": "gapX", "value": 70 },
     { "name": "gapY", "value": 74 },
     { "name": "titleSpace", "value": 24 },
-    { "name": "panelH", "value": 110 },
+    { "name": "panelH", "value": 160 },
+    { "name": "groupColor", "value": "#444444" },
     {
       "name": "groupOrder",
       "value": ["Mammals", "Amphibians", "Birds", "Fish", "Invertebrates", "Reptiles"]
@@ -134,12 +135,6 @@
       "domainMin": 0,
       "nice": true,
       "range": [{ "signal": "panelH" }, 0]
-    },
-    {
-      "name": "color",
-      "type": "ordinal",
-      "domain": ["Amphibians", "Birds", "Fish", "Invertebrates", "Mammals", "Reptiles"],
-      "range": ["#66c2a5", "#3288bd", "#5e4fa2", "#e6ab02", "#e78ac3", "#fc8d62"]
     }
   ],
 
@@ -274,7 +269,7 @@
         },
 
         {
-          "type": "area",
+          "type": "line",
           "from": { "data": "series" },
           "sort": { "field": "datum.timeDecimal" },
           "interactive": false,
@@ -282,11 +277,8 @@
             "update": {
               "x": { "signal": "scale('x', datum.timeDecimal)" },
               "y": { "signal": "scale('yp', datum.share)" },
-              "y2": { "signal": "panelH" },
               "interpolate": { "value": "monotone" },
-              "fill": { "scale": "color", "field": "animal_group" },
-              "fillOpacity": { "value": 0.65 },
-              "stroke": { "scale": "color", "field": "animal_group" },
+              "stroke": { "signal": "groupColor" },
               "strokeWidth": { "value": 2 }
             }
           }
@@ -300,7 +292,7 @@
               "x": { "signal": "scale('x', datum.timeDecimal)" },
               "y": { "signal": "scale('yp', datum.share)" },
               "size": { "value": 16 },
-              "fill": { "scale": "color", "field": "animal_group" },
+              "fill": { "signal": "groupColor" },
               "stroke": { "value": "#ffffff" },
               "strokeWidth": { "value": 0.5 },
               "tooltip": {
@@ -322,7 +314,7 @@
               "text": { "field": "animal_group" },
               "fontSize": { "value": 13 },
               "fontWeight": { "value": "bold" },
-              "fill": { "scale": "color", "field": "animal_group" }
+              "fill": { "signal": "groupColor" }
             }
           }
         }

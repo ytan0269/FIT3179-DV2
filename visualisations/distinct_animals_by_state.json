@@ -1,18 +1,18 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
-  "description": "Choropleth map of Australia showing the number of distinct animal species recorded in each state and territory.",
-  "width": 600,
-  "height": 450,
-  "padding": {"left": 15, "right": 15, "top": 0, "bottom": 0},
+  "description": "Choropleth map of Australia showing each state's share of all distinct animal species recorded in Australia.",
+  "width": 900,
+  "height": 675,
+  "padding": {"left": 15, "right": 15, "top": 20, "bottom": 20},
   "autosize": { "type": "pad", "contains": "padding" },
   "title": {
-    "text": "Unique Animal Species Recorded by State",
-    "subtitle": "Darker green indicates more unique species recorded in that state or territory",
+    "text": "Share of Australia's Unique Animal Species Recorded, by State",
+    "subtitle": "Darker green means a larger share of all species recorded in Australia was found there",
     "anchor": "middle",
     "frame": "group",
-    "fontSize": 18,
-    "subtitleFontSize": 13,
-    "offset": 10,
+    "fontSize": 22,
+    "subtitleFontSize": 14,
+    "offset": 12,
     "subtitlePadding": 6,
     "subtitleColor": "#555"
   },
@@ -26,17 +26,35 @@
   "datasets": {
     "oceanLabels": [
       { "name": "Indian\nOcean", "lon": 108, "lat": -27 },
-      { "name": "Southern Ocean", "lon": 128, "lat": -40.5 },
+      { "name": "Southern Ocean", "lon": 128, "lat": -41.5 },
       { "name": "Pacific Ocean", "lon": 158, "lat": -27 },
-      { "name": "Tasman Sea", "lon": 158, "lat": -38 },
+      { "name": "Tasman Sea", "lon": 158, "lat": -40 },
       { "name": "Timor Sea", "lon": 126, "lat": -11.5 },
       { "name": "Arafura Sea", "lon": 136, "lat": -9.5 }
+    ],
+    "stateLabels": [
+      { "name": "Western Australia",  "lon": 122.0, "lat": -26.0 },
+      { "name": "Northern Territory", "lon": 133.5, "lat": -19.5 },
+      { "name": "South Australia",    "lon": 135.0, "lat": -30.5 },
+      { "name": "Queensland",         "lon": 144.5, "lat": -22.5 },
+      { "name": "New South Wales",    "lon": 145.5, "lat": -32.8 },
+      { "name": "Victoria",           "lon": 144.3, "lat": -37.0 },
+      { "name": "Tasmania",           "lon": 146.7, "lat": -42.2 }
+    ],
+    "actCallout": [
+      {
+        "key": "Australian Capital Territory",
+        "line1": "Australian Capital",
+        "line2": "Territory",
+        "lon": 149.0, "lat": -35.5,
+        "textLon": 153.6, "textLat": -34.2
+      }
     ]
   },
   "projection": {
     "type": "mercator",
-    "center": [134, -28.3],
-    "scale": 600
+    "center": [134.5, -28.3],
+    "scale": 900
   },
   "layer": [
     {
@@ -45,13 +63,13 @@
       "mark": { "type": "rect", "color": "#d6eaf8" },
       "encoding": {
         "x": { "value": 0 },
-        "x2": { "value": 600 },
+        "x2": { "value": 900 },
         "y": { "value": 0 },
-        "y2": { "value": 450 }
+        "y2": { "value": 675 }
       }
     },
     {
-      "description": "States heat map",
+      "description": "States heat map (the 'All' row in the CSV never matches a state, so it is not drawn or counted in the colour scale)",
       "data": {
         "url": "https://raw.githubusercontent.com/rowanhogan/australian-states/master/states.geojson",
         "format": { "type": "json", "property": "features" }
@@ -65,36 +83,39 @@
               "format": { "type": "csv" }
             },
             "key": "state",
-            "fields": ["distinct_animals"]
+            "fields": ["distinct_animals", "pct_of_australia"]
           }
         }
       ],
       "mark": {
         "type": "geoshape",
-        "stroke": "black",
-        "strokeWidth": 0.5
+        "stroke": "#555555",
+        "strokeWidth": 0.8
       },
       "encoding": {
         "color": {
-          "field": "distinct_animals",
+          "field": "pct_of_australia",
           "type": "quantitative",
-          "title": "Unique Animals",
-          "scale": { "scheme": "greens" },
+          "title": "% of Australia's species",
+          "scale": { "scheme": "greens", "domainMin": 0 },
           "legend": {
             "orient": "bottom",
             "direction": "horizontal",
             "offset": 8,
             "titleOrient": "left",
             "titleAnchor": "middle",
-            "titleFontSize": 13,
-            "labelFontSize": 12,
-            "gradientLength": 250,
-            "gradientThickness": 12
+            "titleFontSize": 14,
+            "labelFontSize": 13,
+            "gradientLength": 350,
+            "gradientThickness": 14,
+            "format": ".0f",
+            "labelExpr": "datum.label + '%'"
           }
         },
         "tooltip": [
           { "field": "properties.STATE_NAME", "type": "nominal", "title": "State" },
-          { "field": "distinct_animals", "type": "quantitative", "title": "Unique Animals", "format": "," }
+          { "field": "distinct_animals", "type": "quantitative", "title": "Unique Animals", "format": "," },
+          { "field": "pct_of_australia", "type": "quantitative", "title": "% of Australia's species", "format": ".1f" }
         ]
       }
     },
@@ -104,16 +125,179 @@
       "mark": {
         "type": "text",
         "fontStyle": "italic",
-        "fontSize": 11,
+        "fontSize": 13,
         "color": "#2c5d8a",
         "lineBreak": "\n",
-        "lineHeight": 13,
+        "lineHeight": 15,
         "align": "center"
       },
       "encoding": {
         "longitude": { "field": "lon", "type": "quantitative" },
         "latitude": { "field": "lat", "type": "quantitative" },
-        "text": { "field": "name", "type": "nominal" }
+        "text": { "field": "name", "type": "nominal" },
+        "tooltip": { "value": null }
+      }
+    },
+    {
+      "description": "ACT leader line, drawn from the territory out into the Tasman Sea",
+      "data": { "name": "actCallout" },
+      "mark": { "type": "rule", "stroke": "#333333", "strokeWidth": 1.2 },
+      "encoding": {
+        "longitude": { "field": "lon", "type": "quantitative" },
+        "latitude": { "field": "lat", "type": "quantitative" },
+        "longitude2": { "field": "textLon" },
+        "latitude2": { "field": "textLat" },
+        "tooltip": { "value": null }
+      }
+    },
+    {
+      "description": "ACT anchor dot",
+      "data": { "name": "actCallout" },
+      "mark": { "type": "point", "filled": true, "size": 25, "color": "#333333" },
+      "encoding": {
+        "longitude": { "field": "lon", "type": "quantitative" },
+        "latitude": { "field": "lat", "type": "quantitative" },
+        "tooltip": { "value": null }
+      }
+    },
+    {
+      "description": "State name labels - white halo underneath so text stays readable on dark and light greens",
+      "data": { "name": "stateLabels" },
+      "transform": [
+        {
+          "lookup": "name",
+          "from": {
+            "data": { "url": "datasets/distinct_animals_by_state.csv", "format": { "type": "csv" } },
+            "key": "state",
+            "fields": ["pct_of_australia"]
+          }
+        },
+        {
+          "calculate": "[datum.name, format(toNumber(datum.pct_of_australia), '.1f') + '%']",
+          "as": "label"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 13,
+        "fontWeight": 600,
+        "lineHeight": 15,
+        "align": "center",
+        "baseline": "middle",
+        "fill": "white",
+        "stroke": "white",
+        "strokeWidth": 4,
+        "strokeJoin": "round"
+      },
+      "encoding": {
+        "longitude": { "field": "lon", "type": "quantitative" },
+        "latitude": { "field": "lat", "type": "quantitative" },
+        "text": { "field": "label" },
+        "tooltip": { "value": null }
+      }
+    },
+    {
+      "description": "State name labels - dark text on top",
+      "data": { "name": "stateLabels" },
+      "transform": [
+        {
+          "lookup": "name",
+          "from": {
+            "data": { "url": "datasets/distinct_animals_by_state.csv", "format": { "type": "csv" } },
+            "key": "state",
+            "fields": ["pct_of_australia"]
+          }
+        },
+        {
+          "calculate": "[datum.name, format(toNumber(datum.pct_of_australia), '.1f') + '%']",
+          "as": "label"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 13,
+        "fontWeight": 600,
+        "lineHeight": 15,
+        "align": "center",
+        "baseline": "middle",
+        "color": "#111111"
+      },
+      "encoding": {
+        "longitude": { "field": "lon", "type": "quantitative" },
+        "latitude": { "field": "lat", "type": "quantitative" },
+        "text": { "field": "label" },
+        "tooltip": { "value": null }
+      }
+    },
+    {
+      "description": "ACT label halo",
+      "data": { "name": "actCallout" },
+      "transform": [
+        {
+          "lookup": "key",
+          "from": {
+            "data": { "url": "datasets/distinct_animals_by_state.csv", "format": { "type": "csv" } },
+            "key": "state",
+            "fields": ["pct_of_australia"]
+          }
+        },
+        {
+          "calculate": "[datum.line1, datum.line2, format(toNumber(datum.pct_of_australia), '.1f') + '%']",
+          "as": "label"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 13,
+        "fontWeight": 600,
+        "lineHeight": 15,
+        "align": "left",
+        "baseline": "middle",
+        "dx": 4,
+        "fill": "white",
+        "stroke": "white",
+        "strokeWidth": 4,
+        "strokeJoin": "round"
+      },
+      "encoding": {
+        "longitude": { "field": "textLon", "type": "quantitative" },
+        "latitude": { "field": "textLat", "type": "quantitative" },
+        "text": { "field": "label" },
+        "tooltip": { "value": null }
+      }
+    },
+    {
+      "description": "ACT label, sitting out in the Tasman Sea at the end of the leader line",
+      "data": { "name": "actCallout" },
+      "transform": [
+        {
+          "lookup": "key",
+          "from": {
+            "data": { "url": "datasets/distinct_animals_by_state.csv", "format": { "type": "csv" } },
+            "key": "state",
+            "fields": ["pct_of_australia"]
+          }
+        },
+        {
+          "calculate": "[datum.line1, datum.line2, format(toNumber(datum.pct_of_australia), '.1f') + '%']",
+          "as": "label"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 13,
+        "fontWeight": 600,
+        "lineHeight": 15,
+        "align": "left",
+        "baseline": "middle",
+        "dx": 4,
+        "color": "#111111"
+      },
+      "encoding": {
+        "longitude": { "field": "textLon", "type": "quantitative" },
+        "latitude": { "field": "textLat", "type": "quantitative" },
+        "text": { "field": "label" },
+        "tooltip": { "value": null }
       }
     }
   ]

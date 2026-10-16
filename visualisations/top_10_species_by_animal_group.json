@@ -7,7 +7,7 @@
 
   "title": {
     "text": "Top 5 Species Observed in Each Animal Group",
-    "subtitle": "Box size shows the number of observations",
+    "subtitle": "Box size shows the number of observations (the smallest group is enlarged slightly so its label fits)",
     "anchor": "middle",
     "frame": "group",
     "fontSize": 18,
@@ -16,6 +16,11 @@
     "offset": 25,
     "subtitlePadding": 6
   },
+
+  "signals": [
+    {"name": "minGroupShare", "value": 0.04},
+    {"name": "maxBoost", "value": 0.85}
+  ],
 
   "data": [
     {
@@ -57,15 +62,47 @@
       ]
     },
     {
+      "name": "groupRank",
+      "source": "raw",
+      "transform": [
+        {
+          "type": "aggregate",
+          "groupby": ["animal_group"],
+          "fields": ["observations"],
+          "ops": ["sum"],
+          "as": ["obs"]
+        },
+        {"type": "collect", "sort": {"field": "obs", "order": "ascending"}}
+      ]
+    },
+    {
       "name": "leaves",
       "source": "raw",
       "transform": [
+        {
+          "type": "joinaggregate",
+          "groupby": ["animal_group"],
+          "fields": ["observations"],
+          "ops": ["sum"],
+          "as": ["group_total"]
+        },
+        {
+          "type": "joinaggregate",
+          "fields": ["observations"],
+          "ops": ["sum"],
+          "as": ["grand_total"]
+        },
         {"type": "formula", "as": "id", "expr": "datum.animal_group + '/' + datum.common_name"},
         {"type": "formula", "as": "parent", "expr": "datum.animal_group"},
         {"type": "formula", "as": "label", "expr": "datum.common_name"},
         {"type": "formula", "as": "grp", "expr": "datum.animal_group"},
         {"type": "formula", "as": "obs", "expr": "datum.observations"},
-        {"type": "formula", "as": "size", "expr": "datum.observations"}
+        {
+          "type": "formula",
+          "as": "boost",
+          "expr": "length(data('groupRank')) > 1 && datum.group_total === data('groupRank')[0].obs ? max(1, min(minGroupShare * datum.grand_total / datum.group_total, maxBoost * data('groupRank')[1].obs / datum.group_total)) : 1"
+        },
+        {"type": "formula", "as": "size", "expr": "datum.observations * datum.boost"}
       ]
     },
     {
@@ -82,7 +119,7 @@
           "ratio": 1.4,
           "paddingInner": 2,
           "paddingOuter": 3,
-          "paddingTop": 3,
+          "paddingTop": 22,
           "size": [{"signal": "width"}, {"signal": "height"}]
         }
       ]
@@ -101,7 +138,63 @@
       "name": "leafLabels",
       "source": "leafNodes",
       "transform": [
-        {"type": "filter", "expr": "(datum.x1 - datum.x0) > 58 && (datum.y1 - datum.y0) > 22"}
+        {"type": "formula", "as": "lb_w", "expr": "datum.x1 - datum.x0 - 8"},
+        {"type": "formula", "as": "lb_h", "expr": "datum.y1 - datum.y0"},
+        {"type": "formula", "as": "lb_len", "expr": "length(datum.label)"},
+        {
+          "type": "formula",
+          "as": "lb_n",
+          "expr": "max(1, min(3, ceil(datum.lb_len / max(1, floor(datum.lb_w / 5.1))), floor((datum.lb_h - 6) / 13) - 1))"
+        },
+        {"type": "formula", "as": "lb_t1", "expr": "floor(datum.lb_len / datum.lb_n)"},
+        {"type": "formula", "as": "lb_a1", "expr": "lastindexof(substring(datum.label, 0, datum.lb_t1), ' ')"},
+        {
+          "type": "formula",
+          "as": "lb_c1",
+          "expr": "indexof(substring(datum.label, datum.lb_t1), ' ') < 0 ? -1 : datum.lb_t1 + indexof(substring(datum.label, datum.lb_t1), ' ')"
+        },
+        {
+          "type": "formula",
+          "as": "lb_p1",
+          "expr": "datum.lb_n < 2 ? -1 : (datum.lb_a1 < 0 ? datum.lb_c1 : (datum.lb_c1 < 0 ? datum.lb_a1 : (datum.lb_t1 - datum.lb_a1 <= datum.lb_c1 - datum.lb_t1 ? datum.lb_a1 : datum.lb_c1)))"
+        },
+        {"type": "formula", "as": "lb_t2", "expr": "floor(2 * datum.lb_len / 3)"},
+        {"type": "formula", "as": "lb_a2", "expr": "lastindexof(substring(datum.label, 0, datum.lb_t2), ' ')"},
+        {
+          "type": "formula",
+          "as": "lb_c2",
+          "expr": "indexof(substring(datum.label, datum.lb_t2), ' ') < 0 ? -1 : datum.lb_t2 + indexof(substring(datum.label, datum.lb_t2), ' ')"
+        },
+        {
+          "type": "formula",
+          "as": "lb_p2",
+          "expr": "datum.lb_n < 3 ? -1 : (datum.lb_a2 < 0 ? datum.lb_c2 : (datum.lb_c2 < 0 ? datum.lb_a2 : (datum.lb_t2 - datum.lb_a2 <= datum.lb_c2 - datum.lb_t2 ? datum.lb_a2 : datum.lb_c2)))"
+        },
+        {
+          "type": "formula",
+          "as": "lb_s0",
+          "expr": "datum.lb_p1 < 0 ? datum.label : substring(datum.label, 0, datum.lb_p1)"
+        },
+        {
+          "type": "formula",
+          "as": "lb_s1",
+          "expr": "datum.lb_p1 < 0 ? '' : (datum.lb_p2 > datum.lb_p1 ? substring(datum.label, datum.lb_p1 + 1, datum.lb_p2) : substring(datum.label, datum.lb_p1 + 1))"
+        },
+        {
+          "type": "formula",
+          "as": "lb_s2",
+          "expr": "datum.lb_p1 >= 0 && datum.lb_p2 > datum.lb_p1 ? substring(datum.label, datum.lb_p2 + 1) : ''"
+        },
+        {
+          "type": "formula",
+          "as": "lb_text",
+          "expr": "datum.lb_s2 !== '' ? [datum.lb_s0, datum.lb_s1, datum.lb_s2, format(datum.obs, ',')] : (datum.lb_s1 !== '' ? [datum.lb_s0, datum.lb_s1, format(datum.obs, ',')] : [datum.lb_s0, format(datum.obs, ',')])"
+        },
+        {"type": "formula", "as": "lb_lines", "expr": "length(datum.lb_text)"},
+        {
+          "type": "filter",
+          "expr": "(datum.x1 - datum.x0) > 58 && datum.lb_h > datum.lb_lines * 13 + 6"
+        }
       ]
     }
   ],
@@ -182,13 +275,32 @@
       "encode": {
         "update": {
           "x": {"signal": "0.5 * (datum.x0 + datum.x1)"},
-          "y": {"signal": "0.5 * (datum.y0 + datum.y1)"},
-          "text": {"field": "label"},
+          "y": {"signal": "0.5 * (datum.y0 + datum.y1) - datum.lb_lines * 13 / 2"},
+          "text": {"signal": "datum.lb_text"},
           "align": {"value": "center"},
-          "baseline": {"value": "middle"},
-          "fontSize": {"value": 11},
+          "baseline": {"value": "top"},
+          "lineHeight": {"value": 13},
+          "fontSize": {"value": 10},
           "fill": {"value": "#111"},
           "limit": {"signal": "datum.x1 - datum.x0 - 8"}
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {"data": "groupNodes"},
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": {"signal": "datum.x0 + 4"},
+          "y": {"signal": "datum.y0 + 5"},
+          "text": {"signal": "'Total: ' + format(datum.obs, ',')"},
+          "align": {"value": "left"},
+          "baseline": {"value": "top"},
+          "fontSize": {"value": 11},
+          "fontWeight": {"value": "bold"},
+          "fill": {"value": "#111"},
+          "limit": {"signal": "datum.x1 - datum.x0 + 12"}
         }
       }
     }

@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v6.json",
-  "description": "Binned map of animal observations across Australia.",
+  "description": "Binned map showing each grid square's share of animal observations across Australia.",
 
   "width": 820,
   "height": 700,
@@ -11,7 +11,7 @@
   "title": {
     "text": "Where Animals Are Observed Across Australia",
     "subtitle": {
-      "signal": "'Number of observations in each map grid square. Showing: ' + (animalGroup === 'All' ? 'all animal groups' : animalGroup)"
+      "signal": "'Share of ' + (animalGroup === 'All' ? 'all' : lower(animalGroup)) + ' observations falling in each map grid square'"
     },
     "anchor": "middle",
     "fontSize": 18,
@@ -27,7 +27,9 @@
       "value": "All",
       "on": [{ "events": "@groupBtn:click", "update": "datum.name" }]
     },
-    { "name": "legendX", "update": "width + 30" }
+    { "name": "legendX", "update": "width + 30" },
+    { "name": "legendY", "value": 36 },
+    { "name": "legendStep", "value": 28 }
   ],
 
   "projections": [
@@ -44,8 +46,8 @@
     {
       "name": "color",
       "type": "threshold",
-      "domain": [11, 101, 1001, 10001, 100001],
-      "range": ["#fee5d9", "#fcbba1", "#fc9272", "#fb6a4a", "#de2d26", "#a50f15"]
+      "domain": [0.01, 0.1, 1, 5],
+      "range": ["#fee5d9", "#fcae91", "#fb6a4a", "#de2d26", "#a50f15"]
     },
     {
       "name": "btnX",
@@ -73,12 +75,11 @@
     {
       "name": "legendSteps",
       "values": [
-        { "i": 0, "v": 1,      "label": "0" },
-        { "i": 1, "v": 11,     "label": "10" },
-        { "i": 2, "v": 101,    "label": "100" },
-        { "i": 3, "v": 1001,   "label": "1,000" },
-        { "i": 4, "v": 10001,  "label": "10,000" },
-        { "i": 5, "v": 100001, "label": "100,000" }
+        { "i": 0, "v": 0.005, "label": "Under 0.01%" },
+        { "i": 1, "v": 0.05,  "label": "0.01% to 0.1%" },
+        { "i": 2, "v": 0.5,   "label": "0.1% to 1%" },
+        { "i": 3, "v": 2,     "label": "1% to 5%" },
+        { "i": 4, "v": 10,    "label": "5% or more" }
       ]
     },
     {
@@ -116,9 +117,10 @@
         { "type": "formula", "as": "lon_bin_end",  "expr": "toNumber(datum.lon_bin_end)" },
         { "type": "formula", "as": "lat_bin_end",  "expr": "toNumber(datum.lat_bin_end)" },
         { "type": "formula", "as": "observations", "expr": "toNumber(datum.observations)" },
+        { "type": "formula", "as": "percentage",   "expr": "toNumber(datum.percentage)" },
         {
           "type": "filter",
-          "expr": "isValid(datum.lon_bin) && isValid(datum.lat_bin) && isValid(datum.observations)"
+          "expr": "isValid(datum.lon_bin) && isValid(datum.lat_bin) && isValid(datum.observations) && isValid(datum.percentage)"
         }
       ]
     },
@@ -133,9 +135,9 @@
         {
           "type": "aggregate",
           "groupby": ["lon_bin", "lat_bin", "lon_bin_end", "lat_bin_end"],
-          "fields": ["observations"],
-          "ops": ["sum"],
-          "as": ["observations"]
+          "fields": ["observations", "percentage"],
+          "ops": ["sum", "sum"],
+          "as": ["observations", "percentage"]
         },
         { "type": "formula", "as": "animal_group", "expr": "animalGroup" }
       ]
@@ -204,12 +206,12 @@
           "y": { "field": "y" },
           "width": { "field": "width" },
           "height": { "field": "height" },
-          "fill": { "scale": "color", "field": "observations" },
+          "fill": { "scale": "color", "field": "percentage" },
           "fillOpacity": { "value": 0.8 },
           "stroke": { "value": null },
           "strokeWidth": { "value": 0 },
           "tooltip": {
-            "signal": "{'Animal group': datum.animal_group, 'Longitude': format(datum.lon_bin, '.2f') + '° to ' + format(datum.lon_bin_end, '.2f') + '°', 'Latitude': format(datum.lat_bin, '.2f') + '° to ' + format(datum.lat_bin_end, '.2f') + '°', 'Observations': format(datum.observations, ',')}"
+            "signal": "{'Animal group': datum.animal_group, 'Longitude': format(datum.lon_bin, '.2f') + '° to ' + format(datum.lon_bin_end, '.2f') + '°', 'Latitude': format(datum.lat_bin, '.2f') + '° to ' + format(datum.lat_bin_end, '.2f') + '°', 'Share of observations': format(datum.percentage, '.2r') + '%', 'Observations': format(datum.observations, ',')}"
           }
         },
         "hover": {
@@ -260,11 +262,25 @@
         "update": {
           "x": { "signal": "legendX" },
           "y": { "value": 10 },
-          "text": { "value": "Observations" },
+          "text": { "value": "Share of observations" },
           "baseline": { "value": "middle" },
           "fontSize": { "value": 13 },
           "fontWeight": { "value": "bold" },
           "fill": { "value": "#222222" }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": { "signal": "legendX" },
+          "y": { "value": 25 },
+          "text": { "value": "per grid square" },
+          "baseline": { "value": "middle" },
+          "fontSize": { "value": 11 },
+          "fill": { "value": "#666666" }
         }
       }
     },
@@ -275,27 +291,14 @@
       "encode": {
         "update": {
           "x": { "signal": "legendX" },
-          "width": { "value": 18 },
-          "y": { "signal": "28 + datum.i * 30" },
-          "height": { "value": 30 },
+          "width": { "value": 22 },
+          "y": { "signal": "legendY + datum.i * legendStep" },
+          "height": { "signal": "legendStep - 4" },
+          "cornerRadius": { "value": 3 },
           "fill": { "scale": "color", "field": "v" },
           "fillOpacity": { "value": 0.8 },
           "stroke": { "value": "#999999" },
           "strokeWidth": { "value": 0.5 }
-        }
-      }
-    },
-    {
-      "type": "rule",
-      "from": { "data": "legendSteps" },
-      "interactive": false,
-      "encode": {
-        "update": {
-          "x": { "signal": "legendX" },
-          "x2": { "signal": "legendX + 24" },
-          "y": { "signal": "28 + datum.i * 30" },
-          "stroke": { "value": "#333333" },
-          "strokeWidth": { "value": 1 }
         }
       }
     },
@@ -305,12 +308,27 @@
       "interactive": false,
       "encode": {
         "update": {
-          "x": { "signal": "legendX + 30" },
-          "y": { "signal": "28 + datum.i * 30" },
+          "x": { "signal": "legendX + 32" },
+          "y": { "signal": "legendY + datum.i * legendStep + (legendStep - 4) / 2" },
           "text": { "field": "label" },
           "baseline": { "value": "middle" },
           "fontSize": { "value": 12 },
           "fill": { "value": "#333333" }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": { "signal": "legendX" },
+          "y": { "signal": "legendY + 5 * legendStep + 8" },
+          "text": { "signal": "'of ' + (animalGroup === 'All' ? 'all' : lower(animalGroup)) + ' records'" },
+          "baseline": { "value": "middle" },
+          "fontSize": { "value": 11 },
+          "fontStyle": { "value": "italic" },
+          "fill": { "value": "#666666" }
         }
       }
     },

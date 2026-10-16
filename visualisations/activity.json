@@ -22,7 +22,7 @@
   },
 
   "width": 550,
-  "height": 250,
+  "height": 350,
   "padding": {"left": 15, "right": 15, "top": 0, "bottom": 0},
   "transform": [
     {

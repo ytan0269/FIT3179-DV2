@@ -243,7 +243,7 @@
           "innerRadius": {"field": "ri0"},
           "outerRadius": {"field": "ri1"},
           "fill": {"value": null},
-          "stroke": {"value": "red"},
+          "stroke": {"value": "black"},
           "strokeWidth": {"value": 2.5},
           "strokeJoin": {"value": "miter"}
         }

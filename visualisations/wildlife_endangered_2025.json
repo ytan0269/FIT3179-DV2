@@ -92,8 +92,7 @@
         { "i": 1, "value": 30 },
         { "i": 2, "value": 60 },
         { "i": 3, "value": 90 },
-        { "i": 4, "value": 120 },
-        { "i": 5, "value": 150 }
+        { "i": 4, "value": 120 }
       ],
       "transform": [
         { "type": "formula", "as": "r", "expr": "scale('pieSize', datum.value)" },

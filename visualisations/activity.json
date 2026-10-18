@@ -16,27 +16,21 @@
 
   "data": {
     "url": "datasets/activity.csv",
-    "format": {
-      "type": "csv"
-    }
+    "format": { "type": "csv" }
   },
 
   "width": 550,
   "height": 350,
-  "padding": {"left": 15, "right": 15, "top": 0, "bottom": 0},
+  "padding": { "left": 15, "right": 15, "top": 0, "bottom": 0 },
+
   "transform": [
     {
       "fold": ["NSW", "VIC", "QLD", "SA", "WA", "TAS", "NT", "ACT"],
       "as": ["State", "Count"]
     },
+    { "calculate": "toNumber(datum.Count)", "as": "Count" },
     {
-      "calculate": "toNumber(datum.Count)",
-      "as": "Count"
-    },
-    {
-      "joinaggregate": [
-        { "op": "sum", "field": "Count", "as": "StateTotal" }
-      ],
+      "joinaggregate": [{ "op": "sum", "field": "Count", "as": "StateTotal" }],
       "groupby": ["State"]
     },
     {
@@ -46,14 +40,19 @@
     {
       "calculate": "format(datum.Percentage, '.1f') + '%'",
       "as": "PercentageLabel"
+    },
+    {
+      "stack": "Percentage",
+      "groupby": ["State"],
+      "sort": [{ "field": "Activity", "order": "ascending" }],
+      "as": ["y0", "y1"]
+    },
+    { "calculate": "(datum.y0 + datum.y1) / 2", "as": "yMid" },
+    {
+      "calculate": "format(datum.Percentage, '.0f') + '%'",
+      "as": "SegmentLabel"
     }
   ],
-
-  "mark": {
-    "type": "bar",
-    "stroke": "white",
-    "strokeWidth": 0.5
-  },
 
   "encoding": {
     "x": {
@@ -61,77 +60,80 @@
       "type": "nominal",
       "title": "State / Territory",
       "sort": ["NSW", "VIC", "QLD", "SA", "WA", "TAS", "NT", "ACT"],
-      "axis": {
-        "labelAngle": 0,
-        "titleFontSize": 13,
-        "labelFontSize": 12
-      }
-    },
-
-    "y": {
-      "field": "Percentage",
-      "type": "quantitative",
-      "title": "Share of state participants (%)",
-      "scale": { "domain": [0, 100] },
-      "axis": {
-        "format": ".0f",
-        "titleFontSize": 13,
-        "labelFontSize": 12,
-        "tickCount": 10
-      }
-    },
-
-    "color": {
-      "field": "Activity",
-      "type": "nominal",
-      "title": "Legend",
-      "scale": {
-        "range": [
-          "#AABB6A",
-          "#F8C85E",
-          "#E27A55",
-          "#98D0EA",
-          "#B0A2D2",
-          "#8575B5",
-          "#4A64A0",
-          "#B54D6E"
-        ]
-      },
-      "legend": {
-        "orient": "bottom",
-        "columns": 2,
-        "labelLimit": 0,
-        "columnPadding": 30,
-        "rowPadding": 10,
-        "offset": 10
-      }
-    },
-
-    "order": {
-      "field": "Activity",
-      "type": "nominal"
-    },
-
-    "tooltip": [
-      { "field": "State", "type": "nominal", "title": "State" },
-      { "field": "Activity", "type": "nominal", "title": "Activity" },
-      { "field": "Count", "type": "quantitative", "title": "Participants", "format": "," },
-      { "field": "PercentageLabel", "type": "nominal", "title": "Share of state total" }
-    ]
+      "axis": { "labelAngle": 0, "titleFontSize": 13, "labelFontSize": 12 }
+    }
   },
 
-  "config": {
-    "view": {
-      "stroke": null
+  "layer": [
+    {
+      "mark": { "type": "bar", "stroke": "white", "strokeWidth": 0.5 },
+      "encoding": {
+        "y": {
+          "field": "y0",
+          "type": "quantitative",
+          "title": "Share of state participants (%)",
+          "scale": { "domain": [0, 100] },
+          "axis": {
+            "format": ".0f",
+            "titleFontSize": 13,
+            "labelFontSize": 12,
+            "tickCount": 10
+          }
+        },
+        "y2": { "field": "y1" },
+        "color": {
+          "field": "Activity",
+          "type": "nominal",
+          "title": "Legend",
+          "scale": {
+            "range": [
+              "#AABB6A",
+              "#F8C85E",
+              "#E27A55",
+              "#98D0EA",
+              "#B0A2D2",
+              "#8575B5",
+              "#4A64A0",
+              "#B54D6E"
+            ]
+          },
+          "legend": {
+            "orient": "bottom",
+            "columns": 2,
+            "labelLimit": 0,
+            "columnPadding": 30,
+            "rowPadding": 10,
+            "offset": 10
+          }
+        },
+        "tooltip": [
+          { "field": "State", "type": "nominal", "title": "State" },
+          { "field": "Activity", "type": "nominal", "title": "Activity" },
+          { "field": "Count", "type": "quantitative", "title": "Participants", "format": "," },
+          { "field": "PercentageLabel", "type": "nominal", "title": "Share of state total" }
+        ]
+      }
     },
-    "axis": {
-      "grid": true,
-      "gridColor": "#eee",
-      "domain": false
-    },
-    "legend": {
-      "labelFontSize": 12,
-      "titleFontSize": 13
+    {
+      "transform": [{ "filter": "datum.Percentage >= 7" }],
+      "mark": {
+        "type": "text",
+        "baseline": "middle",
+        "align": "center",
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "color": "#222"
+      },
+      "encoding": {
+        "y": { "field": "yMid", "type": "quantitative" },
+        "text": { "field": "SegmentLabel", "type": "nominal" }
+      }
     }
+  ],
+
+  "config": {
+    "view": { "stroke": null },
+    "axis": { "grid": true, "gridColor": "#eee", "domain": false },
+    "legend": { "labelFontSize": 12, "titleFontSize": 13 }
   }
 }

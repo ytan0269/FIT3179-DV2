@@ -1,33 +1,10 @@
 {
-  "$schema": "https://vega.github.io/schema/vega/v6.json",
-  "height": 350,
-  "width": 820,
-  "padding": 20,
-  "autosize": {"type": "pad", "contains": "padding"},
-
-  "signals": [
-    {
-      "name": "reasonOrder",
-      "value": [
-        "Support for local environment",
-        "Social reasons",
-        "Nature conservation",
-        "Education or work",
-        "Exercise",
-        "Other reasons",
-        "Enjoyment",
-        "Did not know"
-      ]
-    },
-    {
-      "name": "stateOrder",
-      "value": ["NSW", "VIC", "QLD", "SA", "WA", "TAS", "NT", "ACT"]
-    }
-  ],
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "description": "Stacked proportional bar chart showing the share of participants giving each reason for taking part in nature activities within each Australian state or territory. Each bar sums to 100 percent.",
 
   "title": {
     "text": "Why Australians Take Part in Nature Activities, by State and Territory",
-    "subtitle": "Share of each state or territory's participants giving each reason",
+    "subtitle": "Each bar shows how that state's participants are split across reasons (sums to 100%)",
     "anchor": "middle",
     "frame": "bounds",
     "fontSize": 18,
@@ -37,168 +14,140 @@
     "subtitleColor": "#555"
   },
 
-  "data": [
+  "data": {
+    "url": "datasets/activity_reason.csv",
+    "format": { "type": "csv" }
+  },
+
+  "width": 550,
+  "height": 350,
+  "padding": { "left": 15, "right": 15, "top": 0, "bottom": 0 },
+
+  "transform": [
     {
-      "name": "cells",
-      "url": "datasets/activity_reason.csv",
-      "format": {"type": "csv"},
-      "transform": [
-        {
-          "type": "fold",
-          "fields": ["NSW", "VIC", "QLD", "SA", "WA", "TAS", "NT", "ACT"],
-          "as": ["state", "size"]
-        },
-        {
-          "type": "formula",
-          "expr": "toNumber(datum.size)",
-          "as": "size"
-        },
-        {
-          "type": "formula",
-          "expr": "{'NSW': 'New South Wales', 'VIC': 'Victoria', 'QLD': 'Queensland', 'SA': 'South Australia', 'WA': 'Western Australia', 'TAS': 'Tasmania', 'NT': 'Northern Territory', 'ACT': 'Australian Capital Territory'}[datum.state]",
-          "as": "stateName"
-        },
-        {
-          "type": "joinaggregate",
-          "groupby": ["state"],
-          "fields": ["size"],
-          "ops": ["sum"],
-          "as": ["stateTotal"]
-        },
-        {
-          "type": "formula",
-          "expr": "datum.stateTotal > 0 ? datum.size / datum.stateTotal : 0",
-          "as": "pct"
-        }
-      ]
+      "fold": ["NSW", "VIC", "QLD", "SA", "WA", "TAS", "NT", "ACT"],
+      "as": ["State", "Count"]
+    },
+    { "calculate": "toNumber(datum.Count)", "as": "Count" },
+    {
+      "joinaggregate": [{ "op": "sum", "field": "Count", "as": "StateTotal" }],
+      "groupby": ["State"]
     },
     {
-      "name": "stats",
-      "source": "cells",
-      "transform": [
-        {
-          "type": "aggregate",
-          "fields": ["pct"],
-          "ops": ["max"],
-          "as": ["maxPct"]
-        }
-      ]
+      "calculate": "datum.StateTotal > 0 ? datum.Count / datum.StateTotal * 100 : 0",
+      "as": "Percentage"
+    },
+    {
+      "calculate": "format(datum.Percentage, '.1f') + '%'",
+      "as": "PercentageLabel"
+    },
+    {
+      "calculate": "indexof(['Support for local environment','Social reasons','Nature conservation','Education or work','Exercise','Other reasons','Enjoyment','Did not know'], datum.Reason)",
+      "as": "ReasonOrder"
+    },
+    {
+      "stack": "Percentage",
+      "groupby": ["State"],
+      "sort": [{ "field": "ReasonOrder", "order": "ascending" }],
+      "as": ["y0", "y1"]
+    },
+    { "calculate": "(datum.y0 + datum.y1) / 2", "as": "yMid" },
+    {
+      "calculate": "format(datum.Percentage, '.0f') + '%'",
+      "as": "SegmentLabel"
     }
   ],
 
-  "scales": [
-    {
-      "name": "x",
-      "type": "band",
-      "domain": {"signal": "stateOrder"},
-      "range": "width",
-      "paddingInner": 0.05,
-      "paddingOuter": 0
-    },
-    {
-      "name": "y",
-      "type": "band",
-      "domain": {"signal": "reasonOrder"},
-      "range": "height",
-      "paddingInner": 0.05,
-      "paddingOuter": 0
-    },
-    {
-      "name": "color",
-      "type": "linear",
-      "domain": {"data": "cells", "field": "pct"},
-      "range": {"scheme": "blues"},
-      "zero": true,
-      "nice": true
+  "encoding": {
+    "x": {
+      "field": "State",
+      "type": "nominal",
+      "title": "State / Territory",
+      "sort": ["NSW", "VIC", "QLD", "SA", "WA", "TAS", "NT", "ACT"],
+      "axis": { "labelAngle": 0, "titleFontSize": 13, "labelFontSize": 12 }
     }
-  ],
+  },
 
-  "axes": [
+  "layer": [
     {
-      "orient": "top",
-      "scale": "x",
-      "domain": false,
-      "ticks": false,
-      "labelFontSize": 13,
-      "labelFontWeight": "bold",
-      "labelPadding": 6
-    },
-    {
-      "orient": "left",
-      "scale": "y",
-      "domain": false,
-      "ticks": false,
-      "labelFontSize": 13,
-      "labelFontWeight": "bold",
-      "labelPadding": 8,
-      "labelLimit": 220,
-      "encode": {
-        "labels": {
-          "update": {
-            "text": {
-              "signal": "datum.value == 'Support for local environment' ? ['Support for local', 'environment'] : datum.value"
-            },
-            "lineHeight": {"value": 15}
+      "mark": { "type": "bar", "stroke": "white", "strokeWidth": 0.5 },
+      "encoding": {
+        "y": {
+          "field": "y0",
+          "type": "quantitative",
+          "title": "Share of state participants (%)",
+          "scale": { "domain": [0, 100] },
+          "axis": {
+            "format": ".0f",
+            "titleFontSize": 13,
+            "labelFontSize": 12,
+            "tickCount": 10
           }
-        }
+        },
+        "y2": { "field": "y1" },
+        "color": {
+          "field": "Reason",
+          "type": "nominal",
+          "title": "Legend",
+          "scale": {
+            "domain": [
+              "Support for local environment",
+              "Social reasons",
+              "Nature conservation",
+              "Education or work",
+              "Exercise",
+              "Other reasons",
+              "Enjoyment",
+              "Did not know"
+            ],
+            "range": [
+              "#3B7A57",
+              "#D97941",
+              "#6B9AC4",
+              "#C65D7B",
+              "#8A78B5",
+              "#C4A747",
+              "#4D9B91",
+              "#8C6D5A"
+            ]
+          },
+          "legend": {
+            "orient": "bottom",
+            "columns": 2,
+            "labelLimit": 0,
+            "columnPadding": 30,
+            "rowPadding": 10,
+            "offset": 10
+          }
+        },
+        "tooltip": [
+          { "field": "State", "type": "nominal", "title": "State" },
+          { "field": "Reason", "type": "nominal", "title": "Reason" },
+          { "field": "Count", "type": "quantitative", "title": "Participants", "format": "," },
+          { "field": "PercentageLabel", "type": "nominal", "title": "Share of state total" }
+        ]
+      }
+    },
+    {
+      "transform": [{ "filter": "datum.Percentage >= 7" }],
+      "mark": {
+        "type": "text",
+        "baseline": "middle",
+        "align": "center",
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "color": "white"
+      },
+      "encoding": {
+        "y": { "field": "yMid", "type": "quantitative" },
+        "text": { "field": "SegmentLabel", "type": "nominal" }
       }
     }
   ],
 
-  "legends": [
-    {
-      "fill": "color",
-      "type": "gradient",
-      "orient": "right",
-      "title": "Share of state",
-      "titleFontSize": 12,
-      "labelFontSize": 11,
-      "format": ".0%",
-      "gradientLength": 200,
-      "gradientThickness": 14
-    }
-  ],
-
-  "marks": [
-    {
-      "type": "rect",
-      "name": "cellMark",
-      "from": {"data": "cells"},
-      "encode": {
-        "update": {
-          "x": {"scale": "x", "field": "state"},
-          "width": {"scale": "x", "band": 1},
-          "y": {"scale": "y", "field": "Reason"},
-          "height": {"scale": "y", "band": 1},
-          "fill": {"scale": "color", "field": "pct"},
-          "stroke": {"value": "transparent"},
-          "strokeWidth": {"value": 2},
-          "tooltip": {
-            "signal": "{'State': datum.stateName, 'Reason': datum.Reason, 'Participants': format(datum.size, ',.0f'), 'Share of state': format(datum.pct, '.1%')}"
-          }
-        },
-        "hover": {
-          "stroke": {"value": "#222"}
-        }
-      }
-    },
-    {
-      "type": "text",
-      "from": {"data": "cells"},
-      "interactive": false,
-      "encode": {
-        "update": {
-          "x": {"signal": "scale('x', datum.state) + bandwidth('x') / 2"},
-          "y": {"signal": "scale('y', datum.Reason) + bandwidth('y') / 2"},
-          "align": {"value": "center"},
-          "baseline": {"value": "middle"},
-          "fontSize": {"value": 12},
-          "text": {"signal": "format(datum.pct, '.1%')"},
-          "fill": {
-            "signal": "datum.pct > data('stats')[0].maxPct * 0.55 ? '#fff' : '#222'"
-          }
-        }
-      }
-    }
-  ]
+  "config": {
+    "view": { "stroke": null },
+    "axis": { "grid": true, "gridColor": "#eee", "domain": false },
+    "legend": { "labelFontSize": 12, "titleFontSize": 13 }
+  }
 }

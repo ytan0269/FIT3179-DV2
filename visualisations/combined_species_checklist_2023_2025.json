@@ -137,7 +137,7 @@
     {
       "orient": "bottom",
       "scale": "x",
-      "title": "Endangered status",
+      "title": "Conservation status",
       "labelPadding": 6,
       "domain": false,
       "ticks": false

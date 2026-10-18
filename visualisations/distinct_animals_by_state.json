@@ -10,8 +10,8 @@
     "subtitle": "Darker green means a larger share of all species recorded in Australia was found there",
     "anchor": "middle",
     "frame": "group",
-    "fontSize": 22,
-    "subtitleFontSize": 14,
+    "fontSize": 18,
+    "subtitleFontSize": 13,
     "offset": 12,
     "subtitlePadding": 6,
     "subtitleColor": "#555"
@@ -96,7 +96,7 @@
         "color": {
           "field": "pct_of_australia",
           "type": "quantitative",
-          "title": "% of Australia's species",
+          "title": "Percentage of Australia's Species",
           "scale": { "scheme": "greens", "domainMin": 0 },
           "legend": {
             "orient": "bottom",
@@ -105,6 +105,7 @@
             "titleOrient": "left",
             "titleAnchor": "middle",
             "titleFontSize": 14,
+            "titleLimit": 0,
             "labelFontSize": 13,
             "gradientLength": 350,
             "gradientThickness": 14,

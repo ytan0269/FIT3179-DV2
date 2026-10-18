@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Australian Wildlife Spotting</title>
+    <title>Australian Wildlife Watching</title>
     
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/vega@6.2.0"></script>
@@ -15,7 +15,7 @@
 <body>
     <div class="main_container">
         <header class="hero">
-            <h1>Australian Wildlife Spotting</h1>
+            <h1>Australian Wildlife Watching</h1>
             <div class="hero_divider"></div>
             <div class="hero_subtitle">
                 What Australians see, where and when they see it, and why they head out into nature.
@@ -55,7 +55,6 @@
             <h2>Types of Wildlife Activites Australians Participate in</h2>
 
             <div class="inner_card">
-                <!-- <p>Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder</p>  -->
                  <div class="story_text">
                     <h3>The same top two, everywhere</h3>
                     <p>
@@ -90,9 +89,56 @@
 
 
         <div class="standard_card">
+            <h2>Types of Wildlife Activites Australians Participate in</h2>
+
+            <div class="inner_card">
+                <div class="inner_inner_card">
+                    <div id="activity_reason_vis"></div>
+                    <script>
+                            const vis2_path = "visualisations/activity_reason.json"
+                        vegaEmbed("#activity_reason_vis", vis2_path, {"actions":false})
+                    </script>
+                </div>
+                <div class="story_text">
+                    <h3>What we see</h3>
+                    <p>
+                        The heatmap is dominated by three reasons, and they look almost the same in every state
+                        and territory. Enjoyment is the biggest, at 36-40% (highest in NSW at 40.3%, lowest in
+                        the ACT at 36.0%). Social reasons come second at a steady 24-26%, and exercise third at
+                        16-22%. Together these three account for 80-85% of all reasons everywhere.
+                        Besides leisure related reasonings, support for the local environment (5.5-7.9%),
+                        education or work (4.4-7.4%) and nature conservation (3.5-5.1%) add up to only about
+                        14-18%. "Other reasons" and "did not know" are close to zero. The few differences between
+                        states are small, often under three percentage points. The Northern Territory has the
+                        most people going for education or work (7.4%) and the fewest for exercise (15.9%).
+                    </p>
+
+                    <h3>Why this is the case</h3>
+                    <p>
+                        Most people treat nature as leisure. They go to have a good time, usually with friends
+                        or family, and to stay active, so enjoyment, company and exercise dominate. Caring about
+                        conservation or the local environment may be something people feel without it being
+                        the reason they head out for the day. The pattern is so similar across states because
+                        these motives are personal and don't depend much on where you live. A family picnic in a
+                        Melbourne park and a weekend bushwalk near Sydney are driven by the same things. The
+                        small gaps likely reflect local context. 
+                    </p>
+                </div>
+                
+                <!-- <div class="inner_inner_card">
+                    <div id="activity_reason_vis"></div>
+                    <script>
+                            const vis2_path = "visualisations/activity_reason.json"
+                        vegaEmbed("#activity_reason_vis", vis2_path, {"actions":false})
+                    </script>
+                </div> -->
+            </div>
+        </div>
+        
+
+        <!-- <div class="standard_card">
             <h2>Australian's Reasons for Participating in Wildlife Activities</h2>
             <div class="inner_inner_card_2">
-                <!-- <h3>Type of Wildlife Activities Australians Participate in per State</h3> -->
                 <div id="activity_reason_vis"></div>
                 <script>
                         const vis2_path = "visualisations/activity_reason.json"
@@ -125,9 +171,7 @@
                     small gaps likely reflect local context. 
                 </p>
             </div>
-                
-
-        </div>
+        </div> -->
     
         
         <div class="standard_card">
@@ -212,7 +256,7 @@
 
 
         <div class="standard_card">
-            <h2>Most Common Species and Animal</h2>
+            <h2>Most Common Species in each Animal Group</h2>
 
             <div class="inner_inner_card_2">
                 <div id="top_10_species_by_animal_group_vis"></div>
@@ -533,10 +577,14 @@
 
                 <h3>Declaration of AI use</h3>
                 <p>
-                    Generative AI (ChatGPT and Claude) was used in the making of this project. It helped
+                    ChatGPT was also used to clean the dataset that were obtained from our two sources. Its 
+                    use case was to write the appropriate Python scripts using Pandas to transform the data
+                    into a useable format. I've also check the output produce to ensure that the data remainds
+                    accurate and correct. Claude was used to help
                     write and edit the Vega chart specifications and the written descriptions that sit
                     alongside each visualisation. The data sources, the choice of charts and the final
-                    content were reviewed and approved by the author.
+                    content were reviewed before publishing.
+                    
                 </p>
             </div>
         </div>

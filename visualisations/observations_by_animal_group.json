@@ -3,7 +3,7 @@
 
   "width": 400,
   "height": 400,
-  "padding": {"left": 10, "right": 10, "top": 15, "bottom": 15},
+  "padding": { "left": 10, "right": 10, "top": 15, "bottom": 15 },
 
   "title": {
     "text": "Wildlife Observations by Animal Group",
@@ -19,54 +19,99 @@
 
   "data": {
     "url": "datasets/observations_by_animal_group.csv",
-    "format": {"type": "csv"}
+    "format": { "type": "csv" }
   },
 
   "transform": [
-    {"calculate": "toNumber(datum.observations)", "as": "obs"},
-    {"joinaggregate": [{"op": "sum", "field": "obs", "as": "total"}]},
-    {"calculate": "datum.obs / datum.total", "as": "pct"}
+    { "calculate": "toNumber(datum.observations)", "as": "obs" },
+    { "joinaggregate": [{ "op": "sum", "field": "obs", "as": "total" }] },
+    { "calculate": "datum.obs / datum.total", "as": "pct" },
+    {
+      "calculate": "datum.pct >= 0.04 ? format(datum.pct, '.0%') : ''",
+      "as": "sliceLabel"
+    }
   ],
 
-  "mark": {
-    "type": "arc",
-    "innerRadius": 85,
-    "outerRadius": 190,
-    "stroke": "#fff",
-    "strokeWidth": 2
-  },
-
-  "encoding": {
-    "theta": {
-      "field": "obs",
-      "type": "quantitative",
-      "stack": true
-    },
-    "order": {
-      "field": "obs",
-      "type": "quantitative",
-      "sort": "descending"
-    },
-    "color": {
-      "field": "animal_group",
-      "type": "nominal",
-      "scale": {"scheme": "set2"},
-      "legend": {
-        "title": "Animal Group",
-        "titleFontSize": 13,
-        "labelFontSize": 12,
-        "orient": "none",
-        "legendX": 415,
-        "legendY": 40,
-        "padding": 0
+  "layer": [
+    {
+      "mark": {
+        "type": "arc",
+        "innerRadius": 85,
+        "outerRadius": 190,
+        "stroke": "#fff",
+        "strokeWidth": 2
+      },
+      "encoding": {
+        "theta": { "field": "obs", "type": "quantitative", "stack": true },
+        "order": { "field": "obs", "type": "quantitative", "sort": "descending" },
+        "color": {
+          "field": "animal_group",
+          "type": "nominal",
+          "scale": { "scheme": "set2" },
+          "legend": {
+            "title": "Animal Group",
+            "titleFontSize": 13,
+            "labelFontSize": 12,
+            "orient": "none",
+            "legendX": 415,
+            "legendY": 40,
+            "padding": 0
+          }
+        },
+        "tooltip": [
+          { "field": "animal_group", "type": "nominal", "title": "Animal Group" },
+          { "field": "obs", "type": "quantitative", "title": "Observations", "format": "," },
+          { "field": "pct", "type": "quantitative", "title": "Share", "format": ".1%" }
+        ]
       }
     },
-    "tooltip": [
-      {"field": "animal_group", "type": "nominal", "title": "Animal Group"},
-      {"field": "obs", "type": "quantitative", "title": "Observations", "format": ","},
-      {"field": "pct", "type": "quantitative", "title": "Share", "format": ".1%"}
-    ]
-  },
+    {
+      "mark": {
+        "type": "text",
+        "radius": 138,
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "color": "#222"
+      },
+      "encoding": {
+        "theta": { "field": "obs", "type": "quantitative", "stack": true },
+        "order": { "field": "obs", "type": "quantitative", "sort": "descending" },
+        "text": { "field": "sliceLabel", "type": "nominal" }
+      }
+    },
+    {
+      "transform": [
+        { "aggregate": [{ "op": "max", "field": "total", "as": "total" }] },
+        { "calculate": "format(datum.total, ',')", "as": "totalLabel" }
+      ],
+      "mark": {
+        "type": "text",
+        "x": { "expr": "width / 2" },
+        "y": { "expr": "height / 2" },
+        "dy": -8,
+        "fontSize": 24,
+        "fontWeight": "bold",
+        "color": "#222"
+      },
+      "encoding": {
+        "text": { "field": "totalLabel", "type": "nominal" }
+      }
+    },
+    {
+      "transform": [
+        { "aggregate": [{ "op": "max", "field": "total", "as": "total" }] }
+      ],
+      "mark": {
+        "type": "text",
+        "x": { "expr": "width / 2" },
+        "y": { "expr": "height / 2" },
+        "dy": 16,
+        "fontSize": 12,
+        "color": "#666",
+        "text": "total observations"
+      }
+    }
+  ],
 
-  "view": {"stroke": null}
+  "view": { "stroke": null }
 }

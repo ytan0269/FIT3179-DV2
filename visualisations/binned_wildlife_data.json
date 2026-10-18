@@ -29,7 +29,15 @@
     },
     { "name": "legendX", "update": "width + 30" },
     { "name": "legendY", "value": 36 },
-    { "name": "legendStep", "value": 28 }
+    { "name": "legendStep", "value": 28 },
+
+    { "name": "showReef", "update": "animalGroup === 'All' || animalGroup === 'Fish'" },
+    { "name": "reefX", "update": "length(data('reefAnchor')) ? data('reefAnchor')[0].x : 0" },
+    { "name": "reefY", "update": "length(data('reefAnchor')) ? data('reefAnchor')[0].y : 0" },
+    { "name": "noteW", "value": 180 },
+    { "name": "noteH", "value": 112 },
+    { "name": "noteX", "update": "width - noteW - 4" },
+    { "name": "noteY", "update": "reefY - 160" }
   ],
 
   "projections": [
@@ -98,6 +106,18 @@
         { "name": "Timor Sea",      "lon": 126,   "lat": -12 },
         { "name": "Arafura Sea",    "lon": 135,   "lat": -9.5 }
       ],
+      "transform": [
+        {
+          "type": "geopoint",
+          "projection": "projection",
+          "fields": ["lon", "lat"],
+          "as": ["x", "y"]
+        }
+      ]
+    },
+    {
+      "name": "reefAnchor",
+      "values": [{ "name": "Great Barrier Reef", "lon": 153.2, "lat": -22 }],
       "transform": [
         {
           "type": "geopoint",
@@ -250,7 +270,85 @@
           "baseline": { "value": "middle" },
           "fontStyle": { "value": "italic" },
           "fontSize": { "value": 13 },
-          "fill": { "value": "#4f7ca3" }
+          "fill": { "value": "#4f7ca3" },
+          "fillOpacity": { "signal": "showReef && datum.name === 'Coral Sea' ? 0 : 1" }
+        }
+      }
+    },
+
+    {
+      "name": "reefConnector",
+      "type": "rule",
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": { "signal": "reefX" },
+          "x2": { "signal": "reefX" },
+          "y": { "signal": "reefY - 8" },
+          "y2": { "signal": "noteY + noteH" },
+          "stroke": { "value": "#555" },
+          "strokeWidth": { "value": 1 },
+          "strokeDash": { "value": [3, 3] },
+          "opacity": { "signal": "showReef ? 1 : 0" }
+        }
+      }
+    },
+    {
+      "name": "reefRing",
+      "type": "symbol",
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": { "signal": "reefX" },
+          "y": { "signal": "reefY" },
+          "size": { "value": 180 },
+          "fill": { "value": null },
+          "stroke": { "value": "#333" },
+          "strokeWidth": { "value": 1.5 },
+          "opacity": { "signal": "showReef ? 1 : 0" }
+        }
+      }
+    },
+    {
+      "name": "reefBox",
+      "type": "rect",
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": { "signal": "noteX" },
+          "width": { "signal": "noteW" },
+          "y": { "signal": "noteY" },
+          "height": { "signal": "noteH" },
+          "cornerRadius": { "value": 6 },
+          "fill": { "value": "#ffffff" },
+          "stroke": { "value": "#e3e6ea" },
+          "opacity": { "signal": "showReef ? 1 : 0" }
+        }
+      }
+    },
+    {
+      "name": "reefBody",
+      "type": "text",
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": { "signal": "noteX + 14" },
+          "y": { "signal": "noteY + 14" },
+          "text": {
+            "value": [
+              "The Great Barrier Reef is",
+              "home to hundreds of fish",
+              "species. Divers, snorkellers",
+              "and marine surveys log sightings",
+              "offshore, so reef fish appear",
+              "in the water, not on land."
+            ]
+          },
+          "baseline": { "value": "top" },
+          "lineHeight": { "value": 15 },
+          "fontSize": { "value": 11 },
+          "fill": { "value": "#555" },
+          "opacity": { "signal": "showReef ? 1 : 0" }
         }
       }
     },

@@ -6,7 +6,7 @@
   "autosize": "pad",
 
   "title": {
-    "text": "Top 5 Species Observed in Each Animal Group",
+    "text": "Top 5 Species Observed in Each Animal Group in 2025",
     "subtitle": "Box size shows the number of observations (the smallest group is enlarged slightly so its label fits)",
     "anchor": "middle",
     "frame": "group",

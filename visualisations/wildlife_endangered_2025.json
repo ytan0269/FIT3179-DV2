@@ -1,13 +1,13 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v6.json",
 
-  "width": 880,
+  "width": 780,
   "height": 660,
   "padding": {"left": 20, "right": 20, "top": 20, "bottom": 30},
   "autosize": "pad",
 
   "title": {
-    "text": "Endangered Species Observed Across Australia",
+    "text": "Endangered Species Observed Across Australia in 2025",
     "subtitle": "Slices show conservation status; pie size shows how many distinct endangered species were observed in the state",
     "anchor": "middle",
     "fontSize": 18,

@@ -1,9 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
-  "description": "Stacked proportional bar chart showing the share of participants giving each reason for taking part in nature activities within each Australian state or territory. Each bar sums to 100 percent.",
-
   "title": {
-    "text": "Why Australians Take Part in Nature Activities, by State and Territory",
+    "text": "Why Australians Take Part in Nature Activities (2011-2012)",
     "subtitle": "Each bar shows how that state's participants are split across reasons (sums to 100%)",
     "anchor": "middle",
     "frame": "bounds",

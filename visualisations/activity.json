@@ -3,7 +3,7 @@
   "description": "Stacked bar chart showing the share of participation in each activity within each Australian state or territory. Each bar sums to 100 percent.",
 
   "title": {
-    "text": "Participation by Activity Across Australian States and Territories",
+    "text": "Participation in Nature Activities Across Australia (2011-2012)",
     "subtitle": "Each bar shows how that state's participants are split across activities (sums to 100%)",
     "anchor": "middle",
     "frame": "bounds",

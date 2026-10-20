@@ -6,7 +6,10 @@
   "autosize": "none",
 
   "title": {
-    "text": "Participation in Nature Conservation Activities Across Australia",
+  "text": [
+      "Participation in Nature Activities Across",
+      "Australia (2011-2012)"
+    ],
     "subtitle": "Each section shows how that state's participants are split across activities",
     "anchor": "middle",
     "fontSize": 22,
@@ -46,6 +49,18 @@
       "format": {"type": "csv", "parse": {"Frequency": "number"}},
       "transform": [
         {"type": "filter", "expr": "datum.State === 'AUST'"}
+      ]
+    },
+    {
+      "name": "grand",
+      "source": "raw",
+      "transform": [
+        {
+          "type": "aggregate",
+          "ops": ["sum"],
+          "fields": ["Frequency"],
+          "as": ["grand"]
+        }
       ]
     },
     {
@@ -226,7 +241,9 @@
           "outerRadius": {"field": "ri1"},
           "stroke": {"value": "white"},
           "strokeWidth": {"value": 1.5},
-          "tooltip": {"signal": "datum.id + ', ' + format(datum.total, ',')"}
+          "tooltip": {
+            "signal": "{'Activity': datum.id, 'Participants': format(datum.total, ','), 'Share of all participants': format(datum.total / data('grand')[0].grand, '.1%')}"
+          }
         }
       }
     },

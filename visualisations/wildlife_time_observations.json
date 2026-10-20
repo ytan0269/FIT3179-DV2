@@ -21,7 +21,7 @@
   },
 
   "title": {
-    "text": "Daily Observation Count for Each Animal Group",
+    "text": "Daily Observation Count for Each Animal Group in 2025",
     "subtitle": "Across all states, the time at which the number of observations are made",
     "anchor": "middle",
     "frame": "group",
@@ -243,7 +243,7 @@
           "tickCount": 3,
           "labelFontSize": 10,
           "labelExpr": "datum.value + '%'",
-          "title": "percentage of observations",
+          "title": "Percentage of Observations",
           "titleFontSize": 10.5,
           "titleFontWeight": "normal",
           "titleColor": "#555555",

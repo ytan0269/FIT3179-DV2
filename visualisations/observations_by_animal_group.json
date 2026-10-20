@@ -6,7 +6,7 @@
   "padding": { "left": 10, "right": 10, "top": 15, "bottom": 15 },
 
   "title": {
-    "text": "Wildlife Observations by Animal Group",
+    "text": "Wildlife Observations by Animal Group in 2025",
     "subtitle": "Share of total observations recorded, split by animal group",
     "anchor": "middle",
     "frame": "bounds",

@@ -1,12 +1,11 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
-  "description": "Choropleth map of Australia showing each state's share of all distinct animal species recorded in Australia.",
   "width": 900,
   "height": 675,
   "padding": {"left": 15, "right": 15, "top": 20, "bottom": 20},
   "autosize": { "type": "pad", "contains": "padding" },
   "title": {
-    "text": "Share of Australia's Unique Animal Species Recorded, by State",
+    "text": "Share of Australia's Unique Animal Species Recorded by State as of 2025",
     "subtitle": "Darker green means a larger share of all species recorded in Australia was found there",
     "anchor": "middle",
     "frame": "group",

@@ -1,6 +1,5 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v6.json",
-  "description": "Binned map showing each grid square's share of animal observations across Australia.",
 
   "width": 820,
   "height": 700,
@@ -9,7 +8,7 @@
   "background": "#ffffff",
 
   "title": {
-    "text": "Where Animals Are Observed Across Australia",
+    "text": "Where Animals Are Observed Across Australia in 2025",
     "subtitle": {
       "signal": "'Share of ' + (animalGroup === 'All' ? 'all' : lower(animalGroup)) + ' observations falling in each map grid square'"
     },
@@ -37,7 +36,13 @@
     { "name": "noteW", "value": 180 },
     { "name": "noteH", "value": 112 },
     { "name": "noteX", "update": "width - noteW - 4" },
-    { "name": "noteY", "update": "reefY - 160" }
+    { "name": "noteY", "update": "reefY - 160" },
+
+    { "name": "showBirds", "update": "animalGroup === 'All' || animalGroup === 'Birds'" },
+    { "name": "birdX", "update": "length(data('birdAnchor')) ? data('birdAnchor')[0].x : 0" },
+    { "name": "birdY", "update": "length(data('birdAnchor')) ? data('birdAnchor')[0].y : 0" },
+    { "name": "birdNoteX", "value": 4 },
+    { "name": "birdNoteY", "update": "birdY - 150" }
   ],
 
   "projections": [
@@ -118,6 +123,18 @@
     {
       "name": "reefAnchor",
       "values": [{ "name": "Great Barrier Reef", "lon": 153.2, "lat": -22 }],
+      "transform": [
+        {
+          "type": "geopoint",
+          "projection": "projection",
+          "fields": ["lon", "lat"],
+          "as": ["x", "y"]
+        }
+      ]
+    },
+    {
+      "name": "birdAnchor",
+      "values": [{ "name": "Offshore bird sightings", "lon": 111, "lat": -20 }],
       "transform": [
         {
           "type": "geopoint",
@@ -349,6 +366,49 @@
           "fontSize": { "value": 11 },
           "fill": { "value": "#555" },
           "opacity": { "signal": "showReef ? 1 : 0" }
+        }
+      }
+    },
+
+    {
+      "name": "birdBox",
+      "type": "rect",
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": { "signal": "birdNoteX" },
+          "width": { "signal": "noteW" },
+          "y": { "signal": "birdNoteY" },
+          "height": { "signal": "noteH" },
+          "cornerRadius": { "value": 6 },
+          "fill": { "value": "#ffffff" },
+          "stroke": { "value": "#e3e6ea" },
+          "opacity": { "signal": "showBirds ? 1 : 0" }
+        }
+      }
+    },
+    {
+      "name": "birdBody",
+      "type": "text",
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": { "signal": "birdNoteX + 14" },
+          "y": { "signal": "birdNoteY + 14" },
+          "text": {
+            "value": [
+              "Bird sightings also appear",
+              "over the ocean. Many species",
+              "migrate across open water,",
+              "so they are recorded at sea",
+              "on their way to other regions."
+            ]
+          },
+          "baseline": { "value": "top" },
+          "lineHeight": { "value": 15 },
+          "fontSize": { "value": 11 },
+          "fill": { "value": "#555" },
+          "opacity": { "signal": "showBirds ? 1 : 0" }
         }
       }
     },
